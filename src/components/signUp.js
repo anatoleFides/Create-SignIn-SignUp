@@ -4,6 +4,9 @@ class SignUp extends HTMLElement {
 		const shadow = this.attachShadow({ mode: 'closed' })
 		const wrapper = Object.assign(this.createElem(shadow, 'div'), {
 		style: `
+				position: fixed;
+				top: 0;
+				left: 0;
 				width: 100vw;
 				height: 100vh;
 				display: flex;
@@ -14,23 +17,45 @@ class SignUp extends HTMLElement {
 				font-family: Arial;
 				margin: 0;
 				padding: 0;
-				overflow: hidden;
+				// overflow: hidden;
 			`
 		})
 
 		const container = Object.assign(this.createElem(wrapper, 'div'), {
 			style: `
-				max-width: 500px;
+				max-width: 360px;
 				box-shadow: 2px 2px 8px #000;
 				background: rgba(240, 255, 255, 0.6);
 				border-radius: 8px;
-				padding: 20px;
+				padding: 12px;
 				display: flex;
 				flex-direction: column;
 				align-items: center;
 				justify-content: center;
+				position: relative;
 			`
 		})
+
+		// const close = Object.assign(this.createElem(container, 'div'), {
+		// 	innerText: 'x',
+		// 	style: `
+		// 		position: absolute;
+		// 		top: 12px;
+		// 		right: 12px;
+		// 		width: 16px;
+		// 		height: 16px;
+		// 		border-radius: 2px;
+		// 		background: #8A2BE2;
+		// 		color: #fff;
+		// 		display: flex;
+		// 		align-items: center;
+		// 		justify-content: center;
+		// 	`
+		// })
+		// close.onclick = function (event) {
+		// 	document.getElementsByTagName('sign-up')
+		// 		.classList.remove('open')
+		// }
 
 		const logo = Object.assign(this.createElem(container, 'div'), {
 			style: `
@@ -57,11 +82,10 @@ class SignUp extends HTMLElement {
 		const title = Object.assign(this.createElem(container, 'h2'), {
 			innerText: 'Sign up to Fantasy World',
 			style: `
-				font-size: 32px;
+				font-size: 24px;
 				font-weight: 700;
-				color: #FF8C00;
-				margin: 0 auto;
-				padding: 16px
+				color: #9ACD32;
+				margin: 16px auto
 			`
 		})
 
@@ -70,7 +94,7 @@ class SignUp extends HTMLElement {
 				width: 100%;
 			`
 		})
-		const [login, telephone, email, password, avatar] = [['text', 'Login'], ['tel', '+38(___)___-__-__'], ['email', 'e-mail'], ['password', 'Password'], ['file', '']]
+		const [login, telephone, email, password] = [['text', 'Login'], ['tel', '+38(___)___-__-__'], ['email', 'e-mail'], ['password', 'Password']]
 			.map(function (item) {
 				const elem = this.createElem(form__body, 'input')
 				elem.type = item[0],
@@ -79,8 +103,8 @@ class SignUp extends HTMLElement {
 						width: 90%;
 						display: block;
 						margin: 12px auto;
-						padding: 8px 0 8px 16px;
-						border-radius: 3px;
+						padding: 4px 0 4px 8px;
+						border-radius: 4px;
 						font-size: 16px;
 						border: 1px solid #FF8C00;
 						transition: all .5s ease;
@@ -88,41 +112,58 @@ class SignUp extends HTMLElement {
 				return elem
 			}.bind(this))
 
-			avatar.onchange = function (event) {
-				const reader = new FileReader
-				reader.onload = function (ev) {
-					avatar__photo.src = ev.target.result
-				}
-				reader.readAsDataURL(event.target.files[0])
-			}
-		const avatar__container = Object.assign(this.createElem(form__body, 'div'), {
+			const avatar__container = Object.assign(this.createElem(form__body, 'div'), {
 			style: `
-				width: 70px;
-				height: 70px;
-				margin: 4px auto; 
+				position: relative;
+				margin: 36px auto;
+			`
+			})
+			const avatar = Object.assign(this.createElem(avatar__container, 'input'), {
+			type: 'file',
+			style: `
+				display: block;
+				// opacity: 0;
+				border: 1px solid #FF8C00;
+			`
+			})
+			
+		const avatar__body = Object.assign(this.createElem(avatar__container, 'div'), {
+			style: `
+				width: 80px;
+				height: 80px;
+				margin: 0 auto; 
 				border-radius: 50%;
 				overflow: hidden;
-				position: relative;
-				transform: translateY(-55px);
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
 			`
 		})
-		const avatar__photo = Object.assign(this.createElem(avatar__container, 'img'), {
+		const avatar__photo = Object.assign(this.createElem(avatar__body, 'img'), {
 			src: 'https://apartila.com/images/default_avatar.png',
 			style: `
 				max-width: 100%; 
 				display: block;
 			`
 		})
+		avatar.onchange = function (event) {
+				const reader = new FileReader
+				reader.onload = function (ev) {
+					avatar__photo.src = ev.target.result
+				}
+				reader.readAsDataURL(event.target.files[0])
+			}
 		const button = Object.assign(this.createElem(container, 'div'), {
 			innerText: 'submit',
 			style: `
 				padding: 8px; 
-				margin: 16px auto; 
-				background: #f0f; 
+				margin: 4px auto; 
+				background: #9ACD32; 
 				color: #fff; 
 				border: none; 
 				border-radius: 4px; 
-				font-size: 16px; 
+				font-size: 20px; 
 			`
 		})
 	}

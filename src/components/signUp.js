@@ -70,7 +70,6 @@ class SignUp extends HTMLElement {
 				width: 100%;
 			`
 		})
-		// const [login, telephone, email, password, avatar] = ['text', 'tel', 'email','password', 'file']
 		const [login, telephone, email, password, avatar] = [['text', 'Login'], ['tel', '+38(___)___-__-__'], ['email', 'e-mail'], ['password', 'Password'], ['file', '']]
 			.map(function (item) {
 				const elem = this.createElem(form__body, 'input')
@@ -107,11 +106,23 @@ class SignUp extends HTMLElement {
 				transform: translateY(-55px);
 			`
 		})
-			const avatar__photo = Object.assign(this.createElem(avatar__container, 'img'), {
+		const avatar__photo = Object.assign(this.createElem(avatar__container, 'img'), {
 			src: 'https://apartila.com/images/default_avatar.png',
 			style: `
 				max-width: 100%; 
 				display: block;
+			`
+		})
+		const button = Object.assign(this.createElem(container, 'div'), {
+			innerText: 'submit',
+			style: `
+				padding: 8px; 
+				margin: 16px auto; 
+				background: #f0f; 
+				color: #fff; 
+				border: none; 
+				border-radius: 4px; 
+				font-size: 16px; 
 			`
 		})
 	}

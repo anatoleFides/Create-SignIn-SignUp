@@ -1,6 +1,10 @@
-// document.getElementsByClassName('singUp__btn').onclick = function (event) {
-// 	console.log(event.target, 'hello')
-// 	document.getElementsByTagName('sign-up')[0].add('open-sign_up')
+// const customElemSignUp = document.getElementById("sign-up")
+// 	console.log(customElemSignUp)
+
+// document.getElementById("singup-btn").onclick = function (event) {
+// 	const customElemSignUp = document.getElementById("sign-up")
+// 	console.log(customElemSignUp)
+// 	customElemSignUp.classList.add("open-sign_up")
 // }
 
 class SignUp extends HTMLElement {
@@ -59,11 +63,10 @@ class SignUp extends HTMLElement {
 				cursor: pointer;
 			`
 		})
-		// close.onclick = function (event) {
-		// 	const searchClass = document.getElementsByTagName('sign-up')
-		// 	console.log(searchClass)
-		// 	searchClass[0].remove('open-sign_up')
-		// }
+		close.onclick = function (event) {
+			document.getElementById("sign-up")
+				.classList.remove("open-sign_up")
+		}
 
 		const logo = Object.assign(this.createElem(container, 'div'), {
 			style: `
@@ -123,33 +126,45 @@ class SignUp extends HTMLElement {
 			const avatar__container = Object.assign(this.createElem(form__body, 'div'), {
 			style: `
 				position: relative;
-				margin: 36px auto;
+				margin: 8px auto;
+				width: 80px;
+				height: 80px;
+				border-radius: 50%;
+				border: 1px solid #FF8C00;
+				overflow: hidden;
 			`
 			})
 			const avatar = Object.assign(this.createElem(avatar__container, 'input'), {
 			type: 'file',
 			style: `
-				display: block;
-				// opacity: 0;
-				border: 1px solid #FF8C00;
+				// display: block;
+				// overflow: hidden;
+				opacity: 0;
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				z-index: 8;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
 			`
 			})
 			
 		const avatar__body = Object.assign(this.createElem(avatar__container, 'div'), {
 			style: `
-				width: 80px;
-				height: 80px;
-				margin: 0 auto; 
-				border-radius: 50%;
-				overflow: hidden;
+				width: 100%;
+				height: 100%;
+				// margin: 0 auto; 
+				// border-radius: 50%;
 				position: absolute;
+				z-index: 4;
 				top: 50%;
 				left: 50%;
 				transform: translate(-50%, -50%);
 			`
 		})
 		const avatar__photo = Object.assign(this.createElem(avatar__body, 'img'), {
-			src: 'https://apartila.com/images/default_avatar.png',
+			src: 'https://offvkontakte.ru/wp-content/uploads/avatarka-pustaya-vk_20.jpg',
 			style: `
 				max-width: 100%; 
 				display: block;

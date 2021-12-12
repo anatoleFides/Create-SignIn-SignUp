@@ -1,3 +1,8 @@
+// document.getElementsByClassName('singUp__btn').onclick = function (event) {
+// 	console.log(event.target, 'hello')
+// 	document.getElementsByTagName('sign-up')[0].add('open-sign_up')
+// }
+
 class SignUp extends HTMLElement {
 	constructor () {
 		super()
@@ -7,17 +12,18 @@ class SignUp extends HTMLElement {
 				position: fixed;
 				top: 0;
 				left: 0;
+				z-index: 100;
 				width: 100vw;
 				height: 100vh;
 				display: flex;
 				align-items: center;
 				justify-content: center;
 				overflow: hidden;
-				background: rgba(204, 204, 204, 0.2);
+				background: rgba(204, 204, 204, 0.8);
 				font-family: Arial;
 				margin: 0;
 				padding: 0;
-				// overflow: hidden;
+				overflow: hidden;
 			`
 		})
 
@@ -25,7 +31,7 @@ class SignUp extends HTMLElement {
 			style: `
 				max-width: 360px;
 				box-shadow: 2px 2px 8px #000;
-				background: rgba(240, 255, 255, 0.6);
+				background: rgba(240, 255, 255, 0.8);
 				border-radius: 8px;
 				padding: 12px;
 				display: flex;
@@ -36,25 +42,27 @@ class SignUp extends HTMLElement {
 			`
 		})
 
-		// const close = Object.assign(this.createElem(container, 'div'), {
-		// 	innerText: 'x',
-		// 	style: `
-		// 		position: absolute;
-		// 		top: 12px;
-		// 		right: 12px;
-		// 		width: 16px;
-		// 		height: 16px;
-		// 		border-radius: 2px;
-		// 		background: #8A2BE2;
-		// 		color: #fff;
-		// 		display: flex;
-		// 		align-items: center;
-		// 		justify-content: center;
-		// 	`
-		// })
+		const close = Object.assign(this.createElem(container, 'div'), {
+			innerText: 'x',
+			style: `
+				position: absolute;
+				top: 12px;
+				right: 12px;
+				width: 16px;
+				height: 16px;
+				border-radius: 2px;
+				background: #8A2BE2;
+				color: #fff;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				cursor: pointer;
+			`
+		})
 		// close.onclick = function (event) {
-		// 	document.getElementsByTagName('sign-up')
-		// 		.classList.remove('open')
+		// 	const searchClass = document.getElementsByTagName('sign-up')
+		// 	console.log(searchClass)
+		// 	searchClass[0].remove('open-sign_up')
 		// }
 
 		const logo = Object.assign(this.createElem(container, 'div'), {
@@ -184,7 +192,7 @@ class SignUp extends HTMLElement {
 				body: JSON.stringify(user)
 			})
 			if (response.status === 201) { 
-				document.getElementsByTagName('sign-up')[0].remove() 
+				document.getElementsByClassName('open-sign_up')[0].remove() 
 			}
 		}
 	}
@@ -194,6 +202,7 @@ class SignUp extends HTMLElement {
 		return сontainerName.appendChild(document.createElement(tagName)) 
 	}
 }
+
 
 customElements.define('sign-up', SignUp)
 

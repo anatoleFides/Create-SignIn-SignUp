@@ -1,12 +1,3 @@
-// const customElemSignUp = document.getElementById("sign-up")
-// 	console.log(customElemSignUp)
-
-// document.getElementById("singup-btn").onclick = function (event) {
-// 	const customElemSignUp = document.getElementById("sign-up")
-// 	console.log(customElemSignUp)
-// 	customElemSignUp.classList.add("open-sign_up")
-// }
-
 class SignUp extends HTMLElement {
 	constructor () {
 		super()
@@ -33,7 +24,7 @@ class SignUp extends HTMLElement {
 
 		const container = Object.assign(this.createElem(wrapper, 'div'), {
 			style: `
-				max-width: 360px;
+				max-width: 320px;
 				box-shadow: 2px 2px 8px #000;
 				background: rgba(240, 255, 255, 0.8);
 				border-radius: 8px;
@@ -137,8 +128,6 @@ class SignUp extends HTMLElement {
 			const avatar = Object.assign(this.createElem(avatar__container, 'input'), {
 			type: 'file',
 			style: `
-				// display: block;
-				// overflow: hidden;
 				opacity: 0;
 				width: 100%;
 				height: 100%;
@@ -154,8 +143,6 @@ class SignUp extends HTMLElement {
 			style: `
 				width: 100%;
 				height: 100%;
-				// margin: 0 auto; 
-				// border-radius: 50%;
 				position: absolute;
 				z-index: 4;
 				top: 50%;
@@ -181,7 +168,7 @@ class SignUp extends HTMLElement {
 			innerText: 'submit',
 			style: `
 				padding: 8px; 
-				margin: 4px auto; 
+				margin: 0 auto; 
 				background: #9ACD32; 
 				color: #fff; 
 				border: none; 
@@ -207,7 +194,7 @@ class SignUp extends HTMLElement {
 				body: JSON.stringify(user)
 			})
 			if (response.status === 201) { 
-				document.getElementsByClassName('open-sign_up')[0].remove() 
+				document.getElementsByTagName('sign-up')[0].remove()
 			}
 		}
 	}

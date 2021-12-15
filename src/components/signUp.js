@@ -114,6 +114,7 @@ class SignUp extends HTMLElement {
 				return elem
 			}.bind(this))
 
+
 			const avatar__container = Object.assign(this.createElem(form__body, 'div'), {
 			style: `
 				position: relative;
@@ -207,4 +208,9 @@ class SignUp extends HTMLElement {
 
 
 customElements.define('sign-up', SignUp)
+
+const elemSignUp = document.createElement('sign-up')
+elemSignUp.id = 'sign-up'
+
+export default elemSignUp
 

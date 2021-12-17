@@ -1,58 +1,35 @@
+
+import {
+	wrapperStyle,
+	containerStyle,
+	buttonCloseStyle,
+	logoStyle,
+	logoLinkStyle,
+	imageStyle,
+	titleStyle,
+	formsBodyStyle,
+	inputStyle,
+	avatarContainerStyle,
+	avatarStyle,
+	avatarBodyStyle,
+	buttonSubmitStyle
+} from '../styles'
+
 class SignUp extends HTMLElement {
 	constructor () {
 		super()
 		const shadow = this.attachShadow({ mode: 'closed' })
 		const wrapper = Object.assign(this.createElem(shadow, 'div'), {
-		style: `
-				position: fixed;
-				top: 0;
-				left: 0;
-				z-index: 100;
-				width: 100vw;
-				height: 100vh;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				overflow: hidden;
-				background: rgba(204, 204, 204, 0.8);
-				font-family: Arial;
-				margin: 0;
-				padding: 0;
-				overflow: hidden;
-			`
+		style: wrapperStyle
 		})
 
 		const container = Object.assign(this.createElem(wrapper, 'div'), {
-			style: `
-				max-width: 320px;
-				box-shadow: 2px 2px 8px #000;
-				background: rgba(240, 255, 255, 0.8);
-				border-radius: 8px;
-				padding: 12px;
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				justify-content: center;
-				position: relative;
-			`
+			style: containerStyle
 		})
 
 		const close = Object.assign(this.createElem(container, 'div'), {
 			innerText: 'x',
-			style: `
-				position: absolute;
-				top: 12px;
-				right: 12px;
-				width: 16px;
-				height: 16px;
-				border-radius: 2px;
-				background: #8A2BE2;
-				color: #fff;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				cursor: pointer;
-			`
+			style: buttonCloseStyle
 		})
 		close.onclick = function (event) {
 			document.getElementById("sign-up")
@@ -60,103 +37,54 @@ class SignUp extends HTMLElement {
 		}
 
 		const logo = Object.assign(this.createElem(container, 'div'), {
-			style: `
-				display: flex;
-			`
+			style: logoStyle
 		})
 		const logo__link = Object.assign(this.createElem(logo, 'a'), {
-			style: `
-				flex: 0 0 100px;
-				border-radius: 50%;
-				overflow: hidden;
-				display: block;
-				margin: 0 auto;
-			`
+			style: logoLinkStyle
 		})
 		const logo__img = Object.assign(this.createElem(logo__link, 'img'), {
 			src: 'https://avatarko.ru/img/kartinka/33/cherep_fantastika_feniks_33560.jpg',
-			style: `
-				display: block;
-				max-width: 100%;
-			`
+			style: imageStyle
 		})
 
 		const title = Object.assign(this.createElem(container, 'h2'), {
 			innerText: 'Sign up to Fantasy World',
-			style: `
-				font-size: 24px;
-				font-weight: 700;
-				color: #9ACD32;
-				margin: 16px auto
-			`
+			style: titleStyle
 		})
 
-		const form__body = Object.assign(this.createElem(container, 'div'), {
-			style: `
-				width: 100%;
-			`
+		const forms__body = Object.assign(this.createElem(container, 'div'), {
+			style: formsBodyStyle
 		})
-		const [login, telephone, email, password] = [['text', 'Login'], ['tel', '+38(___)___-__-__'], ['email', 'e-mail'], ['password', 'Password']]
-			.map(function (item) {
-				const elem = this.createElem(form__body, 'input')
-				elem.type = item[0],
-				elem.placeholder = item[1],
-				elem.style = `
-						width: 90%;
-						display: block;
-						margin: 12px auto;
-						padding: 4px 0 4px 8px;
-						border-radius: 4px;
-						font-size: 16px;
-						border: 1px solid #FF8C00;
-						transition: all .5s ease;
-					`
-				return elem
-			}.bind(this))
-
-
-			const avatar__container = Object.assign(this.createElem(form__body, 'div'), {
-			style: `
-				position: relative;
-				margin: 8px auto;
-				width: 80px;
-				height: 80px;
-				border-radius: 50%;
-				border: 1px solid #FF8C00;
-				overflow: hidden;
-			`
+		const [login, telephone, email, password] = [
+			['text', 'Login'],
+			['tel', '+38(___)___-__-__'],
+			['email', 'e-mail'],
+			['password', 'Password']
+		].map(function (item) {
+			const elem = Object.assign(this.createElem(forms__body, 'input'), {
+				type: item[0],
+				placeholder: item[1],
+				style: inputStyle
 			})
-			const avatar = Object.assign(this.createElem(avatar__container, 'input'), {
+
+			return elem
+		}.bind(this))
+
+
+		const avatar__container = Object.assign(this.createElem(forms__body, 'div'), {
+			style: avatarContainerStyle
+		})
+		const avatar = Object.assign(this.createElem(avatar__container, 'input'), {
 			type: 'file',
-			style: `
-				opacity: 0;
-				width: 100%;
-				height: 100%;
-				position: absolute;
-				z-index: 8;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-			`
-			})
+			style: avatarStyle
+		})
 			
 		const avatar__body = Object.assign(this.createElem(avatar__container, 'div'), {
-			style: `
-				width: 100%;
-				height: 100%;
-				position: absolute;
-				z-index: 4;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-			`
+			style: avatarBodyStyle
 		})
 		const avatar__photo = Object.assign(this.createElem(avatar__body, 'img'), {
 			src: 'https://offvkontakte.ru/wp-content/uploads/avatarka-pustaya-vk_20.jpg',
-			style: `
-				max-width: 100%; 
-				display: block;
-			`
+			style: imageStyle
 		})
 		avatar.onchange = function (event) {
 				const reader = new FileReader
@@ -167,16 +95,7 @@ class SignUp extends HTMLElement {
 			}
 		const button = Object.assign(this.createElem(container, 'div'), {
 			innerText: 'submit',
-			style: `
-				padding: 8px; 
-				margin: 0 auto; 
-				background: #9ACD32; 
-				color: #fff; 
-				border: none; 
-				border-radius: 4px; 
-				font-size: 20px;
-				cursor: pointer;
-			`
+			style: buttonSubmitStyle
 		})
 
 		button.onclick = async function (event) {

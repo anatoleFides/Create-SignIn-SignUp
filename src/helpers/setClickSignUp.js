@@ -3,4 +3,5 @@ export const setClickSignUp = document.getElementById("singup-btn").onclick = fu
 	const customElemSignUp = document.getElementById("sign-up")
 	console.log(customElemSignUp)
 	customElemSignUp.classList.add("open-sign_up")
+
 }

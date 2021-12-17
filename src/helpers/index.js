@@ -1,5 +1,9 @@
 import { setClickSignUp } from './setClickSignUp'
+// import { createElem } from './createElem'
+// import { changeAvatar } from './changeAvatar'
 
 export {
-	setClickSignUp
+	setClickSignUp,
+	// createElem,
+	// changeAvatar
 }

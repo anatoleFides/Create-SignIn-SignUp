@@ -1,0 +1,1 @@
+export const avatarImg = 'https://offvkontakte.ru/wp-content/uploads/avatarka-pustaya-vk_20.jpg'

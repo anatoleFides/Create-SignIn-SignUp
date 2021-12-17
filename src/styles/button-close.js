@@ -6,4 +6,6 @@ export const buttonCloseStyle = `
 	background: #8A2BE2;
 	color: #fff;
 	text-align: center;
+	cursor: pointer;
+	font-size: 16px;
 `

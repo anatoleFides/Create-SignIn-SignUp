@@ -15,6 +15,11 @@ import {
 	buttonSubmitStyle
 } from '../styles'
 
+import {
+	logoImg,
+	avatarImg
+} from '../assets'
+
 class SignUp extends HTMLElement {
 	constructor () {
 		super()
@@ -43,7 +48,7 @@ class SignUp extends HTMLElement {
 			style: logoLinkStyle
 		})
 		const logo__img = Object.assign(this.createElem(logo__link, 'img'), {
-			src: 'https://avatarko.ru/img/kartinka/33/cherep_fantastika_feniks_33560.jpg',
+			src: logoImg,
 			style: imageStyle
 		})
 
@@ -83,7 +88,7 @@ class SignUp extends HTMLElement {
 			style: avatarBodyStyle
 		})
 		const avatar__photo = Object.assign(this.createElem(avatar__body, 'img'), {
-			src: 'https://offvkontakte.ru/wp-content/uploads/avatarka-pustaya-vk_20.jpg',
+			src: avatarImg,
 			style: imageStyle
 		})
 		avatar.onchange = function (event) {

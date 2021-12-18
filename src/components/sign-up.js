@@ -21,7 +21,6 @@ import {
 } from '../assets'
 
 import {
-	setClickSignUp,
 	closeSignUp,
 	readFile,
 	getUser,
@@ -32,6 +31,7 @@ class SignUp extends HTMLElement {
 	constructor () {
 		super()
 		const shadow = this.attachShadow({ mode: 'closed' })
+		
 		const wrapper = Object.assign(this.createElem(shadow, 'div'), {
 		style: wrapperStyle
 		})

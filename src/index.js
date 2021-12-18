@@ -1,11 +1,10 @@
-import { setClickSignUp } from './helpers'
+import { getClickSignIn, getClickSignUp } from './helpers'
 
-// import { createElem } from './helpers'
+import formAvtorisation from './components/sign-in'
 
-// import { changeAvatar } from './helpers'
+import formRegistration from './components/sign-up'
 
-
-import formRegistration from './components/signUp'
+document.body.appendChild(formAvtorisation)
 
 document.body.appendChild(formRegistration)
 

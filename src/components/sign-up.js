@@ -91,15 +91,24 @@ class SignUp extends HTMLElement {
 		const avatar__body = Object.assign(this.createElem(avatar__container, 'div'), {
 			style: avatarBodyStyle
 		})
-		const avatar__photo = Object.assign(this.createElem(avatar__body, 'img'), {
+
+		// avatar.onchange = readFile
+
+		const photo = Object.assign(this.createElem(avatar__body, 'img'), {
 			src: defaultAvatar,
 			style: imageStyle
 		})
 
-		avatar.onchange = readFile
+		avatar.onchange = function (event) {
+			const reader = new FileReader
+			reader.onload = function (ev) {
+				photo.src = ev.target.result
+			}
+			reader.readAsDataURL(event.target.files[0])
+		}
 
 		const button = Object.assign(this.createElem(container, 'button'), {
-			innerText: 'submit',
+			innerText: 'Sign Up',
 			style: buttonSubmitStyle,
 			onclick: async function (event) {
 				await getUser ({
@@ -107,7 +116,7 @@ class SignUp extends HTMLElement {
 					telephone: telephone.value,
 					email: email.value,
 					password: password.value,
-					avatat: avatar__photo.src
+					avatat: photo.src
 				})
 			}
 		})

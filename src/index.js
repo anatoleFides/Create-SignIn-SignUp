@@ -1,13 +1,22 @@
-import {
-	getClickSignIn,
-	getClickSignUp
-} from './helpers'
+// import {
+// 	getClickSignIn,
+// 	getClickSignUp
+// } from './helpers'
 
-import formAvtorisation from './components/sign-in'
+import loginForm from './components/sign-in'
 
-import formRegistration from './components/sign-up'
+import registrationForm from './components/sign-up'
 
-document.body.appendChild(formAvtorisation)
+const forms = [loginForm, registrationForm]
 
-document.body.appendChild(formRegistration)
+const [sinInButton, sinUpButton] = ["sing-in__btn", "sing-up__btn"]
+	.map((id, index) => Object.assign(document.getElementById(id), {
+		onclick: function (event) {
+			document.body.appendChild(forms[index])
+		}
+	}))
+
+// document.body.appendChild(loginForm)
+
+// document.body.appendChild(registrationForm)
 

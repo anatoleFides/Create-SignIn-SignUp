@@ -3,5 +3,4 @@ export const getClickSignIn = document.getElementById("sing-in__btn").onclick = 
 	const customElemSignUp = document.getElementById("sign-in")
 	console.log(customElemSignUp)
 	customElemSignUp.classList.add("open-sign_in")
-
 }

@@ -7,4 +7,5 @@ export const buttonSubmitStyle = `
 	border-radius: 4px; 
 	font-size: 20px;
 	cursor: pointer;
+	width: 50%;
 `

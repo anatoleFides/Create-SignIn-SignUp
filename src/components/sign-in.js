@@ -17,14 +17,17 @@ import {
 } from '../assets'
 
 import {
-	// closeSignIn,
-	// getUser,
+	closeSignIn,
+	// loginHandler,
+	// passwordHandler,
+	// authorizeUser,
 	createElem
 } from '../helpers'
 
 class SignIn extends HTMLElement {
 	constructor () {
 		super()
+		// this.handlers = [loginHandler, passwordHandler]
 		const shadow = this.attachShadow({ mode: 'closed' })
 		
 		const wrapper = Object.assign(this.createElem(shadow, 'div'), {
@@ -38,7 +41,7 @@ class SignIn extends HTMLElement {
 		const close = Object.assign(this.createElem(container, 'div'), {
 			innerText: 'x',
 			style: buttonCloseStyle,
-			// onclick: closeSignUp
+			onclick: closeSignIn
 		})
 
 		const logo = Object.assign(this.createElem(container, 'div'), {
@@ -63,11 +66,12 @@ class SignIn extends HTMLElement {
 		const [login, password] = [
 			['text', 'Login'],
 			['password', 'Password']
-		].map(function (item) {
+		].map(function (item, index) {
 			const elem = Object.assign(this.createElem(forms__body, 'input'), {
 				type: item[0],
 				placeholder: item[1],
-				style: inputStyle
+				style: inputStyle,
+				// oninput: this.handlers[index]
 			})
 
 			return elem
@@ -80,17 +84,9 @@ class SignIn extends HTMLElement {
 		})
 
 		const button = Object.assign(this.createElem(container, 'button'), {
-			innerText: 'submit',
-			style: buttonSubmitStyle
-			// onclick: async function (event) {
-			// 	await getUser ({
-			// 		login: login.value,
-			// 		telephone: telephone.value,
-			// 		email: email.value,
-			// 		password: password.value,
-			// 		avatat: avatar__photo.src
-			// 	})
-			// }
+			innerText: 'Sign In',
+			style: buttonSubmitStyle,
+			// onclick: authorizeUser
 		})
 	}
 }

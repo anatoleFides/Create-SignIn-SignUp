@@ -160,7 +160,7 @@ input[type="text" i]:focus-visible{
 	color: #fff;
 	padding: 15px 0;
 }
-sign-up{
+/*sign-up{
 	display: none;
 }
 sign-up.open-sign_up{
@@ -171,4 +171,4 @@ sign-in{
 }
 sign-in.open-sign_in{
 	display: block;
-}
+}*/

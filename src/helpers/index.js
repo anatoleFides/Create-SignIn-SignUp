@@ -1,9 +1,13 @@
 import { setClickSignUp } from './setClickSignUp'
-// import { createElem } from './createElem'
-// import { changeAvatar } from './changeAvatar'
+import { closeSignUp } from './closeSignUp'
+import { readFile } from './readFile'
+import { getUser } from './getUser'
+import { createElem } from './createElem'
 
 export {
 	setClickSignUp,
-	// createElem,
-	// changeAvatar
+	closeSignUp,
+	readFile,
+	getUser,
+	createElem
 }

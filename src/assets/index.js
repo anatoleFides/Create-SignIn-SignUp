@@ -1,7 +1,7 @@
 import { logoImg } from './logo-img'
-import { avatarImg } from './avatar-img'
+import { defaultAvatar } from './default-avatar'
 
 export {
 	logoImg,
-	avatarImg
+	defaultAvatar
 }

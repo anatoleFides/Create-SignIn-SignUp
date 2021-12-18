@@ -17,8 +17,16 @@ import {
 
 import {
 	logoImg,
-	avatarImg
+	defaultAvatar
 } from '../assets'
+
+import {
+	setClickSignUp,
+	closeSignUp,
+	readFile,
+	getUser,
+	createElem
+} from '../helpers'
 
 class SignUp extends HTMLElement {
 	constructor () {
@@ -34,12 +42,9 @@ class SignUp extends HTMLElement {
 
 		const close = Object.assign(this.createElem(container, 'div'), {
 			innerText: 'x',
-			style: buttonCloseStyle
+			style: buttonCloseStyle,
+			onclick: closeSignUp
 		})
-		close.onclick = function (event) {
-			document.getElementById("sign-up")
-				.classList.remove("open-sign_up")
-		}
 
 		const logo = Object.assign(this.createElem(container, 'div'), {
 			style: logoStyle
@@ -75,7 +80,6 @@ class SignUp extends HTMLElement {
 			return elem
 		}.bind(this))
 
-
 		const avatar__container = Object.assign(this.createElem(forms__body, 'div'), {
 			style: avatarContainerStyle
 		})
@@ -88,48 +92,29 @@ class SignUp extends HTMLElement {
 			style: avatarBodyStyle
 		})
 		const avatar__photo = Object.assign(this.createElem(avatar__body, 'img'), {
-			src: avatarImg,
+			src: defaultAvatar,
 			style: imageStyle
 		})
-		avatar.onchange = function (event) {
-				const reader = new FileReader
-				reader.onload = function (ev) {
-					avatar__photo.src = ev.target.result
-				}
-				reader.readAsDataURL(event.target.files[0])
-			}
-		const button = Object.assign(this.createElem(container, 'div'), {
+
+		avatar.onchange = readFile
+
+		const button = Object.assign(this.createElem(container, 'button'), {
 			innerText: 'submit',
-			style: buttonSubmitStyle
+			style: buttonSubmitStyle,
+			onclick: async function (event) {
+				await getUser ({
+					login: login.value,
+					telephone: telephone.value,
+					email: email.value,
+					password: password.value,
+					avatat: avatar__photo.src
+				})
+			}
 		})
-
-		button.onclick = async function (event) {
-			const user = {
-				login: login.value,
-				telephone: telephone.value,
-				email: email.value,
-				password: password.value,
-				avatat: avatar__photo.src
-			}
-			const response = await fetch('http://localhost:3000/users', {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json'
-				},
-				body: JSON.stringify(user)
-			})
-			if (response.status === 201) { 
-				document.getElementsByTagName('sign-up')[0].remove()
-			}
-		}
-	}
-
-	createElem (сontainerName, tagName) { 
-		console.log(сontainerName.nodeType) 
-		return сontainerName.appendChild(document.createElement(tagName)) 
 	}
 }
 
+SignUp.prototype.createElem = createElem
 
 customElements.define('sign-up', SignUp)
 

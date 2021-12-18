@@ -1,4 +1,7 @@
-import { getClickSignIn, getClickSignUp } from './helpers'
+import {
+	getClickSignIn,
+	getClickSignUp
+} from './helpers'
 
 import formAvtorisation from './components/sign-in'
 

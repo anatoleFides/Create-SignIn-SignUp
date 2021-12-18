@@ -1,4 +1,4 @@
-export const getClickSignIn = document.getElementById("singup-btn").onclick = function (event) {
+export const getClickSignIn = document.getElementById("sing-in__btn").onclick = function (event) {
 	event.preventDefault()
 	const customElemSignUp = document.getElementById("sign-in")
 	console.log(customElemSignUp)

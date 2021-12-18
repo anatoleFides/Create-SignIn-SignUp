@@ -8,6 +8,7 @@ import {
 	titleStyle,
 	formsBodyStyle,
 	inputStyle,
+	forgotPasswordStyle,
 	buttonSubmitStyle
 } from '../styles'
 
@@ -16,7 +17,7 @@ import {
 } from '../assets'
 
 import {
-	closeSignIn,
+	// closeSignIn,
 	// getUser,
 	createElem
 } from '../helpers'
@@ -37,7 +38,7 @@ class SignIn extends HTMLElement {
 		const close = Object.assign(this.createElem(container, 'div'), {
 			innerText: 'x',
 			style: buttonCloseStyle,
-			onclick: closeSignUp
+			// onclick: closeSignUp
 		})
 
 		const logo = Object.assign(this.createElem(container, 'div'), {
@@ -71,6 +72,12 @@ class SignIn extends HTMLElement {
 
 			return elem
 		}.bind(this))
+
+		const forgot__password = Object.assign(this.createElem(container, 'a'), {
+			style: forgotPasswordStyle,
+			innerText: 'Forgot password?',
+			href: '#'
+		})
 
 		const button = Object.assign(this.createElem(container, 'button'), {
 			innerText: 'submit',

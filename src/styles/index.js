@@ -10,6 +10,7 @@ import { inputStyle } from './input'
 import { avatarContainerStyle } from './avatar-container'
 import { avatarStyle } from './avatar'
 import { avatarBodyStyle } from './avatar-body'
+import { forgotPasswordStyle } from './forgot-password'
 import { buttonSubmitStyle } from './button-submit'
 
 export {
@@ -25,5 +26,6 @@ export {
 	avatarContainerStyle,
 	avatarStyle,
 	avatarBodyStyle,
+	forgotPasswordStyle,
 	buttonSubmitStyle
 }

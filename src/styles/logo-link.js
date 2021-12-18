@@ -4,4 +4,5 @@ export const logoLinkStyle = `
 	overflow: hidden;
 	display: block;
 	margin: 0 auto;
+	border: 2px solid #9ACD32;
 `

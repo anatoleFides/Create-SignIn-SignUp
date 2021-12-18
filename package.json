@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/anatoleFides/Create-SignIn-SignUp/issues"
   },
-  "homepage": "https://github.com/anatoleFides/Create-SignIn-SignUp#readme"
+  "homepage": "https://github.com/anatoleFides/Create-SignIn-SignUp#readme",
+  "dependencies": {
+    "undefined": "^0.1.0"
+  }
 }

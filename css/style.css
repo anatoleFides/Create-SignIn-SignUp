@@ -13,13 +13,19 @@ body{
 	background: #FFFACD;
 }
 .container {
-	max-width: 1100px;
+	max-width: 1200px;
 	margin: 0 auto;
 }
 .header__body {
 	display: grid;
-	grid-template: 1fr / 7% 1fr 25%;
+	grid-template: 1fr / 8% 1fr 25%;
 	padding: 10px 0;
+	align-items: center;
+}
+@media (max-width: 992px){
+	.header__body {
+		grid-template: 1fr / 12% 1fr 30%;
+	}
 }
 .header__logo {}
 .logo {
@@ -38,31 +44,49 @@ body{
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 0 15px;
+	padding: 0 16px 0 0;
 }
-.heder__menu {
-	flex: 0 0 60%;
+@media (max-width: 992px){
+	.header__row{
+		flex-direction: column;
+	}
 }
-.menu-header {}
+.header__menu {
+	flex: 0 0 50%;
+	margin: 0 12px 0 0;
+	width: 100%;
+}
+@media (max-width: 992px){
+	.header__menu{
+		margin: 0;
+	}
+}
 .header-menu__lists {
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-around;
+}
+@media (max-width: 992px){
+	.header-menu__lists {
+		margin: 0 0 8px 0;
+		justify-content: space-between;
+	}
 }
 .header-menu__lists li{
 	list-style: none;
-	margin: 0 20px 0 0;
+	margin: 0 16px 0 0;
 	background: #FF8C00;
-	padding: 3px 7px;
-	border-radius: 5px;
+	border-radius: 4px;
 }
 .header-menu__lists li:last-child{
 	margin: 0;
 }
 .header-menu__link {
+	display: block;
 	text-decoration: none;
-	font-size: 18px;
+	font-size: 20px;
 	color: #fff;
+	padding: 4px 8px;
 	transition: all .5s ease;
 }
 .header-menu__lists li:hover .header-menu__link{
@@ -70,15 +94,19 @@ body{
 }
 .header__search {
 	flex: 1 1 auto;
+	width: 100%;
 }
 .search-form {}
-.search-form__row {}
+.search-form__row {
+
+}
 .serch-form__input {
-	width: 95%;
+	width: 100%;
+	box-sizing: border-box;
 	font-size: 16px;
-	padding: 5px 0 5px 10px;
+	padding: 4px 0 4px 8px;
 	border: 1px solid #FF8C00;
-	border-radius: 3px;
+	border-radius: 4px;
 }
 input[type="text" i]:focus-visible{
 	border: 1px solid #9ACD32;
@@ -92,13 +120,13 @@ input[type="text" i]:focus-visible{
 	align-items: center;
 }
 .avtorisation__link {
-	padding: 5px;
+	padding: 4px;
 	background: #87CEEB;
 	color: #fff;
-	font-size: 18px;
+	font-size: 16px;
 	text-transform: uppercase;
 	font-weight: 700;
-	border-radius: 5px;
+	border-radius: 4px;
 	text-decoration: none;
 	text-align: center;
 	transition: all .4s ease;
@@ -108,7 +136,7 @@ input[type="text" i]:focus-visible{
 	color: #E0FFFF;
 }
 .avtorisation__link{
-	margin: 0 10px 0 0;
+	margin: 0 8px 0 0;
 }
 .singIn__btn {}
 .avtorisation__link {}
@@ -132,20 +160,21 @@ input[type="text" i]:focus-visible{
 
 .main{
 	flex: 1 1 auto;
+	background: rgba(255, 255, 240, 0.5);
 }
 .main__body{
 	padding: 30px 10px;
 }
 .main__body h1{
 	color: #87CEEB;
-	font-size: 30px;
-	margin: 0 0 30px 0;
+	font-size: 28px;
+	margin: 0 0 28px 0;
 	font-weight: 700;
 	text-align: center;
 }
 .main__text{
-	fill-size: 16px;
-	margin: 0 0 15px 0;
+	font-size: 16px;
+	margin: 0 0 16px 0;
 }
 .main__text:last-child{
 	margin: 0;
@@ -158,17 +187,5 @@ input[type="text" i]:focus-visible{
 	text-align: center;
 	font-size: 20px;
 	color: #fff;
-	padding: 15px 0;
+	padding: 16px 0;
 }
-/*sign-up{
-	display: none;
-}
-sign-up.open-sign_up{
-	display: block;
-}
-sign-in{
-	display: none;
-}
-sign-in.open-sign_in{
-	display: block;
-}*/

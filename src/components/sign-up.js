@@ -92,12 +92,12 @@ class SignUp extends HTMLElement {
 			style: avatarBodyStyle
 		})
 
-		// avatar.onchange = readFile
-
 		const photo = Object.assign(this.createElem(avatar__body, 'img'), {
 			src: defaultAvatar,
 			style: imageStyle
 		})
+
+		// avatar.onchange = readFile
 
 		avatar.onchange = function (event) {
 			const reader = new FileReader
@@ -116,7 +116,7 @@ class SignUp extends HTMLElement {
 					telephone: telephone.value,
 					email: email.value,
 					password: password.value,
-					avatat: photo.src
+					avatar: photo.src
 				})
 			}
 		})

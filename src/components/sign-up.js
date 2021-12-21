@@ -17,11 +17,12 @@ import {
 
 import {
 	logoImg,
-	defaultAvatar
+	getDefaultAvatar
 } from '../assets'
 
 import {
 	closeSignUp,
+	passwordValidation,
 	readFile,
 	getUser,
 	createElem
@@ -80,6 +81,8 @@ class SignUp extends HTMLElement {
 			return elem
 		}.bind(this))
 
+		passwordValidation(password)
+
 		const avatar__container = Object.assign(this.createElem(forms__body, 'div'), {
 			style: avatarContainerStyle
 		})
@@ -92,20 +95,20 @@ class SignUp extends HTMLElement {
 			style: avatarBodyStyle
 		})
 
-		const photo = Object.assign(this.createElem(avatar__body, 'img'), {
-			src: defaultAvatar,
+		window[Symbol.for('photo')] = Object.assign(this.createElem(avatar__body, 'img'), {
+			src: getDefaultAvatar(),
 			style: imageStyle
 		})
 
-		// avatar.onchange = readFile
+		avatar.onchange = readFile
 
-		avatar.onchange = function (event) {
-			const reader = new FileReader
-			reader.onload = function (ev) {
-				photo.src = ev.target.result
-			}
-			reader.readAsDataURL(event.target.files[0])
-		}
+		// avatar.onchange = function (event) {
+		// 	const reader = new FileReader
+		// 	reader.onload = function (ev) {
+		// 		photo.src = ev.target.result
+		// 	}
+		// 	reader.readAsDataURL(event.target.files[0])
+		// }
 
 		const button = Object.assign(this.createElem(container, 'button'), {
 			innerText: 'Sign Up',

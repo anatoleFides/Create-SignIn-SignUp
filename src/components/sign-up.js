@@ -67,19 +67,30 @@ class SignUp extends HTMLElement {
 			style: formsBodyStyle
 		})
 		const [login, telephone, email, password] = [
-			['text', 'Login'],
-			['tel', '+38(___)___-__-__'],
-			['email', 'e-mail'],
-			['password', 'Password']
+			['text', 'Login', 'text'],
+			['tel', '+38(___)___-__-__', 'tel'],
+			['email', 'e-mail', 'email'],
+			['password', 'Password', 'password']
 		].map(function (item) {
 			const elem = Object.assign(this.createElem(forms__body, 'input'), {
 				type: item[0],
 				placeholder: item[1],
-				style: inputStyle
+				style: inputStyle,
+				id: item[2]
 			})
-
+			console.dir(elem)
 			return elem
 		}.bind(this))
+
+		// function validate () {
+		// 	const email = document.getElementById("email")
+		// 	console.log(email.value.length)
+		// 	if (email.value === '') {
+		// 		alert('*this field is required')
+		// 		// email.innerText = '*this field is required'
+		// 		// return { error: '*this field is required' }
+		// 	}
+		// }
 
 		passwordValidation(password)
 
@@ -88,7 +99,8 @@ class SignUp extends HTMLElement {
 		})
 		const avatar = Object.assign(this.createElem(avatar__container, 'input'), {
 			type: 'file',
-			style: avatarStyle
+			style: avatarStyle,
+			id: 'avatar'
 		})
 			
 		const avatar__body = Object.assign(this.createElem(avatar__container, 'div'), {
@@ -102,14 +114,6 @@ class SignUp extends HTMLElement {
 
 		avatar.onchange = readFile
 
-		// avatar.onchange = function (event) {
-		// 	const reader = new FileReader
-		// 	reader.onload = function (ev) {
-		// 		photo.src = ev.target.result
-		// 	}
-		// 	reader.readAsDataURL(event.target.files[0])
-		// }
-
 		const button = Object.assign(this.createElem(container, 'button'), {
 			innerText: 'Sign Up',
 			style: buttonSubmitStyle,
@@ -119,7 +123,7 @@ class SignUp extends HTMLElement {
 					telephone: telephone.value,
 					email: email.value,
 					password: password.value,
-					avatar: photo.src
+					avatar: window[Symbol.for('photo')].src
 				})
 			}
 		})

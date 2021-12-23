@@ -22,6 +22,7 @@ import {
 
 import {
 	closeSignUp,
+	// valueValidation,
 	passwordValidation,
 	readFile,
 	getUser,
@@ -91,7 +92,7 @@ class SignUp extends HTMLElement {
 		// 		// return { error: '*this field is required' }
 		// 	}
 		// }
-
+		// valueValidation(password)
 		passwordValidation(password)
 
 		const avatar__container = Object.assign(this.createElem(forms__body, 'div'), {
@@ -117,6 +118,7 @@ class SignUp extends HTMLElement {
 		const button = Object.assign(this.createElem(container, 'button'), {
 			innerText: 'Sign Up',
 			style: buttonSubmitStyle,
+			id: 'submitButton',
 			onclick: async function (event) {
 				await getUser ({
 					login: login.value,

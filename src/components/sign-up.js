@@ -80,7 +80,7 @@ class SignUp extends HTMLElement {
 			})
 
 			valueValidation(elem)
-			
+
 			return elem
 		}.bind(this))
 
@@ -104,7 +104,7 @@ class SignUp extends HTMLElement {
 			style: imageStyle
 		})
 
-		avatar.onchange = readFile
+		readFile(avatar)
 
 		const button = Object.assign(this.createElem(container, 'button'), {
 			innerText: 'Sign Up',

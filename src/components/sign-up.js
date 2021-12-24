@@ -22,7 +22,7 @@ import {
 
 import {
 	closeSignUp,
-	// valueValidation,
+	valueValidation,
 	passwordValidation,
 	readFile,
 	getUser,
@@ -68,31 +68,22 @@ class SignUp extends HTMLElement {
 			style: formsBodyStyle
 		})
 		const [login, telephone, email, password] = [
-			['text', 'Login', 'text'],
-			['tel', '+38(___)___-__-__', 'tel'],
+			['text', 'Login'],
+			['tel', '+38(___)___-__-__'],
 			['email', 'e-mail', 'email'],
-			['password', 'Password', 'password']
+			['password', 'Password']
 		].map(function (item) {
 			const elem = Object.assign(this.createElem(forms__body, 'input'), {
 				type: item[0],
 				placeholder: item[1],
 				style: inputStyle,
-				id: item[2]
 			})
-			console.dir(elem)
+
+			valueValidation(elem)
+			
 			return elem
 		}.bind(this))
 
-		// function validate () {
-		// 	const email = document.getElementById("email")
-		// 	console.log(email.value.length)
-		// 	if (email.value === '') {
-		// 		alert('*this field is required')
-		// 		// email.innerText = '*this field is required'
-		// 		// return { error: '*this field is required' }
-		// 	}
-		// }
-		// valueValidation(password)
 		passwordValidation(password)
 
 		const avatar__container = Object.assign(this.createElem(forms__body, 'div'), {

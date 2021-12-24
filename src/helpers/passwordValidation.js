@@ -1,8 +1,11 @@
-export const passwordValidation = function (elem) {
-	// if (elem.value === '') {
-	// 	document.getElementById("submitButton") = disabled
-	// }
-	elem.oninput = function (event) {
+import { inputValidationStyle } from '../styles'
+import { inputStyle } from '../styles'
+
+export const passwordValidation = function (inputElem) {
+	inputElem.oninput = function (event) {
+		event.target.value !== "" 
+			? inputElem.style = inputStyle : inputElem.style = inputValidationStyle
+			
 		if (event.target.value.length < 8) {
 			event.target.style.color = '#f00'
 		} else { event.target.style.color = '#090' }

@@ -188,4 +188,5 @@ input[type="text" i]:focus-visible{
 	font-size: 20px;
 	color: #fff;
 	padding: 16px 0;
+	box-sizing: border-box;
 }

@@ -64,7 +64,7 @@ class SignUp extends HTMLElement {
 			style: titleStyle
 		})
 
-		const forms__body = Object.assign(this.createElem(container, 'div'), {
+		window[Symbol.for('forms__body')] = Object.assign(this.createElem(container, 'div'), {
 			style: formsBodyStyle
 		})
 		const [login, telephone, email, password] = [
@@ -73,20 +73,20 @@ class SignUp extends HTMLElement {
 			['email', 'e-mail', 'email'],
 			['password', 'Password']
 		].map(function (item) {
-			const elem = Object.assign(this.createElem(forms__body, 'input'), {
+			const elem = Object.assign(this.createElem(window[Symbol.for('forms__body')], 'input'), {
 				type: item[0],
 				placeholder: item[1],
 				style: inputStyle,
 			})
 
-			valueValidation(elem)
+		valueValidation(elem)
 
 			return elem
 		}.bind(this))
 
 		passwordValidation(password)
 
-		const avatar__container = Object.assign(this.createElem(forms__body, 'div'), {
+		const avatar__container = Object.assign(this.createElem(window[Symbol.for('forms__body')], 'div'), {
 			style: avatarContainerStyle
 		})
 		const avatar = Object.assign(this.createElem(avatar__container, 'input'), {
@@ -110,7 +110,6 @@ class SignUp extends HTMLElement {
 			innerText: 'Sign Up',
 			style: buttonSubmitStyle,
 			id: 'submit-button',
-			'disabled': 'disabled',
 			onclick: async function (event) {
 				await getUser ({
 					login: login.value,

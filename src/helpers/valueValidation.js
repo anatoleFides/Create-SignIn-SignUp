@@ -6,6 +6,10 @@ export const valueValidation = function (elem) {
 			Object.assign(elem, {
 				style: inputValidationStyle
 			})
+			// Object.assign(document.getElementById("submit-button"), {
+			// 	disabled: `disabled`
+
+			// })
 		}
 	elem.oninput = function (event) {
 		console.log(event.target.value.length)

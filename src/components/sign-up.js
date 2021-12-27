@@ -12,6 +12,7 @@ import {
 	avatarContainerStyle,
 	avatarStyle,
 	avatarBodyStyle,
+	errorMessage,
 	buttonSubmitStyle
 } from '../styles'
 
@@ -23,6 +24,7 @@ import {
 import {
 	closeSignUp,
 	valueValidation,
+	emailValidation,
 	passwordValidation,
 	readFile,
 	getUser,
@@ -64,7 +66,7 @@ class SignUp extends HTMLElement {
 			style: titleStyle
 		})
 
-		window[Symbol.for('forms__body')] = Object.assign(this.createElem(container, 'div'), {
+		const forms__body = Object.assign(this.createElem(container, 'div'), {
 			style: formsBodyStyle
 		})
 		const [login, telephone, email, password] = [
@@ -73,10 +75,20 @@ class SignUp extends HTMLElement {
 			['email', 'e-mail', 'email'],
 			['password', 'Password']
 		].map(function (item) {
-			const elem = Object.assign(this.createElem(window[Symbol.for('forms__body')], 'input'), {
+			const elem__container = Object.assign(this.createElem(forms__body, 'div'), {
+			// style: `
+			// 	position: relative
+			// `
+		})
+			const elem = Object.assign(this.createElem(elem__container, 'input'), {
 				type: item[0],
 				placeholder: item[1],
 				style: inputStyle,
+			})
+
+			window[Symbol.for('error__message')] = Object.assign(this.createElem(elem__container, 'p'), {
+				style: errorMessage,
+				innerText: 'False'
 			})
 
 		valueValidation(elem)
@@ -86,13 +98,12 @@ class SignUp extends HTMLElement {
 
 		passwordValidation(password)
 
-		const avatar__container = Object.assign(this.createElem(window[Symbol.for('forms__body')], 'div'), {
+		const avatar__container = Object.assign(this.createElem(forms__body, 'div'), {
 			style: avatarContainerStyle
 		})
 		const avatar = Object.assign(this.createElem(avatar__container, 'input'), {
 			type: 'file',
-			style: avatarStyle,
-			id: 'avatar'
+			style: avatarStyle
 		})
 			
 		const avatar__body = Object.assign(this.createElem(avatar__container, 'div'), {
@@ -104,12 +115,15 @@ class SignUp extends HTMLElement {
 			style: imageStyle
 		})
 
+		window[Symbol.for('error__message')] = Object.assign(this.createElem(forms__body, 'p'), {
+			style: errorMessage
+		})
+
 		readFile(avatar)
 
 		const button = Object.assign(this.createElem(container, 'button'), {
 			innerText: 'Sign Up',
 			style: buttonSubmitStyle,
-			id: 'submit-button',
 			onclick: async function (event) {
 				await getUser ({
 					login: login.value,

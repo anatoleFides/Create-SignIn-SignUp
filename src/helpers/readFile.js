@@ -5,19 +5,16 @@ export const readFile = function (elem) {
 	elem.onchange = function (event) {
 		console.log(event.target.files[0].type, !event.target.files[0].type.indexOf('image'))
 		if (event.target.files[0].type.indexOf('image')) {
-			console.log('Invalid type image')
-			// alert('Invalid type image')
-			const messageMistace = Object
-				.assign(window[Symbol.for('forms__body')]
-					.appendChild(document.createElement('p')), {
-						innerText: 'Invalid type image',
-						style: errorMessage,
-						id: 'error-messge__input-file'
-					})
-
-			console.log(messageMistace)
+			console.log('Invalid file type')
+			// const errorMessage = Object
+			// 	.assign(window[Symbol.for('forms__body')]
+			// 		.appendChild(document.createElement('p')), {
+			// 			innerText: 'Invalid file type',
+			// 			style: errorMessage
+			// 		})
+			window[Symbol.for('error__message')].innerText = 'Invalid file type'
 		} else {
-			// document.getElementById("error-messge__input-file").remove()
+			window[Symbol.for('error__message')].innerText = ''
 			const reader = new FileReader
 			reader.onload = function (ev) {
 				// console.log(getDefaultAvatar())

@@ -6,9 +6,9 @@ export const readFile = function (elem) {
 		// console.log(event.target.files[0].type, !event.target.files[0].type.indexOf('image'))
 		if (event.target.files[0].type.indexOf('image')) {
 			// console.log('Invalid file type')
-			window[Symbol.for('error__message')].innerText = 'Invalid file type'
+			window[Symbol.for('error__message-avatar')].innerText = 'Invalid file type'
 		} else {
-			window[Symbol.for('error__message')].innerText = ''
+			window[Symbol.for('error__message-avatar')].innerText = ''
 			const reader = new FileReader
 			reader.onload = function (ev) {
 				// console.log(getDefaultAvatar())

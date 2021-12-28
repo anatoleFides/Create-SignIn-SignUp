@@ -8,10 +8,11 @@ export const emailValidation = function(inputElem) {
 
 		let mailformat = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu
 		if (!event.target.value.match(mailformat)) {
-			console.log('Invalid write e-mail')
-			// window[Symbol.for('error__message')].innerText = 'Invalid write e-mail'
-		} else {
 			console.log('wow')
+			window[Symbol.for('error__message')].innerText = 'Invalid write e-mail'
+		} else {
+			console.log('Invalid write e-mail')
+			window[Symbol.for('error__message')].innerText = ''
 		}
 	}
 } 

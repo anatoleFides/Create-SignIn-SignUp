@@ -9,6 +9,7 @@ export const loginValidation = function(inputElem) {
 		let letters = /^[A-Za-z]+$/
 		if (!event.target.value.match(letters)) {
 			console.log('Invalid login format')
+			window[Symbol.for('error__message-login')]
 		} else {
 			console.log('Login true')
 		}

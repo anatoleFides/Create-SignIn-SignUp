@@ -78,7 +78,7 @@ class SignUp extends HTMLElement {
 			['tel', '+38(___)___-__-__'],
 			['email', 'e-mail', 'email'],
 			['password', 'Password']
-		].map(function (item, index) {
+		].map(function (item) {
 			const elem__container = this.createElem(elems__body, 'div')
 
 			const elem = Object.assign(this.createElem(elem__container, 'input'), {
@@ -87,14 +87,20 @@ class SignUp extends HTMLElement {
 				style: inputStyle,
 			})
 
-			window[Symbol.for('error__message')] = Object.assign(this.createElem(elem__container, 'p'), {
-				style: errorMessage
-			})
+			// const error__message = Object.assign(this.createElem(elem__container, 'p'), {
+			// 	style: errorMessage,
+			// 	innerText: ''
+			// })
 
 			valueValidation(elem)
 
 			return elem
 		}.bind(this))
+
+		const errors = [window[Symbol.for('error__message-login')], window[Symbol.for('error__message-phone')], window[Symbol.for('error__message-email')], window[Symbol.for('error__message-password')]]
+		errors.forEach(item => Object.assign(this.createElem(elem__container, 'p'), {
+				style: errorMessage,
+			}))
 
 		loginValidation(login)
 
@@ -121,7 +127,7 @@ class SignUp extends HTMLElement {
 			style: imageStyle
 		})
 
-		window[Symbol.for('error__message')] = Object.assign(this.createElem(forms__body, 'p'), {
+		window[Symbol.for('error__message-avatar')] = Object.assign(this.createElem(forms__body, 'p'), {
 			style: errorMessage
 		})
 

@@ -1,6 +1,6 @@
 export const avatarContainerStyle = `
 	position: relative;
-	margin: 8px auto;
+	margin: 4px auto;
 	width: 80px;
 	height: 80px;
 	border-radius: 50%;

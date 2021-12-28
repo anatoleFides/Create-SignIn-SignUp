@@ -1,5 +1,6 @@
 export const buttonSubmitStyle = `
 	padding: 8px; 
+	margin: 4px 0 0 0;
 	margin: 0 auto; 
 	background: #9ACD32; 
 	color: #fff; 

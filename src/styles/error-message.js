@@ -1,8 +1,9 @@
 export const errorMessage = `
 	color: #f00;
-	margin: 0;
+	margin: 0 auto;
+	text-align: center;
 	border-radius: 4px;
-	padding: 0 0 0 8px;
+	font-size: 12px;
 `
 
 // 	position: absolute;

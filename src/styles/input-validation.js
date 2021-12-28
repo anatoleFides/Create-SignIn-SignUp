@@ -8,5 +8,5 @@ export const inputValidationStyle = `
 	border: 1px solid #9ACD32;
 	transition: all .5s ease;
 	box-sizing: border-box;
-	box-shadow: 1px 1px 4px #f00;
+	box-shadow: 1px 1px 2px #f00;
 `

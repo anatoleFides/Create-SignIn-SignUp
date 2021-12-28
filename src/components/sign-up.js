@@ -24,6 +24,8 @@ import {
 import {
 	closeSignUp,
 	valueValidation,
+	loginValidation,
+	phoneValidation,
 	emailValidation,
 	passwordValidation,
 	readFile,
@@ -69,17 +71,16 @@ class SignUp extends HTMLElement {
 		const forms__body = Object.assign(this.createElem(container, 'div'), {
 			style: formsBodyStyle
 		})
+		const elems__body =this.createElem(forms__body, 'div')
+
 		const [login, telephone, email, password] = [
 			['text', 'Login'],
 			['tel', '+38(___)___-__-__'],
 			['email', 'e-mail', 'email'],
 			['password', 'Password']
-		].map(function (item) {
-			const elem__container = Object.assign(this.createElem(forms__body, 'div'), {
-			// style: `
-			// 	position: relative
-			// `
-		})
+		].map(function (item, index) {
+			const elem__container = this.createElem(elems__body, 'div')
+
 			const elem = Object.assign(this.createElem(elem__container, 'input'), {
 				type: item[0],
 				placeholder: item[1],
@@ -87,14 +88,19 @@ class SignUp extends HTMLElement {
 			})
 
 			window[Symbol.for('error__message')] = Object.assign(this.createElem(elem__container, 'p'), {
-				style: errorMessage,
-				innerText: 'False'
+				style: errorMessage
 			})
 
-		valueValidation(elem)
+			valueValidation(elem)
 
 			return elem
 		}.bind(this))
+
+		loginValidation(login)
+
+		phoneValidation(telephone)
+
+		emailValidation(email)
 
 		passwordValidation(password)
 

@@ -3,15 +3,9 @@ import { errorMessage } from '../styles'
 
 export const readFile = function (elem) {
 	elem.onchange = function (event) {
-		console.log(event.target.files[0].type, !event.target.files[0].type.indexOf('image'))
+		// console.log(event.target.files[0].type, !event.target.files[0].type.indexOf('image'))
 		if (event.target.files[0].type.indexOf('image')) {
-			console.log('Invalid file type')
-			// const errorMessage = Object
-			// 	.assign(window[Symbol.for('forms__body')]
-			// 		.appendChild(document.createElement('p')), {
-			// 			innerText: 'Invalid file type',
-			// 			style: errorMessage
-			// 		})
+			// console.log('Invalid file type')
 			window[Symbol.for('error__message')].innerText = 'Invalid file type'
 		} else {
 			window[Symbol.for('error__message')].innerText = ''

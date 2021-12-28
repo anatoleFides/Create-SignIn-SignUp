@@ -1,6 +1,8 @@
 import { closeSignIn } from './closeSignIn'
 import { closeSignUp } from './closeSignUp'
 import { valueValidation } from './valueValidation'
+import { loginValidation } from './loginValidation'
+import { phoneValidation } from './phoneValidation'
 import { emailValidation } from './emailValidation'
 import { passwordValidation } from './passwordValidation'
 import { readFile } from './readFile'
@@ -14,6 +16,8 @@ export {
 	closeSignIn,
 	closeSignUp,
 	valueValidation,
+	loginValidation,
+	phoneValidation,
 	emailValidation,
 	passwordValidation,
 	readFile,

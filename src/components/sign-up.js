@@ -76,12 +76,12 @@ class SignUp extends HTMLElement {
 		const [login, telephone, email, password] = [
 			['text', 'Login'],
 			['tel', '+38(___)___-__-__'],
-			['email', 'e-mail', 'email'],
+			['email', 'e-mail'],
 			['password', 'Password']
 		].map(function (item) {
-			const elem__container = this.createElem(elems__body, 'div')
+			window[Symbol.for('elem__container')] = this.createElem(elems__body, 'div')
 
-			const elem = Object.assign(this.createElem(elem__container, 'input'), {
+			const elem = Object.assign(this.createElem(window[Symbol.for('elem__container')], 'input'), {
 				type: item[0],
 				placeholder: item[1],
 				style: inputStyle,
@@ -89,18 +89,13 @@ class SignUp extends HTMLElement {
 
 			// const error__message = Object.assign(this.createElem(elem__container, 'p'), {
 			// 	style: errorMessage,
-			// 	innerText: ''
+			// 	innerText: 'hello'
 			// })
 
 			valueValidation(elem)
 
 			return elem
 		}.bind(this))
-
-		const errors = [window[Symbol.for('error__message-login')], window[Symbol.for('error__message-phone')], window[Symbol.for('error__message-email')], window[Symbol.for('error__message-password')]]
-		errors.forEach(item => Object.assign(this.createElem(elem__container, 'p'), {
-				style: errorMessage,
-			}))
 
 		loginValidation(login)
 

@@ -1,14 +1,28 @@
-import { valueValidation } from 'helpers'
-import { loginValidation } from 'helpers'
-import { phoneValidation } from 'helpers'
-import { emailValidation } from 'helpers'
-import { passwordValidation } from 'helpers'
+import {
+	valueValidation,
+	loginValidation,
+	phoneValidation,
+	emailValidation,
+	passwordValidation
+ } from 'helpers'
 
 export function inputValidation (inputElem) {
-	valueValidation(inputElem)
-	loginValidation(inputElem)
-	phoneValidation(inputElem)
-	emailValidation(inputElem)
-	passwordValidation(inputElem)
+	if (valueValidation(inputElem)) {
+		if (loginValidation(inputElem)) {
+			if (phoneValidation(inputElem)) {
+				if (emailValidation(inputElem)) {
+					if (passwordValidation(inputElem)) {
+						return
+					}
+				}
+			}
+		}
+	}
+
+	// valueValidation(inputElem)
+	// loginValidation(inputElem)
+	// phoneValidation(inputElem)
+	// emailValidation(inputElem)
+	// passwordValidation(inputElem)
 }
 

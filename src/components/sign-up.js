@@ -96,7 +96,7 @@ class SignUp extends HTMLElement {
 
 		// phoneValidation(telephone)
 
-		// emailValidation(email)
+		emailValidation(email)
 
 		passwordValidation(password)
 

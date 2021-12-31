@@ -23,7 +23,6 @@ import {
 
 import {
 	closeSignUp,
-	inputValidation,
 	valueValidation,
 	loginValidation,
 	phoneValidation,
@@ -87,20 +86,19 @@ class SignUp extends HTMLElement {
 				placeholder: item[1],
 				style: inputStyle
 			})
-			// valueValidation(elem)
 
-			inputValidation(elem)
+			valueValidation(elem)
 
 			return elem
 		}.bind(this))
 
-		// loginValidation(login)
+		loginValidation(login)
 
 		// phoneValidation(telephone)
 
 		// emailValidation(email)
 
-		// passwordValidation(password)
+		passwordValidation(password)
 
 		const avatar__container = Object.assign(this.createElem(forms__body, 'div'), {
 			style: avatarContainerStyle

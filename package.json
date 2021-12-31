@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/anatoleFides/Create-SignIn-SignUp#readme",
   "dependencies": {
+    "helpers": "^0.0.6",
     "undefined": "^0.1.0"
   }
 }

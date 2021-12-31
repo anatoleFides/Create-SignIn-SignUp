@@ -89,7 +89,7 @@ class SignUp extends HTMLElement {
 			})
 			// valueValidation(elem)
 
-			inputValidationn(elem)
+			inputValidation(elem)
 
 			return elem
 		}.bind(this))

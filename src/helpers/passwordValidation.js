@@ -8,10 +8,10 @@ export const passwordValidation = function (inputElem) {
 			
 		if (event.target.value.length < 8) {
 			event.target.style.color = '#f00'
-			return true
+			return false
 		} else { 
 			event.target.style.color = '#090'
-			return false
+			return true
 		}
 	}
 }

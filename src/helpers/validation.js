@@ -4,7 +4,7 @@
 // 	phoneValidation,
 // 	emailValidation,
 // 	passwordValidation
-//  } from 'helpers'
+//  } from './helpers'
 
 import { valueValidation } from './valueValidation'
 import { loginValidation } from './loginValidation'
@@ -14,7 +14,7 @@ import { passwordValidation } from './passwordValidation'
 
 export function inputValidation (inputElem) {
 	if (valueValidation(inputElem)) {
-		// if (loginValidation(inputElem)) {
+		if (loginValidation(inputElem)) {
 		// 	if (phoneValidation(inputElem)) {
 		// 		if (emailValidation(inputElem)) {
 		// 			if (passwordValidation(inputElem)) {
@@ -22,7 +22,7 @@ export function inputValidation (inputElem) {
 		// 			}
 		// 		}
 		// 	}
-		// }
+		}
 	}
 }
 

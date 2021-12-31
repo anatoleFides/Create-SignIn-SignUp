@@ -1,6 +1,5 @@
 import { closeSignIn } from './closeSignIn'
 import { closeSignUp } from './closeSignUp'
-import { inputValidation } from './validation'
 import { valueValidation } from './valueValidation'
 import { loginValidation } from './loginValidation'
 import { phoneValidation } from './phoneValidation'
@@ -16,7 +15,6 @@ import { createElem } from './createElem'
 export {
 	closeSignIn,
 	closeSignUp,
-	inputValidation,
 	valueValidation,
 	loginValidation,
 	phoneValidation,

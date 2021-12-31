@@ -2,16 +2,18 @@ import { inputValidationStyle } from '../styles'
 import { inputStyle } from '../styles'
 
 export const valueValidation = function (inputElem) {
-	if (inputElem.value.length === 0) {
-		// alert("User Id should not be empty")
+	if (inputElem.value === '') {
 		inputElem.style = inputValidationStyle
-		inputElem.focus() 
-		return false
-	}
+	} 
+	// else {
+	// 	inputElem.style = inputStyle
+	// }
+
+	// inputElem.value === ''
+	// 	? inputElem.style = inputStyle : inputElem = inputValidationStyle
+
 	inputElem.oninput = function (event) {
-		event.target.value.length !== 0 
+		event.target.value !== ''
 			? inputElem.style = inputStyle : inputElem = inputValidationStyle
 	}
-
-	return true
 }

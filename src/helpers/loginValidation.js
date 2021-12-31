@@ -1,6 +1,7 @@
 import { inputValidationStyle } from '../styles'
 import { inputStyle } from '../styles'
-import { errorMessage } from '../styles'
+import { valueValidation } from './valueValidation'
+// import { errorMessage } from '../styles'
 // import { createElem } from 'helpers'
 
 export const loginValidation = function(inputElem) {
@@ -9,6 +10,8 @@ export const loginValidation = function(inputElem) {
 	// 	style: errorMessage
 	// })
 
+	valueValidation(inputElem)
+
 	inputElem.oninput = function(event) {
 		// event.target.value !== "" 
 		// 	? inputElem.style = inputStyle : inputElem.style = inputValidationStyle
@@ -16,7 +19,6 @@ export const loginValidation = function(inputElem) {
 		let letters = /^[A-Za-z]+$/
 		if (event.target.value.match(letters)) {
 			console.log('Login true')
-			return true
 
 			// const loginErrorMessage = Object.assign(createElem(window[Symbol.for('elem__container')], 'p'), {
 			// 	style: errorMessage
@@ -25,8 +27,7 @@ export const loginValidation = function(inputElem) {
 			// loginErrorMessage.innerText = 'Invalid login format'
 		} else {
 			console.log('Invalid login format')
-			alert('Invalid login format')
-			inputElem.focus()
+			// inputElem.focus()
 		}
 		// if (event.target.value.match(letters) || event.target.value === '') {
 		// 	console.log('Invalid login format')

@@ -8,7 +8,8 @@ import { titleStyle } from './title.js'
 import { formsBodyStyle } from './forms-body'
 import { inputStyle } from './input'
 import { inputValidationStyle } from './input-validation'
-import { errorMessage } from './error-message'
+import { errorMessageStyle } from './error-message'
+import { errorMessageActiveStyle } from './error-message-active'
 import { avatarContainerStyle } from './avatar-container'
 import { avatarStyle } from './avatar'
 import { avatarBodyStyle } from './avatar-body'
@@ -26,7 +27,8 @@ export {
 	formsBodyStyle,
 	inputStyle,
 	inputValidationStyle,
-	errorMessage,
+	errorMessageStyle,
+	errorMessageActiveStyle,
 	avatarContainerStyle,
 	avatarStyle,
 	avatarBodyStyle,

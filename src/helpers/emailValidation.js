@@ -2,9 +2,7 @@ import { valueValidation } from './valueValidation'
 
 export const emailValidation = function(inputElem) {
 	inputElem.oninput = function (event) {
-		// valueValidation(event.target)
-		// event.target.value !== "" 
-		// 	? inputElem.style = inputStyle : inputElem.style = inputValidationStyle
+		valueValidation(inputElem, event.target)
 
 		let mailformat = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu
 		if (event.target.value.match(mailformat)) {

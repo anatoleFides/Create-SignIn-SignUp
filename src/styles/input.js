@@ -1,7 +1,7 @@
 export const inputStyle = `
 	width: 100%;
 	display: block;
-	margin: 12px 0 4px;
+	margin: 4px 0;
 	padding: 4px 0 4px 8px;
 	border-radius: 4px;
 	font-size: 16px;

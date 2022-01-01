@@ -1,9 +1,10 @@
-export const errorMessageStyle = `
+export const errorMessageActiveStyle = `
 	color: #f00;
 	margin: 0 auto;
 	text-align: center;
 	border-radius: 4px;
 	font-size: 10px;
+	visibility: visible;
 	padding: 2px 0;
-	visibility: hidden;
+	transition: all .2s ease;
 `

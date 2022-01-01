@@ -1,9 +1,7 @@
-import { inputValidationStyle } from '../styles'
-import { inputStyle } from '../styles'
+import { valueValidation } from './valueValidation'
 
 export const phoneValidation = function(inputElem) {
 	inputElem.oninput = function(event) {
-		// event.target.value !== "" 
-		// 	? inputElem.style = inputStyle : inputElem.style = inputValidationStyle
+		valueValidation(inputElem, event.target)
 	}
 }

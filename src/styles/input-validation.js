@@ -1,7 +1,7 @@
 export const inputValidationStyle = `
 	width: 100%;
 	display: block;
-	margin: 12px 0 2px;
+	margin: 4px 0;
 	padding: 4px 0 4px 8px;
 	border-radius: 4px;
 	font-size: 16px;

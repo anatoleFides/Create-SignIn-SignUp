@@ -2,7 +2,7 @@ import { valueValidation } from './valueValidation'
 
 export const passwordValidation = function (inputElem) {
 	inputElem.oninput = function (event) {
-		// valueValidation(event.target)
+		valueValidation(inputElem, event.target)
 
 		if (event.target.value.length < 8) {
 			event.target.style.color = '#f00'

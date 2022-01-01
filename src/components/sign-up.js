@@ -8,11 +8,12 @@ import {
 	imageStyle,
 	titleStyle,
 	formsBodyStyle,
-	inputStyle,
+	inputValidationStyle,
 	avatarContainerStyle,
 	avatarStyle,
 	avatarBodyStyle,
-	errorMessage,
+	errorMessageStyle,
+	errorMessageActiveStyle,
 	buttonSubmitStyle
 } from '../styles'
 
@@ -71,30 +72,58 @@ class SignUp extends HTMLElement {
 		const forms__body = Object.assign(this.createElem(container, 'div'), {
 			style: formsBodyStyle
 		})
-		const elems__body =this.createElem(forms__body, 'div')
+		const elems__body = Object.assign(this.createElem(forms__body, 'div'), {
+			style: `
+				margin: 0 0 2px 0;
+			`
+		})
 
 		const [login, telephone, email, password] = [
-			['text', 'Login'],
-			['tel', '+38(___)___-__-__'],
-			['email', 'e-mail'],
-			['password', 'Password']
+			['text', 'Login', 'Invalid login format', 'login'],
+			['tel', '+38(___)___-__-__', 'Invalid telephone format', 'telephone'],
+			['email', 'e-mail', 'Invalid e-mail format', 'email'],
+			['password', 'Password', 'Invalid password format', 'password']
 		].map(function (item) {
-			window[Symbol.for('elem__container')] = this.createElem(elems__body, 'div')
+			const elem__container = this.createElem(elems__body, 'div')
 
-			const elem = Object.assign(this.createElem(window[Symbol.for('elem__container')], 'input'), {
+			const elem = Object.assign(this.createElem(elem__container, 'input'), {
 				type: item[0],
 				placeholder: item[1],
-				style: inputStyle
+				style: inputValidationStyle
 			})
 
-			valueValidation(elem)
+			const error__message = Object.assign(this.createElem(elem__container, 'p'), {
+				innerText: item[2],
+				id: item[3],
+				style: errorMessageStyle
+			})
 
 			return elem
 		}.bind(this))
 
+		// login.p.login = window[Symbol.for('error__message-login')]
+		window[Symbol.for('error__message-login')] = document.getElementById("login")
+
+		// [
+		// 	window[Symbol.for('error__message-login')],
+		// 	window[Symbol.for('error__message-telephone')],
+		// 	window[Symbol.for('error__message-email')],
+		// 	window[Symbol.for('error__message-password')]
+		// ] = [
+		// 	'Invalid login format',
+		// 	'Invalid telephone format',
+		// 	'Invalid e-mail format',
+		// 	'Invalid password format'
+		// ].forEach(function (item) {
+		// 	const error__message = Object.assign(this.createElem(elem__container, 'p'), {
+		// 		innerText: item[0],
+		// 		style: errorMessageStyle
+		// 	})
+		// }.bind(this))
+
 		loginValidation(login)
 
-		// phoneValidation(telephone)
+		phoneValidation(telephone)
 
 		emailValidation(email)
 
@@ -118,7 +147,8 @@ class SignUp extends HTMLElement {
 		})
 
 		window[Symbol.for('error__message-avatar')] = Object.assign(this.createElem(forms__body, 'p'), {
-			style: errorMessage
+			style: errorMessageStyle,
+			innerText: 'Invalid file type'
 		})
 
 		readFile(avatar)

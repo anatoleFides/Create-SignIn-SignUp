@@ -79,47 +79,32 @@ class SignUp extends HTMLElement {
 		})
 
 		const [login, telephone, email, password] = [
-			['text', 'Login', 'Invalid login format', 'login'],
-			['tel', '+38(___)___-__-__', 'Invalid telephone format', 'telephone'],
-			['email', 'e-mail', 'Invalid e-mail format', 'email'],
-			['password', 'Password', 'Invalid password format', 'password']
+			['text', 'Login', 'Invalid login format'],
+			['tel', '(___)___-__-__', 'Invalid telephone format'],
+			['email', 'e-mail', 'Invalid e-mail format'],
+			['password', 'Password', 'Invalid password format']
 		].map(function (item) {
 			const elem__container = this.createElem(elems__body, 'div')
 
 			const elem = Object.assign(this.createElem(elem__container, 'input'), {
 				type: item[0],
 				placeholder: item[1],
-				style: inputValidationStyle
+				style: inputValidationStyle,
+				onFocus: 'this.blur()'
 			})
+
+			// console.log(document.activeElement)
+			// elem.activeElement.style = `
+			// 	outline: none;
+			// `
 
 			const error__message = Object.assign(this.createElem(elem__container, 'p'), {
 				innerText: item[2],
-				id: item[3],
 				style: errorMessageStyle
 			})
 
 			return elem
 		}.bind(this))
-
-		// login.p.login = window[Symbol.for('error__message-login')]
-		window[Symbol.for('error__message-login')] = document.getElementById("login")
-
-		// [
-		// 	window[Symbol.for('error__message-login')],
-		// 	window[Symbol.for('error__message-telephone')],
-		// 	window[Symbol.for('error__message-email')],
-		// 	window[Symbol.for('error__message-password')]
-		// ] = [
-		// 	'Invalid login format',
-		// 	'Invalid telephone format',
-		// 	'Invalid e-mail format',
-		// 	'Invalid password format'
-		// ].forEach(function (item) {
-		// 	const error__message = Object.assign(this.createElem(elem__container, 'p'), {
-		// 		innerText: item[0],
-		// 		style: errorMessageStyle
-		// 	})
-		// }.bind(this))
 
 		loginValidation(login)
 

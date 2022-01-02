@@ -89,8 +89,7 @@ class SignUp extends HTMLElement {
 			const elem = Object.assign(this.createElem(elem__container, 'input'), {
 				type: item[0],
 				placeholder: item[1],
-				style: inputValidationStyle,
-				onFocus: 'this.blur()'
+				style: inputValidationStyle
 			})
 
 			// console.log(document.activeElement)

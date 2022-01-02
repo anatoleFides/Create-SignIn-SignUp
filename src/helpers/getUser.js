@@ -1,5 +1,7 @@
+import { endpoint } from '../assets'
+
 export const getUser = async user => {
-	const response = await fetch('http://localhost:3000/users', {
+	const response = await fetch(endpoint, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'

@@ -73,9 +73,9 @@ class SignUp extends HTMLElement {
 			style: formsBodyStyle
 		})
 		const elems__body = Object.assign(this.createElem(forms__body, 'div'), {
-			style: `
-				margin: 0 0 2px 0;
-			`
+			// style: `
+			// 	margin: 0 0 2px 0;
+			// `
 		})
 
 		const [login, telephone, email, password] = [
@@ -91,7 +91,7 @@ class SignUp extends HTMLElement {
 				placeholder: item[1],
 				style: inputValidationStyle
 			})
-
+			
 			// console.log(document.activeElement)
 			// elem.activeElement.style = `
 			// 	outline: none;

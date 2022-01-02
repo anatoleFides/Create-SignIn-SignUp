@@ -11,3 +11,12 @@ Object.assign(Object.prototype, {
 		return Object.compare(this, object)
 	}
 })
+
+Object.assign(Storage.prototype, {
+	setObject (key, value) {
+		this.setItem(key, JSON.stringify(value))
+	},
+	getObgect (key) {
+		return JSON.parse(this.getItem(key))
+	}
+})

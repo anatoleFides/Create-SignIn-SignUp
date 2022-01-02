@@ -7,6 +7,7 @@ import { emailValidation } from './emailValidation'
 import { passwordValidation } from './passwordValidation'
 import { readFile } from './readFile'
 import { getUser } from './getUser'
+import { getLogin } from './getLogin'
 // import { loginHandler } from './loginHandler'
 // import { passwordHandler } from './passwordHandler'
 // import { authorizeUser } from './authorizeUser'
@@ -22,6 +23,7 @@ export {
 	passwordValidation,
 	readFile,
 	getUser,
+	getLogin,
 	// loginHandler,
 	// passwordHandler,
 	// authorizeUser,

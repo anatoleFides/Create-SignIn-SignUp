@@ -5,6 +5,7 @@ import { loginValidation } from './loginValidation'
 import { phoneValidation } from './phoneValidation'
 import { emailValidation } from './emailValidation'
 import { passwordValidation } from './passwordValidation'
+// import { compareLogin } from './compareLogin'
 import { readFile } from './readFile'
 import { getUser } from './getUser'
 // import { getLogin } from './getLogin'
@@ -21,6 +22,7 @@ export {
 	phoneValidation,
 	emailValidation,
 	passwordValidation,
+	// compareLogin,
 	readFile,
 	getUser,
 	// getLogin,

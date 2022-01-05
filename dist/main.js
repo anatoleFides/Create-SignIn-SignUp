@@ -90,6 +90,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./src/helpers/compareLogin.js":
+/*!*************************************!*\
+  !*** ./src/helpers/compareLogin.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"compareLogin\": () => (/* binding */ compareLogin)\n/* harmony export */ });\n// import { loginValidation } from './loginValidation'\r\n\r\nconst compareLogin = (inputElem, loginValue) => {\r\n\tconst usersLogin = JSON.parse(localStorage.logins)\r\n\tconsole.log(usersLogin)\r\n\tif (usersLogin.filter(login => login === loginValue).length !== 0) {\r\n\t\tconsole.log('login exists')\r\n\t\tinputElem.nextElementSibling.innetText = 'login exists'\r\n\t} else console.log('true login')\r\n}\n\n//# sourceURL=webpack://create-signin-signup/./src/helpers/compareLogin.js?");
+
+/***/ }),
+
 /***/ "./src/helpers/createElem.js":
 /*!***********************************!*\
   !*** ./src/helpers/createElem.js ***!
@@ -146,7 +156,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"loginValidation\": () => (/* binding */ loginValidation)\n/* harmony export */ });\n/* harmony import */ var _valueValidation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./valueValidation */ \"./src/helpers/valueValidation.js\");\n/* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styles */ \"./src/styles/index.js\");\n\r\n// import { compareLogin } from './compareLogin'\r\n// import { getListLogins } from './getListLogins'\r\n\r\n\r\nconst loginValidation = function(inputElem) {\r\n\tinputElem.oninput = function(event) {\r\n\t\t(0,_valueValidation__WEBPACK_IMPORTED_MODULE_0__.valueValidation)(inputElem, event.target)\r\n\r\n\t\tlet letters = /^[a-zA-z]{1}[a-zA-Z1-9]{3,20}$/\r\n\t\tif (!event.target.value.match(letters)) {\r\n\t\t\tinputElem.nextElementSibling.style = _styles__WEBPACK_IMPORTED_MODULE_1__.errorMessageActiveStyle\r\n\t\t} else {\r\n\t\t\tinputElem.nextElementSibling.style = _styles__WEBPACK_IMPORTED_MODULE_1__.errorMessageStyle\r\n\t\t}\r\n\r\n\t\t// getListLogins()\r\n\r\n\t\t// compareLogin(event.target)\r\n\t}\r\n}\n\n//# sourceURL=webpack://create-signin-signup/./src/helpers/loginValidation.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"loginValidation\": () => (/* binding */ loginValidation)\n/* harmony export */ });\n/* harmony import */ var _valueValidation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./valueValidation */ \"./src/helpers/valueValidation.js\");\n/* harmony import */ var _compareLogin__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./compareLogin */ \"./src/helpers/compareLogin.js\");\n/* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../styles */ \"./src/styles/index.js\");\n\r\n\r\n\r\n\r\nconst loginValidation = function(inputElem) {\r\n\tinputElem.oninput = function(event) {\r\n\t\t(0,_valueValidation__WEBPACK_IMPORTED_MODULE_0__.valueValidation)(inputElem, event.target)\r\n\r\n\t\tlet letters = /^[a-zA-z]{1}[a-zA-Z1-9]{3,20}$/\r\n\t\tif (!event.target.value.match(letters)) {\r\n\t\t\tinputElem.nextElementSibling.style = _styles__WEBPACK_IMPORTED_MODULE_2__.errorMessageActiveStyle\r\n\t\t} else {\r\n\t\t\tinputElem.nextElementSibling.style = _styles__WEBPACK_IMPORTED_MODULE_2__.errorMessageStyle\r\n\t\t}\r\n\r\n\t\t\r\n\t}\r\n\t;(0,_compareLogin__WEBPACK_IMPORTED_MODULE_1__.compareLogin)(inputElem, inputElem.value)\r\n}\n\n//# sourceURL=webpack://create-signin-signup/./src/helpers/loginValidation.js?");
 
 /***/ }),
 

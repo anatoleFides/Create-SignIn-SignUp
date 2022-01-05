@@ -1,5 +1,6 @@
 import { valueValidation } from './valueValidation'
 // import { compareLogin } from './compareLogin'
+// import { getListLogins } from './getListLogins'
 import {
 	errorMessageStyle,
 	errorMessageActiveStyle
@@ -15,6 +16,8 @@ export const loginValidation = function(inputElem) {
 		} else {
 			inputElem.nextElementSibling.style = errorMessageStyle
 		}
+
+		// getListLogins()
 
 		// compareLogin(event.target)
 	}

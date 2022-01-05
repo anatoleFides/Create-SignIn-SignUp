@@ -91,11 +91,6 @@ class SignUp extends HTMLElement {
 				placeholder: item[1],
 				style: inputValidationStyle
 			})
-			
-			// console.log(document.activeElement)
-			// elem.activeElement.style = `
-			// 	outline: none;
-			// `
 
 			const error__message = Object.assign(this.createElem(elem__container, 'p'), {
 				innerText: item[2],

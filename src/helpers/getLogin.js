@@ -1,6 +1,6 @@
 import { endpoint } from '../assets'
 
-export const getLogin = function () {
+export const getLogin = () => {
 	const userLogins = []
 
 	const collecLogins = async () => await (await fetch("http://localhost:3000/users")).json()
@@ -8,6 +8,8 @@ export const getLogin = function () {
 	collecLogins().then(response => {
 		response.map(item => userLogins.push(item.login))
 	})
+
+	userLogins
 
 	localStorage.setObject('logins', userLogins)
 }

@@ -1,4 +1,5 @@
 import { endpoint } from '../assets'
+import { getLogin } from './getLogin'
 
 export const getUser = async user => {
 	const response = await fetch(endpoint, {
@@ -8,7 +9,8 @@ export const getUser = async user => {
 				},
 				body: JSON.stringify(user)
 			})
-			if (response.status === 201) { 
+			if (response.status === 201) {
+				getLogin()
 				document.getElementsByTagName('sign-up')[0].remove()
 			}
 }

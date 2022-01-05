@@ -8,7 +8,7 @@ import { passwordValidation } from './passwordValidation'
 import { compareLogin } from './compareLogin'
 import { readFile } from './readFile'
 import { getUser } from './getUser'
-// import { getLogin } from './getLogin'
+import { getLogin } from './getLogin'
 // import { loginHandler } from './loginHandler'
 // import { passwordHandler } from './passwordHandler'
 // import { authorizeUser } from './authorizeUser'
@@ -25,7 +25,7 @@ export {
 	compareLogin,
 	readFile,
 	getUser,
-	// getLogin,
+	getLogin,
 	// loginHandler,
 	// passwordHandler,
 	// authorizeUser,

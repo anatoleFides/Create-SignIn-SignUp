@@ -1,6 +1,12 @@
+import { getListLogins } from './helpers'
+
 import loginForm from './components/sign-in'
 
 import registrationForm from './components/sign-up'
+
+window.onload = function (event) {
+	getListLogins()
+}
 
 const forms = [loginForm, registrationForm]
 

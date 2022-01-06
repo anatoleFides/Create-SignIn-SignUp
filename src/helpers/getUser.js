@@ -11,6 +11,7 @@ export const getUser = async user => {
 			})
 			if (response.status === 201) {
 				getListLogins()
+
 				document.getElementsByTagName('sign-up')[0].remove()
 			}
 }

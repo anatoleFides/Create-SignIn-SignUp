@@ -75,12 +75,6 @@ class SignUp extends HTMLElement {
 		const elems__body = Object.assign(this.createElem(forms__body, 'div'), {
 		})
 
-		const validationUsers = () => {
-			if (localStorage.getObject('logins').length === 0) {
-				getListLogins()
-			} else return
-		}
-
 		const [login, telephone, email, password] = [
 			['text', 'Login', 'Invalid login format'],
 			['tel', '(___)___-__-__', 'Invalid telephone format'],
@@ -134,6 +128,8 @@ class SignUp extends HTMLElement {
 		})
 
 		readFile(avatar)
+
+		window[Symbol.for('listInput')] = [login, telephone, email, password, avatar]
 
 		const button = Object.assign(this.createElem(container, 'button'), {
 			innerText: 'Sign Up',

@@ -14,5 +14,9 @@ export const emailValidation = function(inputElem) {
 		} else {
 			inputElem.nextElementSibling.style = errorMessageActiveStyle
 		}
+
+		if (event.target.value === '') {
+			inputElem.nextElementSibling.style = errorMessageStyle
+		}
 	}
 }

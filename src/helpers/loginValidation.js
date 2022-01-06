@@ -16,7 +16,10 @@ export const loginValidation = function(inputElem) {
 			inputElem.nextElementSibling.style = errorMessageStyle
 		}
 
-		
+		compareLogin(inputElem, inputElem.value)
+
+		if (event.target.value === '') {
+			inputElem.nextElementSibling.style = errorMessageStyle
+		}
 	}
-	compareLogin(inputElem, inputElem.value)
 }

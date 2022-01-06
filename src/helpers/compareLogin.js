@@ -1,10 +1,15 @@
-// import { loginValidation } from './loginValidation'
+import { errorMessageActiveStyle } from '../styles'
 
 export const compareLogin = (inputElem, loginValue) => {
+	// const usersLogin = localStorage.getObject('logins')
 	const usersLogin = JSON.parse(localStorage.logins)
-	console.log(usersLogin)
+
 	if (usersLogin.filter(login => login === loginValue).length !== 0) {
-		console.log('login exists')
-		inputElem.nextElementSibling.innetText = 'login exists'
-	} else console.log('true login')
+		Object.assign(inputElem.nextElementSibling, {
+			textContent: 'login exists',
+			style: errorMessageActiveStyle
+		})
+	} else {
+		inputElem.nextElementSibling.textContent = 'Invalid login format'
+	}
 }

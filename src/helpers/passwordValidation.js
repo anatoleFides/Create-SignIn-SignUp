@@ -15,5 +15,9 @@ export const passwordValidation = function (inputElem) {
 			event.target.style.color = '#090'
 			inputElem.nextElementSibling.style = errorMessageStyle
 		}
+
+		if (event.target.value === '') {
+			inputElem.nextElementSibling.style = errorMessageStyle
+		}
 	}
 }

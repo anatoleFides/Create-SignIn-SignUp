@@ -73,10 +73,13 @@ class SignUp extends HTMLElement {
 			style: formsBodyStyle
 		})
 		const elems__body = Object.assign(this.createElem(forms__body, 'div'), {
-			// style: `
-			// 	margin: 0 0 2px 0;
-			// `
 		})
+
+		const validationUsers = () => {
+			if (localStorage.getObject('logins').length === 0) {
+				getListLogins()
+			} else return
+		}
 
 		const [login, telephone, email, password] = [
 			['text', 'Login', 'Invalid login format'],
@@ -93,7 +96,7 @@ class SignUp extends HTMLElement {
 			})
 
 			const error__message = Object.assign(this.createElem(elem__container, 'p'), {
-				innerText: item[2],
+				textContent: item[2],
 				style: errorMessageStyle
 			})
 

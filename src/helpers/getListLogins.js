@@ -1,9 +1,10 @@
 import { endpoint } from '../assets'
+import { usersCollection } from './usersCollection'
 
 export const getListLogins = function () {
-	const collecLogins = async () => await (await fetch("http://localhost:3000/users")).json()
+	// const collecUsers = async () => await (await fetch("http://localhost:3000/users")).json()
 
-	collecLogins().then(response => {
+	usersCollection().then(response => {
 		localStorage.setObject('logins', response.map(item => item.login))
 	})
 }

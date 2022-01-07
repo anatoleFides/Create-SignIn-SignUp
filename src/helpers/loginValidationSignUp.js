@@ -6,7 +6,7 @@ import {
 	errorMessageActiveStyle
 } from '../styles'
 
-export const loginValidation = function(inputElem) {
+export const loginValidationSignUp = function(inputElem) {
 	inputElem.oninput = function(event) {
 		valueValidation(inputElem, event.target)
 

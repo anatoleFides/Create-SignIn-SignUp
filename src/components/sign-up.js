@@ -25,7 +25,7 @@ import {
 import {
 	closeSignUp,
 	valueValidation,
-	loginValidation,
+	loginValidationSignUp,
 	phoneValidation,
 	emailValidation,
 	passwordValidation,
@@ -97,7 +97,7 @@ class SignUp extends HTMLElement {
 			return elem
 		}.bind(this))
 
-		loginValidation(login)
+		loginValidationSignUp(login)
 
 		phoneValidation(telephone)
 

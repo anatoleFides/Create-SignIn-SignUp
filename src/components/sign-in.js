@@ -8,6 +8,8 @@ import {
 	titleStyle,
 	formsBodyStyle,
 	inputStyle,
+	errorMessageStyle,
+	errorMessageActiveStyle,
 	forgotPasswordStyle,
 	buttonSubmitStyle
 } from '../styles'
@@ -18,7 +20,7 @@ import {
 
 import {
 	closeSignIn,
-	// loginHandler,
+	loginHandlerSignIn,
 	// passwordHandler,
 	// authorizeUser,
 	createElem
@@ -27,7 +29,7 @@ import {
 class SignIn extends HTMLElement {
 	constructor () {
 		super()
-		// this.handlers = [loginHandler, passwordHandler]
+		// this.handlers = [loginHandlerSignIn, passwordHandler]
 		const shadow = this.attachShadow({ mode: 'closed' })
 		
 		const wrapper = Object.assign(this.createElem(shadow, 'div'), {
@@ -64,24 +66,34 @@ class SignIn extends HTMLElement {
 			style: formsBodyStyle
 		})
 		const [login, password] = [
-			['text', 'Login'],
-			['password', 'Password']
-		].map(function (item, index) {
-			const elem = Object.assign(this.createElem(forms__body, 'input'), {
+			['text', 'Login', 'Login not found'],
+			['password', 'Password', 'Invalid passvord']
+		].map(function (item) {
+			const elem__container = this.createElem(forms__body, 'div')
+
+			const elem = Object.assign(this.createElem(elem__container, 'input'), {
 				type: item[0],
 				placeholder: item[1],
-				style: inputStyle,
-				// oninput: this.handlers[index]
+				style: inputStyle
+			})
+
+			const error__message = Object.assign(this.createElem(elem__container, 'p'), {
+				textContent: item[2],
+				style: errorMessageStyle
 			})
 
 			return elem
 		}.bind(this))
+
+		loginHandlerSignIn(login)
 
 		const forgot__password = Object.assign(this.createElem(container, 'a'), {
 			style: forgotPasswordStyle,
 			innerText: 'Forgot password?',
 			href: '#'
 		})
+
+
 
 		const button = Object.assign(this.createElem(container, 'button'), {
 			innerText: 'Sign In',

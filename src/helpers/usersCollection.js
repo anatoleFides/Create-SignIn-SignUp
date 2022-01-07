@@ -1,1 +1,3 @@
-export const usersCollection = async () => await (await fetch("http://localhost:3000/users")).json()
+import { endpoint } from '../assets'
+
+export const usersCollection = async () => await (await fetch(endpoint)).json()

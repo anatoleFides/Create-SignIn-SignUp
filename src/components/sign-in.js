@@ -21,7 +21,7 @@ import {
 import {
 	closeSignIn,
 	loginHandlerSignIn,
-	// passwordHandler,
+	passwordHandlerSignIn,
 	// authorizeUser,
 	createElem
 } from '../helpers'
@@ -29,7 +29,7 @@ import {
 class SignIn extends HTMLElement {
 	constructor () {
 		super()
-		// this.handlers = [loginHandlerSignIn, passwordHandler]
+		// this.handlers = [loginHandlerSignIn, passwordHandlerSignIn]
 		const shadow = this.attachShadow({ mode: 'closed' })
 		
 		const wrapper = Object.assign(this.createElem(shadow, 'div'), {
@@ -85,15 +85,22 @@ class SignIn extends HTMLElement {
 			return elem
 		}.bind(this))
 
-		loginHandlerSignIn(login)
-
 		const forgot__password = Object.assign(this.createElem(container, 'a'), {
 			style: forgotPasswordStyle,
 			innerText: 'Forgot password?',
 			href: '#'
 		})
 
+		loginHandlerSignIn(login)
 
+		passwordHandlerSignIn(password)
+
+		// const user = {
+		// 	login: login.value,
+		// 	password: password.value
+		// }
+
+		// console.log(user)
 
 		const button = Object.assign(this.createElem(container, 'button'), {
 			innerText: 'Sign In',

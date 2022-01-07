@@ -13,7 +13,7 @@ import { getListLogins } from './getListLogins'
 import { usersCollection } from './usersCollection'
 // import { disabledSummit } from './disabledSummit'
 import { loginHandlerSignIn } from './loginHandlerSignIn'
-// import { passwordHandler } from './passwordHandler'
+import { passwordHandlerSignIn } from './passwordHandlerSignIn'
 // import { authorizeUser } from './authorizeUser'
 import { createElem } from './createElem'
 
@@ -33,7 +33,7 @@ export {
 	usersCollection,
 	// disabledSummit,
 	loginHandlerSignIn,
-	// passwordHandler,
+	passwordHandlerSignIn,
 	// authorizeUser,
 	createElem
 }

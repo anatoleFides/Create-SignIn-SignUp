@@ -1,4 +1,4 @@
-import { endpoint } from '../assets'
+// import { endpoint } from '../assets'
 import { usersCollection } from './usersCollection'
 
 export const getListLogins = function () {

@@ -129,7 +129,7 @@ class SignUp extends HTMLElement {
 
 		readFile(avatar)
 
-		window[Symbol.for('listInput')] = [login, telephone, email, password, avatar]
+		window[Symbol.for('listInput')] = [login, telephone, email, password]
 
 		const button = Object.assign(this.createElem(container, 'button'), {
 			innerText: 'Sign Up',

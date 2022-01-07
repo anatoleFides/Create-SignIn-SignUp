@@ -1,5 +1,6 @@
+import { resetInputSignUp } from './resetInputSignUp'
+
 export const closeSignUp = function (event) {
-	window[Symbol.for('listInput')].forEach(input => input.value = '')
-	
+	resetInputSignUp()
 	document.getElementById("sign-up").remove()
 }

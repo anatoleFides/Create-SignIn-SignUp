@@ -1,5 +1,7 @@
-import { inputValidationStyle } from '../styles'
-import { inputStyle } from '../styles'
+import {
+	inputValidationStyle,
+	inputStyle
+} from '../styles'
 
 export const valueValidation = function (inputElem, callbackValue) {
 		callbackValue.value.length !== 0

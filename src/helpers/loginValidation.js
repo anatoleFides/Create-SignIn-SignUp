@@ -23,4 +23,6 @@ export const loginValidation = function(inputElem) {
 			inputElem.nextElementSibling.style = errorMessageStyle
 		}
 	}
+	// return let validLogin = true
+	// console.log(validLogin)
 }

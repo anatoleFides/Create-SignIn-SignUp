@@ -132,6 +132,7 @@ class SignUp extends HTMLElement {
 		window[Symbol.for('listInput')] = [login, telephone, email, password]
 
 		const button = Object.assign(this.createElem(container, 'button'), {
+			// disabled: false,
 			innerText: 'Sign Up',
 			style: buttonSubmitStyle,
 			onclick: async function (event) {

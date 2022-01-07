@@ -10,6 +10,7 @@ import { compareLogin } from './compareLogin'
 import { readFile } from './readFile'
 import { getUser } from './getUser'
 import { getListLogins } from './getListLogins'
+// import { disabledSummit } from './disabledSummit'
 // import { loginHandler } from './loginHandler'
 // import { passwordHandler } from './passwordHandler'
 // import { authorizeUser } from './authorizeUser'
@@ -28,6 +29,7 @@ export {
 	readFile,
 	getUser,
 	getListLogins,
+	// disabledSummit,
 	// loginHandler,
 	// passwordHandler,
 	// authorizeUser,

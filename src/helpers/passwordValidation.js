@@ -1,4 +1,5 @@
 import { valueValidation } from './valueValidation'
+import { emptiValidationStyle } from './emptiValidationStyle'
 import {
 	errorMessageStyle,
 	errorMessageActiveStyle
@@ -16,8 +17,6 @@ export const passwordValidation = function (inputElem) {
 			inputElem.nextElementSibling.style = errorMessageStyle
 		}
 
-		if (event.target.value === '') {
-			inputElem.nextElementSibling.style = errorMessageStyle
-		}
+		emptiValidationStyle(inputElem, event.target)
 	}
 }

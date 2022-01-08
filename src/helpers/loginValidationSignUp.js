@@ -1,4 +1,5 @@
 import { valueValidation } from './valueValidation'
+import { emptiValidationStyle } from './emptiValidationStyle'
 import { compareLogin } from './compareLogin'
 import { getListLogins } from './getListLogins'
 import {
@@ -19,9 +20,7 @@ export const loginValidationSignUp = function(inputElem) {
 
 		compareLogin(inputElem, inputElem.value)
 
-		if (event.target.value === '') {
-			inputElem.nextElementSibling.style = errorMessageStyle
-		}
+		emptiValidationStyle(inputElem, event.target)
 	}
 	// return let validLogin = true
 	// console.log(validLogin)

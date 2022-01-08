@@ -1,4 +1,5 @@
 import { valueValidation } from './valueValidation'
+import { emptiValidationStyle } from './emptiValidationStyle'
 import {
 	errorMessageStyle,
 	errorMessageActiveStyle
@@ -15,8 +16,6 @@ export const phoneValidation = function(inputElem) {
 			inputElem.nextElementSibling.style = errorMessageActiveStyle
 		}
 
-		if (event.target.value === '') {
-			inputElem.nextElementSibling.style = errorMessageStyle
-		}
+		emptiValidationStyle(inputElem, event.target)
 	}
 }

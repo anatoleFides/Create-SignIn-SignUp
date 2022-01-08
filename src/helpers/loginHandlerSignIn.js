@@ -1,26 +1,27 @@
-// import {
-// 	errorMessageStyle,
-// 	errorMessageActiveStyle
-// } from '../styles'
+import { emptiValidationStyle } from './emptiValidationStyle'
+import {
+	errorMessageStyle,
+	errorMessageActiveStyle
+} from '../styles'
 
-// export const loginHandlerSignIn = function (inputElem) {
-// 	const usersLogin = JSON.parse(localStorage.logins)
+export const loginHandlerSignIn = function (inputElem) {
+	const usersLogin = JSON.parse(localStorage.logins)
 
-// 	inputElem.oninput = (event) => {
-// 		const loginCompare = usersLogin.filter(login => login === event.target.value)
+	inputElem.oninput = (event) => {
+		window[Symbol.for('userLoginIndex')] = usersLogin.indexOf(usersLogin
+			.filter(item => item === event.target.value)[0])
+		console.log(window[Symbol.for('userLoginIndex')])
 
-// 		if (loginCompare.length === 0) {
-// 			Object.assign(inputElem.nextElementSibling, {
-// 				style: errorMessageActiveStyle
-// 			})
-// 			// return false
-// 		} else {
-// 			inputElem.nextElementSibling.style = errorMessageStyle
-// 			// return true
-// 		}
+		if (usersLogin[window[Symbol.for('userLoginIndex')]] !== event.target.value) {
+			Object.assign(inputElem.nextElementSibling, {
+				style: errorMessageActiveStyle
+			})
+		} else {
+			Object.assign(inputElem.nextElementSibling, {
+				style: errorMessageStyle
+			})
+		}
 
-// 		if (event.target.value === '') {
-// 			inputElem.nextElementSibling.style = errorMessageStyle
-// 		}
-// 	}
-// }
+		emptiValidationStyle(inputElem, event.target)
+	}
+}

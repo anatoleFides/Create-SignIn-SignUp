@@ -1,14 +1,11 @@
 import { usersCollection } from './usersCollection'
+import { emptiValidationStyle } from './emptiValidationStyle'
 import {
 	errorMessageStyle,
 	errorMessageActiveStyle
 } from '../styles'
 
-export const passwordHandlerSignIn = function (loginElem, passwordElem) {
-	// const usersPassword = []
-	// usersCollection().then(response => response.map(item => usersPassword.push(item.password)))
-	// console.log(usersPassword)
-
+export const passwordHandlerSignIn = function (inputElem) {
 	const usersLoginPassword = []
 	usersCollection().then(response => response
 		.map(item => usersLoginPassword.push({
@@ -16,49 +13,23 @@ export const passwordHandlerSignIn = function (loginElem, passwordElem) {
 			password: item.password
 		})))
 	
-	// console.log(usersLoginPassword)
+	inputElem.oninput = (event) => {
+		const usersPassord = usersLoginPassword.map(item => item.password)
 
-	loginElem.oninput = (event) => {
-		const usersLogin = usersLoginPassword.map(item => item.login)
-		// console.log(usersLoginPassword.map(item => item.login))
-
-		const userLoginIndex = usersLogin.indexOf(usersLogin
+		const userPasswordIndex = usersPassord.indexOf(usersPassord
 			.filter(item => item === event.target.value)[0])
-		console.log(userLoginIndex)
+		console.log(userPasswordIndex)
 
-		if (usersLogin[userLoginIndex] === event.target.value) {
-			loginElem.nextElementSibling.style = errorMessageStyle
+		if (window[Symbol.for('userLoginIndex')] === userPasswordIndex) {
+			Object.assign(inputElem.nextElementSibling, {
+				style: errorMessageStyle
+			})
 		} else {
-			loginElem.nextElementSibling.style = errorMessageActiveStyle
+			Object.assign(inputElem.nextElementSibling, {
+				style: errorMessageActiveStyle
+			})
 		}
 
-		// if (userLoginIndex !== userPasswordIndex && event.target.value === '') {
-		// 	passwordElem.nextElementSibling.style = errorMessageActiveStyle
-		// }
-
-		if (event.target.value === '') {
-			loginElem.nextElementSibling.style = errorMessageStyle
-		}
-
-		passwordElem.oninput = (event) => {
-			const usersPassord = usersLoginPassword.map(item => item.password)
-			console.log(usersPassord)
-
-			const userPasswordIndex = usersPassord.indexOf(usersPassord
-				.filter(item => item === event.target.value)[0])
-			console.log(userPasswordIndex)
-
-			if (userLoginIndex === userPasswordIndex) {
-				Object.assign(passwordElem.nextElementSibling, {
-					style: errorMessageStyle
-				})
-			} else {
-				passwordElem.nextElementSibling.style = errorMessageActiveStyle
-			}
-
-			if (event.target.value === '') {
-				passwordElem.nextElementSibling.style = errorMessageStyle
-			}
-		}
+		emptiValidationStyle(inputElem, event.target)
 	}
 }

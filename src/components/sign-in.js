@@ -20,7 +20,7 @@ import {
 
 import {
 	closeSignIn,
-	// loginHandlerSignIn,
+	loginHandlerSignIn,
 	passwordHandlerSignIn,
 	// authorizeUser,
 	createElem
@@ -91,9 +91,9 @@ class SignIn extends HTMLElement {
 			href: '#'
 		})
 
-		// loginHandlerSignIn(login)
+		loginHandlerSignIn(login)
 
-		passwordHandlerSignIn(login, password)
+		passwordHandlerSignIn(password)
 
 		// const user = {
 		// 	login: login.value,

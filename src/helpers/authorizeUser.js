@@ -1,12 +1,11 @@
 import { usersCollection } from './usersCollection'
 
 export const authorizeUser = function (event) {
-	const usersLoginPassord = {}
-	usersCollection().then(response => {
-		response.map(user => Object.assign(usersLoginPassord, {
-			login: user.login,
-			password: user.password
-		}))
-		console.log(usersLoginPassord)
-	})
+	const usersLoginPassword = []
+	usersCollection().then(response => response
+		.map(item => usersLoginPassword.push({
+			login: item.login,
+			password: item.password
+		})))
+	console.log(usersLoginPassword)
 }

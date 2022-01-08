@@ -2,6 +2,7 @@ import { closeSignIn } from './closeSignIn'
 import { closeSignUp } from './closeSignUp'
 import { resetInputSignUp } from './resetInputSignUp'
 import { valueValidation } from './valueValidation'
+import { emptiValidationStyle } from './emptiValidationStyle'
 import { loginValidationSignUp } from './loginValidationSignUp'
 import { phoneValidation } from './phoneValidation'
 import { emailValidation } from './emailValidation'
@@ -12,7 +13,7 @@ import { getUser } from './getUser'
 import { getListLogins } from './getListLogins'
 import { usersCollection } from './usersCollection'
 // import { disabledSummit } from './disabledSummit'
-// import { loginHandlerSignIn } from './loginHandlerSignIn'
+import { loginHandlerSignIn } from './loginHandlerSignIn'
 import { passwordHandlerSignIn } from './passwordHandlerSignIn'
 // import { authorizeUser } from './authorizeUser'
 import { createElem } from './createElem'
@@ -22,6 +23,7 @@ export {
 	closeSignUp,
 	resetInputSignUp,
 	valueValidation,
+	emptiValidationStyle,
 	loginValidationSignUp,
 	phoneValidation,
 	emailValidation,
@@ -32,7 +34,7 @@ export {
 	getListLogins,
 	usersCollection,
 	// disabledSummit,
-	// loginHandlerSignIn,
+	loginHandlerSignIn,
 	passwordHandlerSignIn,
 	// authorizeUser,
 	createElem

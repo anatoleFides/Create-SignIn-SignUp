@@ -5,7 +5,7 @@ import {
 	errorMessageActiveStyle
 } from '../styles'
 
-export const passwordHandlerSignIn = function (inputElem) {
+export const passwordHandlerSignIn = (inputElem) => {
 	const usersLoginPassword = []
 	usersCollection().then(response => response
 		.map(item => usersLoginPassword.push({

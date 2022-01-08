@@ -5,8 +5,8 @@ import {
 	errorMessageActiveStyle
 } from '../styles'
 
-export const passwordValidation = function (inputElem) {
-	inputElem.oninput = function (event) {
+export const passwordValidation = (inputElem) => {
+	inputElem.oninput = (event) => {
 		valueValidation(inputElem, event.target)
 
 		if (event.target.value.length < 8) {

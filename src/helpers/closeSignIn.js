@@ -1,3 +1,3 @@
-export const closeSignIn = function (event) {
+export const closeSignIn = (event) => {
 	document.getElementById("sign-in").remove()
 }

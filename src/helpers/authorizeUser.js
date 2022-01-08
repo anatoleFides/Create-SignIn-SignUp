@@ -1,6 +1,6 @@
 import { usersCollection } from './usersCollection'
 
-export const authorizeUser = function (event) {
+export const authorizeUser = (event) => {
 	const usersLoginPassword = []
 	usersCollection().then(response => response
 		.map(item => usersLoginPassword.push({

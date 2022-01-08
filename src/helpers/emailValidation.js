@@ -5,8 +5,8 @@ import {
 	errorMessageActiveStyle
 } from '../styles'
 
-export const emailValidation = function(inputElem) {
-	inputElem.oninput = function (event) {
+export const emailValidation = (inputElem) => {
+	inputElem.oninput = (event) => {
 		valueValidation(inputElem, event.target)
 
 		let mailformat = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu

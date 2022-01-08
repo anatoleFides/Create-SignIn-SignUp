@@ -4,7 +4,7 @@ import {
 	errorMessageActiveStyle
 } from '../styles'
 
-export const loginHandlerSignIn = function (inputElem) {
+export const loginHandlerSignIn = (inputElem) => {
 	const usersLogin = JSON.parse(localStorage.logins)
 
 	inputElem.oninput = (event) => {

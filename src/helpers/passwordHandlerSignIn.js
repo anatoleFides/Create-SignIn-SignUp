@@ -4,28 +4,61 @@ import {
 	errorMessageActiveStyle
 } from '../styles'
 
-export const passwordHandlerSignIn = function (inputElem) {
-	const usersPassword = []
-	usersCollection().then(response => response.map(item => usersPassword.push(item.password)))
+export const passwordHandlerSignIn = function (loginElem, passwordElem) {
+	// const usersPassword = []
+	// usersCollection().then(response => response.map(item => usersPassword.push(item.password)))
+	// console.log(usersPassword)
+
+	const usersLoginPassword = []
+	usersCollection().then(response => response
+		.map(item => usersLoginPassword.push({
+			login: item.login,
+			password: item.password
+		})))
 	
-	console.log(usersPassword)
+	// console.log(usersLoginPassword)
 
-	inputElem.oninput = (event) => {
-		const passwordCompare = usersPassword
-			.filter(password => password === event.target.value)
+	loginElem.oninput = (event) => {
+		const usersLogin = usersLoginPassword.map(item => item.login)
+		// console.log(usersLoginPassword.map(item => item.login))
 
-		if (passwordCompare.length === 0) {
-			Object.assign(inputElem.nextElementSibling, {
-				style: errorMessageActiveStyle
-			})
-			// return false
+		const userLoginIndex = usersLogin.indexOf(usersLogin
+			.filter(item => item === event.target.value)[0])
+		console.log(userLoginIndex)
+
+		if (usersLogin[userLoginIndex] === event.target.value) {
+			loginElem.nextElementSibling.style = errorMessageStyle
 		} else {
-			inputElem.nextElementSibling.style = errorMessageStyle
-			// return true
+			loginElem.nextElementSibling.style = errorMessageActiveStyle
 		}
 
+		// if (userLoginIndex !== userPasswordIndex && event.target.value === '') {
+		// 	passwordElem.nextElementSibling.style = errorMessageActiveStyle
+		// }
+
 		if (event.target.value === '') {
-			inputElem.nextElementSibling.style = errorMessageStyle
+			loginElem.nextElementSibling.style = errorMessageStyle
+		}
+
+		passwordElem.oninput = (event) => {
+			const usersPassord = usersLoginPassword.map(item => item.password)
+			console.log(usersPassord)
+
+			const userPasswordIndex = usersPassord.indexOf(usersPassord
+				.filter(item => item === event.target.value)[0])
+			console.log(userPasswordIndex)
+
+			if (userLoginIndex === userPasswordIndex) {
+				Object.assign(passwordElem.nextElementSibling, {
+					style: errorMessageStyle
+				})
+			} else {
+				passwordElem.nextElementSibling.style = errorMessageActiveStyle
+			}
+
+			if (event.target.value === '') {
+				passwordElem.nextElementSibling.style = errorMessageStyle
+			}
 		}
 	}
 }

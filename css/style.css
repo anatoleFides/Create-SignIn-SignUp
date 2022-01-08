@@ -116,9 +116,27 @@ input[type="text" i]:focus-visible{
 .header__avtorisation {}
 .avtorisation {
 	display: grid;
-	grid-template: 1fr / 1fr 1fr 80px;
+	grid-template: 1fr / 1fr 80px;
 	align-items: center;
 }
+.avtorisation__row {
+	position: relative;
+}
+#not_avtirize {
+	z-index: 10;
+	display: block;
+}
+.avtorisation__container {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	z-index: 5;
+}
+/*#avtirize {
+	z-index: 10;
+	display: block;
+}*/
 .avtorisation__link {
 	padding: 4px;
 	background: #87CEEB;

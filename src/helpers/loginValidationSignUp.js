@@ -12,11 +12,12 @@ export const loginValidationSignUp = (inputElem) => {
 		valueValidation(inputElem, event.target)
 
 		let letters = /^[a-zA-z]{1}[a-zA-Z1-9]{3,20}$/
-		if (!event.target.value.match(letters)) {
-			inputElem.nextElementSibling.style = errorMessageActiveStyle
-		} else {
-			inputElem.nextElementSibling.style = errorMessageStyle
-		}
+
+		!event.target.value.match(letters) ? Object.assign(inputElem.nextElementSibling, {
+			style: errorMessageActiveStyle
+		}) : Object.assign(inputElem.nextElementSibling, {
+			style: errorMessageStyle
+		})
 
 		compareLogin(inputElem, inputElem.value)
 

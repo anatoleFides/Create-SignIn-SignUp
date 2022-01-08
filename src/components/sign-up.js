@@ -129,7 +129,7 @@ class SignUp extends HTMLElement {
 
 		readFile(avatar)
 
-		window[Symbol.for('listInput')] = [login, telephone, email, password]
+		window[Symbol.for('listInputSignUp')] = [login, telephone, email, password]
 
 		const button = Object.assign(this.createElem(container, 'button'), {
 			// disabled: false,

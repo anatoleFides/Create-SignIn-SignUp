@@ -101,6 +101,7 @@ class SignIn extends HTMLElement {
 		// }
 
 		// console.log(user)
+		window[Symbol.for('listInputSignIn')] = [login, password]
 
 		const button = Object.assign(this.createElem(container, 'button'), {
 			innerText: 'Sign In',

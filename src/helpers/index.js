@@ -1,5 +1,6 @@
 import { closeSignIn } from './closeSignIn'
 import { closeSignUp } from './closeSignUp'
+import { resetInputSignIn } from './resetInputSignIn'
 import { resetInputSignUp } from './resetInputSignUp'
 import { valueValidation } from './valueValidation'
 import { emptiValidationStyle } from './emptiValidationStyle'
@@ -21,6 +22,7 @@ import { createElem } from './createElem'
 export {
 	closeSignIn,
 	closeSignUp,
+	resetInputSignIn,
 	resetInputSignUp,
 	valueValidation,
 	emptiValidationStyle,

@@ -20,15 +20,12 @@ export const passwordHandlerSignIn = (inputElem) => {
 			.filter(item => item === event.target.value)[0])
 		console.log(userPasswordIndex)
 
-		if (window[Symbol.for('userLoginIndex')] === userPasswordIndex) {
-			Object.assign(inputElem.nextElementSibling, {
-				style: errorMessageStyle
-			})
-		} else {
-			Object.assign(inputElem.nextElementSibling, {
-				style: errorMessageActiveStyle
-			})
-		}
+		window[Symbol.for('userLoginIndex')] === userPasswordIndex
+			? Object.assign(inputElem.nextElementSibling, {
+					style: errorMessageStyle
+			}): Object.assign(inputElem.nextElementSibling, {
+					style: errorMessageActiveStyle
+				})
 
 		emptiValidationStyle(inputElem, event.target)
 	}

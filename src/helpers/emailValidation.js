@@ -10,11 +10,13 @@ export const emailValidation = (inputElem) => {
 		valueValidation(inputElem, event.target)
 
 		let mailformat = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu
-		if (event.target.value.match(mailformat)) {
-			inputElem.nextElementSibling.style = errorMessageStyle
-		} else {
-			inputElem.nextElementSibling.style = errorMessageActiveStyle
-		}
+
+		event.target.value.match(mailformat) 
+			? Object.assign(inputElem.nextElementSibling, {
+				style: errorMessageStyle
+			}) : Object.assign(inputElem.nextElementSibling, {
+				style: errorMessageActiveStyle
+			})
 
 		emptiValidationStyle(inputElem, event.target)
 	}

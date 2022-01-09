@@ -115,26 +115,48 @@ input[type="text" i]:focus-visible{
 }
 .header__avtorisation {}
 .avtorisation {
-	display: grid;
-	grid-template: 1fr / 1fr 80px;
+	display: flex;
+	justify-content: space-between;
 	align-items: center;
 }
 .avtorisation__row {
+	flex: 1 1 auto;
 	position: relative;
-}
-#not_avtirize {
-	z-index: 10;
-	display: block;
 }
 .avtorisation__container {
 	position: absolute;
 	left: 0;
-	top: 0;
+	top: 50%;
+	transform: translateY(-50%);
 	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+/*	visibility: hidden;
+	opacity: 0;
+	transition: all .5 ease;*/
+	display: none;
+}
+#not_avtirize {
+	z-index: 10;
+/*	visibility: visible;
+	opacity: 1;*/
+	display: block;
+}
+.avtorisation__container-links {
 	z-index: 5;
+
+}
+.avtorisation__container-username{
+	z-index: 2;
+	visibility: hidden;
+	opacity: 0;
+	transition: all .5 ease;
 }
 /*#avtirize {
 	z-index: 10;
+	visibility: visible;
+	opacity: 1;
 	display: block;
 }*/
 .avtorisation__link {
@@ -153,7 +175,7 @@ input[type="text" i]:focus-visible{
 	background: #9ACD32;
 	color: #E0FFFF;
 }
-.avtorisation__link{
+.avtorisation__link:first-child {
 	margin: 0 8px 0 0;
 }
 .singIn__btn {}
@@ -161,8 +183,7 @@ input[type="text" i]:focus-visible{
 .singUp {}
 .singUp__btn {}
 .avtorisation__avatar {
-	width: 59px;
-	height: 59px;
+	flex: 0 0 59px;
 	border-radius: 50%;
 	overflow: hidden;
 	border: 1px solid #87CEEB;

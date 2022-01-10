@@ -8,6 +8,16 @@ window.onload = function (event) {
 	getListLogins()
 }
 
+// const openSearch = document.querySelector('search-form__icon')
+// openSearch.onclick = (event) => {
+// 	event.target.classList.toggle('active')
+// }
+
+// const openBurger = document.querySelector('icon-menu')
+// openBurger.onclick = (event) => {
+// 	event.target.classList.toggle('open')
+// }
+
 const forms = [loginForm, registrationForm]
 
 const [sinInButton, sinUpButton] = ["sing-in__btn", "sing-up__btn"]

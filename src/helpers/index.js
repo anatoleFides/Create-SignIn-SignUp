@@ -1,3 +1,4 @@
+import { openCloseBurgerMenu } from './openCloseBurgerMenu'
 import { closeSignIn } from './closeSignIn'
 import { closeSignUp } from './closeSignUp'
 import { resetInputSignIn } from './resetInputSignIn'
@@ -20,6 +21,7 @@ import { passwordHandlerSignIn } from './passwordHandlerSignIn'
 import { createElem } from './createElem'
 
 export {
+	openCloseBurgerMenu,
 	closeSignIn,
 	closeSignUp,
 	resetInputSignIn,

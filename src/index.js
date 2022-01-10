@@ -1,4 +1,4 @@
-import { getListLogins } from './helpers'
+import { getListLogins, openCloseBurgerMenu } from './helpers'
 
 import loginForm from './components/sign-in'
 
@@ -8,18 +8,7 @@ window.onload = function (event) {
 	getListLogins()
 }
 
-// const openSearch = document.querySelector('search-form__icon')
-// openSearch.onclick = (event) => {
-// 	event.target.classList.toggle('active')
-// }
-
-// const openBurger = document.getElementById("icon-menu")
-// openBurger.onclick = (event) => {
-// 	event.target.classList.toggle('open')
-// 	open () => {
-// 		document.getElementById("header-menu").classList.toggle('open')
-// 	}
-// }
+openCloseBurgerMenu()
 
 const forms = [loginForm, registrationForm]
 
@@ -29,11 +18,3 @@ const [sinInButton, sinUpButton] = ["sing-in__btn", "sing-up__btn"]
 			document.body.appendChild(forms[index])
 		}
 }))
-
-const buttonBurger = document.getElementById("burger-menu")
-Object.assign(buttonBurger, {
-	onclick: function (event) {
-		buttonBurger.classList.toggle('open')
-		document.getElementById("header-menu").classList.toggle('active')
-	}
-})

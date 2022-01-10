@@ -30,3 +30,10 @@ const [sinInButton, sinUpButton] = ["sing-in__btn", "sing-up__btn"]
 		}
 }))
 
+const buttonBurger = document.getElementById("burger-menu")
+Object.assign(buttonBurger, {
+	onclick: function (event) {
+		buttonBurger.classList.toggle('open')
+		document.getElementById("header-menu").classList.toggle('active')
+	}
+})

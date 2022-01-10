@@ -160,7 +160,7 @@ body{
 		background: #FFF0F5;
 		transition: all .8s ease;
 	}
-	.header-menu__lists.open {
+	.header-menu__lists.active {
 		display: block;
 		left: 0;
 		transition: all .8s ease;

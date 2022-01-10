@@ -13,9 +13,12 @@ window.onload = function (event) {
 // 	event.target.classList.toggle('active')
 // }
 
-// const openBurger = document.querySelector('icon-menu')
+// const openBurger = document.getElementById("icon-menu")
 // openBurger.onclick = (event) => {
 // 	event.target.classList.toggle('open')
+// 	open () => {
+// 		document.getElementById("header-menu").classList.toggle('open')
+// 	}
 // }
 
 const forms = [loginForm, registrationForm]

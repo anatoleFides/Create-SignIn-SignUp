@@ -315,7 +315,7 @@ input[type="text" i]:focus-visible{
 	display: block;
 	max-width: 100%;
 }
-
+/*MAIN-----------------------------------------------------------------------------*/
 .main{
 	flex: 1 1 auto;
 	background: rgba(255, 255, 240, 0.5);
@@ -343,6 +343,7 @@ input[type="text" i]:focus-visible{
 .main__text:last-child {
 	margin: 0;
 }
+/*FOOTER------------------------------------------------------------------------------*/
 .footer{
 	flex: 0 0 60px;
 	background: #6B8E23;

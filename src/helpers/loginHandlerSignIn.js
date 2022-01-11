@@ -19,11 +19,13 @@ export const loginHandlerSignIn = (inputElem, passwordInput) => {
 					style: errorMessageStyle
 				})
 
-		if (window[Symbol.for('userLoginIndex')] !== window[Symbol.for('userPasswordIndex')] 
-			&& event.target.value !== '') {
-				passwordInput.nextElementSibling.style = errorMessageActiveStyle
-		}
-
 		emptiValidationStyle(inputElem, event.target)
+
+		window[Symbol.for('userLoginIndex')] === window[Symbol.for('userPasswordIndex')]
+			? Object.assign(passwordInput.nextElementSibling, {
+				style: errorMessageStyle
+			}) : Object.assign(passwordInput.nextElementSibling, {
+				style: errorMessageActiveStyle
+			})
 	}
 }

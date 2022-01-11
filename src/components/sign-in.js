@@ -95,20 +95,17 @@ class SignIn extends HTMLElement {
 
 		passwordHandlerSignIn(password)
 
-		// const user = {
-		// 	login: login.value,
-		// 	password: password.value
-		// }
-
-		// console.log(user)
-		window[Symbol.for('listInputSignIn')] = [login.value, password.value]
-
-		authorizeUser(window[Symbol.for('listInputSignIn')])
+		window[Symbol.for('listInputSignIn')] = [login, password]
 
 		const button = Object.assign(this.createElem(container, 'button'), {
 			innerText: 'Sign In',
 			style: buttonSubmitStyle,
-			// onclick: authorizeUser
+			onclick: async function (event) {
+				await authorizeUser ({
+					login: login.value,
+					password: password.value
+				})
+			}
 		})
 	}
 }

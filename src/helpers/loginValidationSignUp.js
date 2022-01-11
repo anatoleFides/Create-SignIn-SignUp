@@ -23,6 +23,4 @@ export const loginValidationSignUp = (inputElem) => {
 
 		emptiValidationStyle(inputElem, event.target)
 	}
-	// return let validLogin = true
-	// console.log(validLogin)
 }

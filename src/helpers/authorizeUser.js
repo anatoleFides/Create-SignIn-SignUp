@@ -1,18 +1,12 @@
 import { usersCollection } from './usersCollection'
 
 export const authorizeUser = (objectAutorize) => {
-	const collectionUsers = []
+	const users = []
 	usersCollection().then(response => response
-		.map(item => usersLoginPassword.push({
-			login: item.login,
-			telephone: item.telephone,
-			email: item.email
-			password: item.password,
-			avatar: item.avatar
-		})))
-	console.log(usersLoginPassword)
+		.map(item => users.push({item})))
+	console.log(users)
 
-	if (collectionUsers.forEach(user => {
+	if (users.forEach(user => {
 		user.compareWith(objectAutorize)}) === true) {
 			console.log('WOW')
 	} else console.log('fuck')

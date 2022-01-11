@@ -17,7 +17,7 @@ import { usersCollection } from './usersCollection'
 // import { disabledSummit } from './disabledSummit'
 import { loginHandlerSignIn } from './loginHandlerSignIn'
 import { passwordHandlerSignIn } from './passwordHandlerSignIn'
-// import { authorizeUser } from './authorizeUser'
+import { authorizeUser } from './authorizeUser'
 import { createElem } from './createElem'
 
 export {
@@ -40,6 +40,6 @@ export {
 	// disabledSummit,
 	loginHandlerSignIn,
 	passwordHandlerSignIn,
-	// authorizeUser,
+	authorizeUser,
 	createElem
 }

@@ -22,7 +22,7 @@ import {
 	closeSignIn,
 	loginHandlerSignIn,
 	passwordHandlerSignIn,
-	// authorizeUser,
+	authorizeUser,
 	createElem
 } from '../helpers'
 
@@ -91,7 +91,7 @@ class SignIn extends HTMLElement {
 			href: '#'
 		})
 
-		loginHandlerSignIn(login)
+		loginHandlerSignIn(login, password)
 
 		passwordHandlerSignIn(password)
 
@@ -101,7 +101,9 @@ class SignIn extends HTMLElement {
 		// }
 
 		// console.log(user)
-		window[Symbol.for('listInputSignIn')] = [login, password]
+		window[Symbol.for('listInputSignIn')] = [login.value, password.value]
+
+		authorizeUser(window[Symbol.for('listInputSignIn')])
 
 		const button = Object.assign(this.createElem(container, 'button'), {
 			innerText: 'Sign In',

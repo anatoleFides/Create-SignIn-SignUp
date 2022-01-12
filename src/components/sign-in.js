@@ -100,6 +100,7 @@ class SignIn extends HTMLElement {
 		const button = Object.assign(this.createElem(container, 'button'), {
 			innerText: 'Sign In',
 			style: buttonSubmitStyle,
+			id: 'submit-sign_in',
 			onclick: async function (event) {
 				await authorizeUser ({
 					login: login.value,

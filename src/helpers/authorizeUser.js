@@ -14,6 +14,10 @@ export const authorizeUser = async objectAutorize => {
 			document.getElementById("avtirize").classList.add('user-active')
 			document.getElementById("user-name").textContent = userAutorize.login
 			document.getElementById("user-avatar").src = userAutorize.avatar
+
+			// resetInputSignIn()
+
+			document.getElementsByTagName('sign-in')[0].remove()
 		}
 	}
 

@@ -9,14 +9,12 @@ export const passwordHandlerSignIn = (inputElem) => {
 	const users = []
 	usersCollection().then(response => response
 		.map(item => users.push(item)))
-		console.log(users)
 
 	inputElem.oninput = (event) => {
 		const usersPassord = users.map(item => item.password)
 
 		window[Symbol.for('userPasswordIndex')] = usersPassord.indexOf(usersPassord
 			.filter(item => item === event.target.value)[0])
-		console.log(window[Symbol.for('userPasswordIndex')])
 
 		window[Symbol.for('userLoginIndex')] === window[Symbol.for('userPasswordIndex')]
 			? Object.assign(inputElem.nextElementSibling, {

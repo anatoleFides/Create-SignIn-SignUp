@@ -231,7 +231,7 @@ input[type="text" i]:focus-visible{
 	opacity: 0;
 	transition: all .5s ease;
 }
-#not_avtirize {
+.uzer-not_active {
 	z-index: 10;
 	visibility: visible;
 	opacity: 1;
@@ -244,11 +244,11 @@ input[type="text" i]:focus-visible{
 .avtorisation__container-username{
 	z-index: 2;
 }
-/* #avtirize {
+.user-active {
 	z-index: 10;
 	visibility: visible;
 	opacity: 1;
-} */
+}
 .user-name {
 	text-decoration: none;
 	color: #9ACD32;

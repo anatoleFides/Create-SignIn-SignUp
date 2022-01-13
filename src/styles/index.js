@@ -15,6 +15,7 @@ import { avatarStyle } from './avatar'
 import { avatarBodyStyle } from './avatar-body'
 import { forgotPasswordStyle } from './forgot-password'
 import { buttonSubmitStyle } from './button-submit'
+import { buttonDisabledStyle } from './button-disabled'
 
 export {
 	wrapperStyle,
@@ -33,5 +34,6 @@ export {
 	avatarStyle,
 	avatarBodyStyle,
 	forgotPasswordStyle,
-	buttonSubmitStyle
+	buttonSubmitStyle,
+	buttonDisabledStyle
 }

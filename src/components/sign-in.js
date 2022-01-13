@@ -11,7 +11,7 @@ import {
 	errorMessageStyle,
 	errorMessageActiveStyle,
 	forgotPasswordStyle,
-	buttonSubmitStyle
+	buttonDisabledStyle
 } from '../styles'
 
 import {
@@ -22,6 +22,7 @@ import {
 	closeSignIn,
 	loginHandlerSignIn,
 	passwordHandlerSignIn,
+	compareUsersAutorize,
 	authorizeUser,
 	createElem
 } from '../helpers'
@@ -99,8 +100,8 @@ class SignIn extends HTMLElement {
 
 		window[Symbol.for('buttonSignIn')] = Object.assign(this.createElem(container, 'button'), {
 			innerText: 'Sign In',
-			style: buttonSubmitStyle,
-			// id: 'submit-sign_in',
+			style: buttonDisabledStyle,
+			disabled: true,
 			onclick: async function (event) {
 				await authorizeUser ({
 					login: login.value,

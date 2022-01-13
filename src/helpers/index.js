@@ -14,7 +14,8 @@ import { readFile } from './readFile'
 import { getUser } from './getUser'
 import { getListLogins } from './getListLogins'
 import { usersCollection } from './usersCollection'
-// import { disabledSummit } from './disabledSummit'
+// import { compareUsersAutorize } from './compareUsersAutorize'
+// import { disabledSummitSignIn } from './disabledSummitSignIn'
 import { loginHandlerSignIn } from './loginHandlerSignIn'
 import { passwordHandlerSignIn } from './passwordHandlerSignIn'
 import { authorizeUser } from './authorizeUser'
@@ -37,7 +38,8 @@ export {
 	getUser,
 	getListLogins,
 	usersCollection,
-	// disabledSummit,
+	// compareUsersAutorize,
+	// disabledSummitSignIn,
 	loginHandlerSignIn,
 	passwordHandlerSignIn,
 	authorizeUser,

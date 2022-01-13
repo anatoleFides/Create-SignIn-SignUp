@@ -1,7 +1,9 @@
 import { emptiValidationStyle } from './emptiValidationStyle'
 import {
 	errorMessageStyle,
-	errorMessageActiveStyle
+	errorMessageActiveStyle,
+	buttonDisabledStyle,
+	buttonSubmitStyle
 } from '../styles'
 
 export const loginHandlerSignIn = (logintElem, passworElem) => {
@@ -20,11 +22,29 @@ export const loginHandlerSignIn = (logintElem, passworElem) => {
 
 		emptiValidationStyle(logintElem, event.target)
 
-		window[Symbol.for('userLoginIndex')] === window[Symbol.for('userPasswordIndex')]
-			? Object.assign(passworElem.nextElementSibling, {
+		// window[Symbol.for('userLoginIndex')] === window[Symbol.for('userPasswordIndex')]
+		// 	? Object.assign(passworElem.nextElementSibling, {
+		// 		style: errorMessageStyle
+		// 	}) : Object.assign(passworElem.nextElementSibling, {
+		// 		style: errorMessageActiveStyle
+		// 	})
+
+		if (window[Symbol.for('userLoginIndex')] === window[Symbol.for('userPasswordIndex')]) {
+			Object.assign(passworElem.nextElementSibling, {
 				style: errorMessageStyle
-			}) : Object.assign(passworElem.nextElementSibling, {
+			})
+			Object.assign(window[Symbol.for('buttonSignIn')], {
+				disabled: false,
+				style: buttonSubmitStyle
+			})
+		} else {
+			Object.assign(passworElem.nextElementSibling, {
 				style: errorMessageActiveStyle
 			})
+			// Object.assign(window[Symbol.for('buttonSignIn')], {
+			// 	disabled: true,
+			// 	style: buttonDisabledStyle
+			// })
+		}
 	}
 }

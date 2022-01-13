@@ -19,7 +19,7 @@ export const authorizeUser = async objectAutorize => {
 
 			document.getElementsByTagName('sign-in')[0].remove()
 		} else {
-			// shadow.getElementById("submit-sign_in").disabled = false
+			window[Symbol.for('buttonSignIn')].disabled = true
 		}
 	}
 

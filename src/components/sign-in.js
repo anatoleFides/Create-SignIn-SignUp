@@ -97,10 +97,10 @@ class SignIn extends HTMLElement {
 
 		window[Symbol.for('listInputSignIn')] = [login, password]
 
-		const button = Object.assign(this.createElem(container, 'button'), {
+		window[Symbol.for('buttonSignIn')] = Object.assign(this.createElem(container, 'button'), {
 			innerText: 'Sign In',
 			style: buttonSubmitStyle,
-			id: 'submit-sign_in',
+			// id: 'submit-sign_in',
 			onclick: async function (event) {
 				await authorizeUser ({
 					login: login.value,

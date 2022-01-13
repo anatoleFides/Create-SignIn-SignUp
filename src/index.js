@@ -4,9 +4,7 @@ import loginForm from './components/sign-in'
 
 import registrationForm from './components/sign-up'
 
-window.onload = function (event) {
-	getListLogins()
-}
+getListLogins()
 
 openCloseBurgerMenu()
 

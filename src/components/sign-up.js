@@ -141,7 +141,7 @@ class SignUp extends HTMLElement {
 			innerText: 'Invalid file type'
 		})
 
-		avatar.onchenge = (event) => {
+		avatar.onchange = (event) => {
 			readFile(event.target)
 		}
 

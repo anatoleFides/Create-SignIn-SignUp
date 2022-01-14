@@ -1,9 +1,9 @@
-import { usersCollection } from './usersCollection'
+// import { usersCollection } from './usersCollection'
 
 export const authorizeUser = async objectAutorize => {
-	const users = []
-	await usersCollection().then(response => response
-		.map(item => users.push(item)))
+	// const users = []
+	// await usersCollection().then(response => response
+	// 	.map(item => users.push(item)))
 
 	for (const user of users) {
 		if (objectAutorize.compareWith(user) === true) {

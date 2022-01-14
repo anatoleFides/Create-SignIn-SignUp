@@ -20,9 +20,10 @@ import {
 
 import {
 	closeSignIn,
-	loginHandlerSignIn,
-	passwordHandlerSignIn,
-	compareUsersAutorize,
+	testLoginSignIn,
+	// loginHandlerSignIn,
+	// passwordHandlerSignIn,
+	// compareUsersAutorize,
 	authorizeUser,
 	createElem
 } from '../helpers'
@@ -86,15 +87,19 @@ class SignIn extends HTMLElement {
 			return elem
 		}.bind(this))
 
+		login.onchange = function (event) {
+			testLoginSignIn(event.target.value)
+		}
+
 		const forgot__password = Object.assign(this.createElem(container, 'a'), {
 			style: forgotPasswordStyle,
 			innerText: 'Forgot password?',
 			href: '#'
 		})
 
-		loginHandlerSignIn(login, password)
+		// loginHandlerSignIn(login, password)
 
-		passwordHandlerSignIn(password)
+		// passwordHandlerSignIn(password)
 
 		window[Symbol.for('listInputSignIn')] = [login, password]
 

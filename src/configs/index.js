@@ -1,4 +1,4 @@
-import { apiHost } from 'api-host'
+import { apiHost } from './api-host'
 
 export {
 	apiHost

@@ -25,10 +25,10 @@ import {
 import {
 	closeSignUp,
 	valueValidation,
-	loginValidationSignUp,
-	phoneValidation,
-	emailValidation,
-	passwordValidation,
+	validateLogin,
+	validatePhone,
+	validateEmail,
+	validatePassword,
 	readFile,
 	getUser,
 	createElem
@@ -75,8 +75,9 @@ class SignUp extends HTMLElement {
 		const elems__body = Object.assign(this.createElem(forms__body, 'div'), {
 		})
 
-		const [login, telephone, email, password] = [
+		const [login, name, telephone, email, password] = [
 			['text', 'Login', 'Invalid login format'],
+			['text', 'User name', 'Invalid name format'],
 			['tel', '(___)___-__-__', 'Invalid telephone format'],
 			['email', 'e-mail', 'Invalid e-mail format'],
 			['password', 'Password', 'Invalid password format']
@@ -97,13 +98,13 @@ class SignUp extends HTMLElement {
 			return elem
 		}.bind(this))
 
-		loginValidationSignUp(login)
+		validateLogin(login)
 
-		phoneValidation(telephone)
+		validatePhone(telephone)
 
-		emailValidation(email)
+		validateEmail(email)
 
-		passwordValidation(password)
+		validatePassword(password)
 
 		const avatar__container = Object.assign(this.createElem(forms__body, 'div'), {
 			style: avatarContainerStyle
@@ -137,6 +138,7 @@ class SignUp extends HTMLElement {
 			onclick: async function (event) {
 				await getUser ({
 					login: login.value,
+					name: name.value,
 					telephone: telephone.value,
 					email: email.value,
 					password: password.value,

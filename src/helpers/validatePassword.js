@@ -1,11 +1,11 @@
-import { valueValidation } from './valueValidation'
-import { emptiValidationStyle } from './emptiValidationStyle'
+import { valueValidation } from './'
+import { validateEmptyString } from './'
 import {
 	errorMessageStyle,
 	errorMessageActiveStyle
 } from '../styles'
 
-export const passwordValidation = (inputElem) => {
+export const validatePassword = (inputElem) => {
 	inputElem.oninput = (event) => {
 		valueValidation(inputElem, event.target)
 
@@ -17,6 +17,6 @@ export const passwordValidation = (inputElem) => {
 			inputElem.nextElementSibling.style = errorMessageStyle
 		}
 
-		emptiValidationStyle(inputElem, event.target)
+		validateEmptyString(inputElem, event.target)
 	}
 }

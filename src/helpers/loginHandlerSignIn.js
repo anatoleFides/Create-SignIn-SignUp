@@ -1,4 +1,4 @@
-import { emptiValidationStyle } from './emptiValidationStyle'
+import { validateEmptyString } from './'
 import {
 	errorMessageStyle,
 	errorMessageActiveStyle,
@@ -20,7 +20,7 @@ export const loginHandlerSignIn = (logintElem, passworElem) => {
 					style: errorMessageStyle
 				})
 
-		emptiValidationStyle(logintElem, event.target)
+		validateEmptyString(logintElem, event.target)
 
 		// window[Symbol.for('userLoginIndex')] === window[Symbol.for('userPasswordIndex')]
 		// 	? Object.assign(passworElem.nextElementSibling, {

@@ -4,20 +4,22 @@ import { closeSignUp } from './closeSignUp'
 import { resetInputSignIn } from './resetInputSignIn'
 import { resetInputSignUp } from './resetInputSignUp'
 import { valueValidation } from './valueValidation'
-import { emptiValidationStyle } from './emptiValidationStyle'
-import { loginValidationSignUp } from './loginValidationSignUp'
-import { phoneValidation } from './phoneValidation'
-import { emailValidation } from './emailValidation'
-import { passwordValidation } from './passwordValidation'
-import { compareLogin } from './compareLogin'
+import { validateEmptyString } from './validateEmptyString'
+import { validateLogin } from './validateLogin'
+import { validatePhone } from './validatePhone'
+import { validateEmail } from './validateEmail'
+import { validatePassword } from './validatePassword'
+// import { compareLogin } from './compareLogin'
 import { readFile } from './readFile'
 import { getUser } from './getUser'
-import { getListLogins } from './getListLogins'
-import { usersCollection } from './usersCollection'
+import { testLoginSignIn } from './testLoginSignIn'
+import { testLoginSignUp } from './testLoginSignUp'
+// import { getListLogins } from './getListLogins'
+// import { usersCollection } from './usersCollection'
 // import { compareUsersAutorize } from './compareUsersAutorize'
 // import { disabledSummitSignIn } from './disabledSummitSignIn'
-import { loginHandlerSignIn } from './loginHandlerSignIn'
-import { passwordHandlerSignIn } from './passwordHandlerSignIn'
+// import { loginHandlerSignIn } from './loginHandlerSignIn'
+// import { passwordHandlerSignIn } from './passwordHandlerSignIn'
 import { authorizeUser } from './authorizeUser'
 import { createElem } from './createElem'
 
@@ -28,20 +30,22 @@ export {
 	resetInputSignIn,
 	resetInputSignUp,
 	valueValidation,
-	emptiValidationStyle,
-	loginValidationSignUp,
-	phoneValidation,
-	emailValidation,
-	passwordValidation,
-	compareLogin,
+	validateEmptyString,
+	validateLogin,
+	validatePhone,
+	validateEmail,
+	validatePassword,
+	// compareLogin,
 	readFile,
 	getUser,
-	getListLogins,
-	usersCollection,
+	testLoginSignIn,
+	testLoginSignUp,
+	// getListLogins,
+	// usersCollection,
 	// compareUsersAutorize,
 	// disabledSummitSignIn,
-	loginHandlerSignIn,
-	passwordHandlerSignIn,
+	// loginHandlerSignIn,
+	// passwordHandlerSignIn,
 	authorizeUser,
 	createElem
 }

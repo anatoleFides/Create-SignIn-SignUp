@@ -1,1 +1,1 @@
-export const apiHost = () => {}
+export const apiHost = 'https://garevna-rest-api.glitch.me'

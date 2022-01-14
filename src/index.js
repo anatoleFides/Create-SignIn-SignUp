@@ -4,7 +4,7 @@ import loginForm from './components/sign-in'
 
 import registrationForm from './components/sign-up'
 
-getListLogins()
+// getListLogins()
 
 openCloseBurgerMenu()
 

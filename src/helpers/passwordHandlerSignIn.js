@@ -1,5 +1,5 @@
-import { usersCollection } from './usersCollection'
-import { emptiValidationStyle } from './emptiValidationStyle'
+import { usersCollection } from './'
+import { validateEmptyString } from './'
 import {
 	errorMessageStyle,
 	errorMessageActiveStyle,
@@ -8,10 +8,10 @@ import {
 } from '../styles'
 
 export const passwordHandlerSignIn = (inputElem) => {
-	const users = []
-	usersCollection().then(response => response
-		.map(item => users.push(item)))
-	console.log(users)
+	// const users = []
+	// usersCollection().then(response => response
+	// 	.map(item => users.push(item)))
+	// console.log(users)
 
 	inputElem.oninput = (event) => {
 		const usersPassord = users.map(item => item.password)
@@ -32,11 +32,11 @@ export const passwordHandlerSignIn = (inputElem) => {
 					style: errorMessageActiveStyle
 			})
 			Object.assign(window[Symbol.for('buttonSignIn')], {
-				disabled: true,
+				// disabled: true,
 				style: buttonDisabledStyle
 			})
 		}
 
-		emptiValidationStyle(inputElem, event.target)
+		validateEmptyString(inputElem, event.target)
 	}
 }

@@ -1,6 +1,6 @@
 import { errorMessageStyle } from '../styles'
 
-export const emptiValidationStyle = (inputElem, callbackValue) => {
+export const validateEmptyString = (inputElem, callbackValue) => {
 	if (callbackValue.value === '') {
 		inputElem.nextElementSibling.style = errorMessageStyle
 	}

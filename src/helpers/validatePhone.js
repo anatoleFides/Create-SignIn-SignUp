@@ -1,22 +1,23 @@
-import { valueValidation } from './'
-import { validateEmptyString } from './'
+import {
+	fillFormStyle,
+	validateEmptyString
+} from './'
+
 import {
 	errorMessageStyle,
 	errorMessageActiveStyle
 } from '../styles'
 
-export const validatePhone = (inputElem) => {
-	inputElem.oninput = (event) => {
-		valueValidation(inputElem, event.target)
+export const validatePhone = (inputElem, value) => {
+	fillFormStyle(inputElem, value)
 
-		let phoneformat = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/
-		
-		event.target.value.match(phoneformat) ? Object.assign(inputElem.nextElementSibling, {
-			style: errorMessageStyle
-		}) : Object.assign(inputElem.nextElementSibling, {
-			style: errorMessageActiveStyle
-		})
+	let phoneformat = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/
+	
+	value.match(phoneformat) ? Object.assign(inputElem.nextElementSibling, {
+		style: errorMessageStyle
+	}) : Object.assign(inputElem.nextElementSibling, {
+		style: errorMessageActiveStyle
+	})
 
-		validateEmptyString(inputElem, event.target)
-	}
+	validateEmptyString(inputElem, value)
 }

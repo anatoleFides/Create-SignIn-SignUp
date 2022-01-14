@@ -3,7 +3,7 @@ import {
 	inputStyle
 } from '../styles'
 
-export const valueValidation = (inputElem, callbackValue) => {
-		callbackValue.value.length !== 0
+export const fillFormStyle = (inputElem, property) => {
+		property.length !== 0
 			? inputElem.style = inputStyle : inputElem.style = inputValidationStyle
 	}

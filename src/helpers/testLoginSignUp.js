@@ -6,21 +6,12 @@ export const testLoginSignUp = async (inputElem, login) => {
 		
 		console.log(login)
 
-// 		response.status === 200
-// 			? Object.assign(inputElem.nextElementSibling, {
-// 				textContent: 'login exists',
-// 				style: errorMessageActiveStyle
-// 			}) : Object.assign(inputElem.nextElementSibling, {
-// 				textContent: 'Invalid login format'
-// 		})
-// console.log(response.status)
-			console.log(response)
-	// return response.error ? null : response
+		console.log(response)
 	return response.error 
 		? Object.assign(inputElem.nextElementSibling, {
 			textContent: 'Invalid login format'
-		}) : Object.assign(inputElem.nextElementSibling, {
-				textContent: 'login exists',
-				style: errorMessageActiveStyle
-			})
+			}) : Object.assign(inputElem.nextElementSibling, {
+					textContent: 'login exists',
+					style: errorMessageActiveStyle
+				})
 }

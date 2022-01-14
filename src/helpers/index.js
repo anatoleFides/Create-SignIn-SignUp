@@ -3,9 +3,10 @@ import { closeSignIn } from './closeSignIn'
 import { closeSignUp } from './closeSignUp'
 import { resetInputSignIn } from './resetInputSignIn'
 import { resetInputSignUp } from './resetInputSignUp'
-import { valueValidation } from './valueValidation'
+import { fillFormStyle } from './fillFormStyle'
 import { validateEmptyString } from './validateEmptyString'
 import { validateLogin } from './validateLogin'
+import { validateName } from './validateName'
 import { validatePhone } from './validatePhone'
 import { validateEmail } from './validateEmail'
 import { validatePassword } from './validatePassword'
@@ -14,10 +15,7 @@ import { readFile } from './readFile'
 import { getUser } from './getUser'
 import { testLoginSignIn } from './testLoginSignIn'
 import { testLoginSignUp } from './testLoginSignUp'
-// import { getListLogins } from './getListLogins'
-// import { usersCollection } from './usersCollection'
 // import { compareUsersAutorize } from './compareUsersAutorize'
-// import { disabledSummitSignIn } from './disabledSummitSignIn'
 // import { loginHandlerSignIn } from './loginHandlerSignIn'
 // import { passwordHandlerSignIn } from './passwordHandlerSignIn'
 import { authorizeUser } from './authorizeUser'
@@ -29,9 +27,10 @@ export {
 	closeSignUp,
 	resetInputSignIn,
 	resetInputSignUp,
-	valueValidation,
+	fillFormStyle,
 	validateEmptyString,
 	validateLogin,
+	validateName,
 	validatePhone,
 	validateEmail,
 	validatePassword,
@@ -40,10 +39,7 @@ export {
 	getUser,
 	testLoginSignIn,
 	testLoginSignUp,
-	// getListLogins,
-	// usersCollection,
 	// compareUsersAutorize,
-	// disabledSummitSignIn,
 	// loginHandlerSignIn,
 	// passwordHandlerSignIn,
 	authorizeUser,

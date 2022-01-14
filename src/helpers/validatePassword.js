@@ -1,22 +1,23 @@
-import { valueValidation } from './'
-import { validateEmptyString } from './'
+import {
+	fillFormStyle,
+	validateEmptyString
+} from './'
+
 import {
 	errorMessageStyle,
 	errorMessageActiveStyle
 } from '../styles'
 
-export const validatePassword = (inputElem) => {
-	inputElem.oninput = (event) => {
-		valueValidation(inputElem, event.target)
+export const validatePassword = (inputElem, value) => {
+	fillFormStyle(inputElem, value)
 
-		if (event.target.value.length < 8) {
-			event.target.style.color = '#f00'
-			inputElem.nextElementSibling.style = errorMessageActiveStyle
-		} else { 
-			event.target.style.color = '#090'
-			inputElem.nextElementSibling.style = errorMessageStyle
-		}
-
-		validateEmptyString(inputElem, event.target)
+	if (value.length < 8) {
+		inputElem.style.color = '#f00'
+		inputElem.nextElementSibling.style = errorMessageActiveStyle
+	} else { 
+		inputElem.style.color = '#090'
+		inputElem.nextElementSibling.style = errorMessageStyle
 	}
+
+	validateEmptyString(inputElem, value)
 }

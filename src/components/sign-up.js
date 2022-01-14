@@ -26,6 +26,7 @@ import {
 	closeSignUp,
 	valueValidation,
 	validateLogin,
+	validateName,
 	validatePhone,
 	validateEmail,
 	validatePassword,
@@ -98,13 +99,25 @@ class SignUp extends HTMLElement {
 			return elem
 		}.bind(this))
 
-		validateLogin(login)
+		login.onchange = (event) => {
+			validateLogin(event.target, event.target.value)
+		}
 
-		validatePhone(telephone)
+		name.oninput = (event) => {
+			validateName(event.target, event.target.value)
+		}
 
-		validateEmail(email)
+		telephone.oninput = (event) => {
+			validatePhone(event.target, event.target.value)
+		}
 
-		validatePassword(password)
+		email.oninput = (event) => {
+			validateEmail(event.target, event.target.value)
+		}
+
+		password.oninput = (event) => {
+			validatePassword(event.target, event.target.value)
+		}
 
 		const avatar__container = Object.assign(this.createElem(forms__body, 'div'), {
 			style: avatarContainerStyle
@@ -128,7 +141,9 @@ class SignUp extends HTMLElement {
 			innerText: 'Invalid file type'
 		})
 
-		readFile(avatar)
+		avatar.onchenge = (event) => {
+			readFile(event.target)
+		}
 
 		window[Symbol.for('listInputSignUp')] = [login, telephone, email, password]
 

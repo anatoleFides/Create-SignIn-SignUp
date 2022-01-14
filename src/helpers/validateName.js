@@ -1,6 +1,6 @@
 import {
 	fillFormStyle,
-	validateEmptyString
+	validateEmptyString,
 } from './'
 
 import {
@@ -8,13 +8,11 @@ import {
 	errorMessageActiveStyle
 } from '../styles'
 
-export const validateEmail = (inputElem, value) => {
+export const validateName = (inputElem, value) => {
 	fillFormStyle(inputElem, value)
 
-	let emailformat = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu
-
-	value.match(emailformat) 
-		? Object.assign(inputElem.nextElementSibling, {
+	let letters = /^[A-Za-z]{0,12}$/
+	value.match(letters) ? Object.assign(inputElem.nextElementSibling, {
 			style: errorMessageStyle
 		}) : Object.assign(inputElem.nextElementSibling, {
 			style: errorMessageActiveStyle

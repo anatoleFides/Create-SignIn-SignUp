@@ -6,7 +6,5 @@ export const authorizeUser = async objectAutorize => {
 	document.getElementById("user-name").textContent = objectAutorize.login
 	document.getElementById("user-avatar").src = avatarHandler()
 
-	resetInputSignIn()
-
 	document.getElementsByTagName('sign-in')[0].remove()
 }

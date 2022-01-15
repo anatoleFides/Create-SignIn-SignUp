@@ -33,7 +33,7 @@ import {
 class SignIn extends HTMLElement {
 	constructor () {
 		super()
-		// this.handlers = [loginHandlerSignIn, passwordHandlerSignIn]
+		
 		const shadow = this.attachShadow({ mode: 'closed' })
 		
 		const wrapper = Object.assign(this.createElem(shadow, 'div'), {

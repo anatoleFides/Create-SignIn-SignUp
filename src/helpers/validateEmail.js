@@ -13,10 +13,19 @@ export const validateEmail = (inputElem, value) => {
 
 	let emailformat = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu
 
-	value.match(emailformat) 
-		? Object.assign(inputElem.nextElementSibling, {
-			style: errorMessageStyle
-		}) : Object.assign(inputElem.nextElementSibling, {
+	// value.match(emailformat) 
+	// 	? Object.assign(inputElem.nextElementSibling, {
+	// 		style: errorMessageStyle
+	// 	}) : Object.assign(inputElem.nextElementSibling, {
+	// 		style: errorMessageActiveStyle
+	// 	})
+
+		if (value.match(emailformat)) {
+			Object.assign(inputElem.nextElementSibling, {
+				style: errorMessageStyle
+			})
+			// return console.log(true)
+		} else Object.assign(inputElem.nextElementSibling, {
 			style: errorMessageActiveStyle
 		})
 

@@ -14,7 +14,8 @@ import {
 	avatarBodyStyle,
 	errorMessageStyle,
 	errorMessageActiveStyle,
-	buttonSubmitStyle
+	buttonSubmitStyle,
+	buttonDisabledStyle
 } from '../styles'
 
 import {
@@ -31,8 +32,8 @@ import {
 	validateEmail,
 	validatePassword,
 	readFile,
-	getUser,
-	createElem
+	createElem,
+	createUser
 } from '../helpers'
 
 class SignUp extends HTMLElement {
@@ -145,14 +146,26 @@ class SignUp extends HTMLElement {
 			readFile(event.target)
 		}
 
-		window[Symbol.for('listInputSignUp')] = [login, telephone, email, password]
+		window[Symbol.for('listInputSignUp')] = [login, name, telephone, email, password]
+
+		// const checkCorrectFillForms = async () => {
+		// 	await console.log(validateName())
+
+		// 	if (validateName() === true) {
+		// 		console.log('wow')
+		// 		Object.assign(button, {
+		// 			disabled: false,
+		// 			style: buttonSubmitStyle
+		// 		})
+		// 	}
+		// }
 
 		const button = Object.assign(this.createElem(container, 'button'), {
+			// disabled: true,
 			innerText: 'Sign Up',
 			style: buttonSubmitStyle,
 			onclick: async function (event) {
-				await getUser ({
-					login: login.value,
+				await createUser (login.value, {
 					name: name.value,
 					telephone: telephone.value,
 					email: email.value,

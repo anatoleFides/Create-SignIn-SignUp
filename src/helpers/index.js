@@ -12,7 +12,7 @@ import { validateEmail } from './validateEmail'
 import { validatePassword } from './validatePassword'
 // import { compareLogin } from './compareLogin'
 import { readFile } from './readFile'
-import { getUser } from './getUser'
+import { createUser } from './createUser'
 import { testLoginSignIn } from './testLoginSignIn'
 import { testLoginSignUp } from './testLoginSignUp'
 // import { compareUsersAutorize } from './compareUsersAutorize'
@@ -36,7 +36,7 @@ export {
 	validatePassword,
 	// compareLogin,
 	readFile,
-	getUser,
+	createUser,
 	testLoginSignIn,
 	testLoginSignUp,
 	// compareUsersAutorize,

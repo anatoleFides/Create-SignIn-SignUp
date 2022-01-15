@@ -11,10 +11,19 @@ import {
 export const validateName = (inputElem, value) => {
 	fillFormStyle(inputElem, value)
 
-	let letters = /^[A-Za-z]{0,12}$/
-	value.match(letters) ? Object.assign(inputElem.nextElementSibling, {
-			style: errorMessageStyle
-		}) : Object.assign(inputElem.nextElementSibling, {
+	let letters = /^[A-Za-z]{2,12}$/
+	// value.match(letters) ? Object.assign(inputElem.nextElementSibling, {
+	// 		style: errorMessageStyle
+	// 	}) : Object.assign(inputElem.nextElementSibling, {
+	// 		style: errorMessageActiveStyle
+	// 	})
+
+		if (value.match(letters)) {
+			Object.assign(inputElem.nextElementSibling, {
+				style: errorMessageStyle
+			})
+			// return console.log(true)
+		} else Object.assign(inputElem.nextElementSibling, {
 			style: errorMessageActiveStyle
 		})
 

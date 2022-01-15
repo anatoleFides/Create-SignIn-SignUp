@@ -23,10 +23,10 @@ export const passwordHandlerSignIn = (inputElem) => {
 			Object.assign(inputElem.nextElementSibling, {
 				style: errorMessageStyle
 			})
-			// Object.assign(window[Symbol.for('buttonSignIn')], {
-			// 	disabled: false,
-			// 	style: buttonSubmitStyle
-			// })
+			Object.assign(window[Symbol.for('buttonSignIn')], {
+				disabled: false,
+				style: buttonSubmitStyle
+			})
 		} else {
 			Object.assign(inputElem.nextElementSibling, {
 					style: errorMessageActiveStyle

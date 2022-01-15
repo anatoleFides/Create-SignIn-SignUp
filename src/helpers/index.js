@@ -15,7 +15,7 @@ import { readFile } from './readFile'
 import { createUser } from './createUser'
 import { testLoginSignIn } from './testLoginSignIn'
 import { testLoginSignUp } from './testLoginSignUp'
-// import { compareUsersAutorize } from './compareUsersAutorize'
+import { testPassordSignIn } from './testPassordSignIn'
 // import { loginHandlerSignIn } from './loginHandlerSignIn'
 // import { passwordHandlerSignIn } from './passwordHandlerSignIn'
 import { authorizeUser } from './authorizeUser'
@@ -39,7 +39,7 @@ export {
 	createUser,
 	testLoginSignIn,
 	testLoginSignUp,
-	// compareUsersAutorize,
+	testPassordSignIn,
 	// loginHandlerSignIn,
 	// passwordHandlerSignIn,
 	authorizeUser,

@@ -1,21 +1,18 @@
-// import { usersCollection } from './usersCollection'
+// import { apiHost } from '../configs'
+import { avatarHandler } from '../data-handlers'
 
 export const authorizeUser = async objectAutorize => {
-	// const users = []
-	// await usersCollection().then(response => response
-	// 	.map(item => users.push(item)))
+	// const response = await (await fetch(`${apiHost}/user/${objectAutorize.login}`)).json()
 
-	for (const user of users) {
-		if (objectAutorize.compareWith(user) === true) {
-			const userAutorize = users[users.indexOf(user)]
-			console.log(userAutorize)
+// console.log(objectAutorize.compareWith(response))
+// 		if (objectAutorize.compareWith(response) === true) {
 
-			document.getElementById("not_avtirize").classList.remove('uzer-not_active')
-			document.getElementById("avtirize").classList.add('user-active')
-			document.getElementById("user-name").textContent = userAutorize.login
-			document.getElementById("user-avatar").src = userAutorize.avatar
 
-			document.getElementsByTagName('sign-in')[0].remove()
-		}
-	}
+	document.getElementById("not_avtirize").classList.remove('uzer-not_active')
+	document.getElementById("avtirize").classList.add('user-active')
+	document.getElementById("user-name").textContent = objectAutorize.login
+	document.getElementById("user-avatar").src = avatarHandler()
+
+	document.getElementsByTagName('sign-in')[0].remove()
 }
+// }

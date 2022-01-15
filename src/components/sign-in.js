@@ -18,7 +18,9 @@ import {
 	logoImg
 } from '../assets'
 
-import { loginHandler } from '../data-handlers'
+import {
+	loginHandler,
+} from '../data-handlers'
 
 import {
 	closeSignIn,
@@ -89,17 +91,16 @@ class SignIn extends HTMLElement {
 
 		login.onchange = function (event) {
 			loginHandler(event.target.value)
-			testLoginSignIn(loginHandler())
+			testLoginSignIn(password, loginHandler())
 		}
 
 		password.oninput = function (event) {
-			testPassordSignIn(event.target, event.target.value, loginHandler())
+			testPassordSignIn(event.target, event.target.value)
 		}
 
 		const forgot__password = Object.assign(this.createElem(container, 'a'), {
 			style: forgotPasswordStyle,
 			innerText: 'Forgot password?',
-			href: '#'
 		})
 
 		window[Symbol.for('listInputSignIn')] = [login, password]
@@ -109,7 +110,7 @@ class SignIn extends HTMLElement {
 			style: buttonDisabledStyle,
 			disabled: true,
 			onclick: async function (event) {
-				await authorizeUser ({
+				await authorizeUser({
 					login: login.value,
 					password: password.value
 				})

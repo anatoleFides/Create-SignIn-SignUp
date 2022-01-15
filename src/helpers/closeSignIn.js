@@ -1,4 +1,4 @@
-import { resetInputSignIn } from './resetInputSignIn'
+import { resetInputSignIn } from './'
 
 export const closeSignIn = (event) => {
 	resetInputSignIn()

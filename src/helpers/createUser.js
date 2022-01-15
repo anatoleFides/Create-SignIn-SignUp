@@ -1,6 +1,6 @@
 import { apiHost } from '../configs'
 
-import { resetInputSignUp } from './resetInputSignUp'
+import { resetInputSignUp } from './'
 
 export const createUser = async (login, user) => {
 	const response = await fetch(`${apiHost}/user/${login}`, {

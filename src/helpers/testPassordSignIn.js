@@ -1,5 +1,3 @@
-// import { apiHost } from '../configs'
-
 import { passwordHandler } from '../data-handlers'
 
 import {

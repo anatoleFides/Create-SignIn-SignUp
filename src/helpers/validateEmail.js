@@ -24,7 +24,7 @@ export const validateEmail = (inputElem, value) => {
 			Object.assign(inputElem.nextElementSibling, {
 				style: errorMessageStyle
 			})
-			// return console.log(true)
+			return console.log(true)
 		} else Object.assign(inputElem.nextElementSibling, {
 			style: errorMessageActiveStyle
 		})

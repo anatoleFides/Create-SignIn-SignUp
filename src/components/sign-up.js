@@ -149,9 +149,9 @@ class SignUp extends HTMLElement {
 		window[Symbol.for('listInputSignUp')] = [login, name, telephone, email, password]
 
 		// const checkCorrectFillForms = async () => {
-		// 	await console.log(validateName())
+		// 	await console.log(validateName(name.value))
 
-		// 	if (validateName() === true) {
+		// 	if (validateName(name.value) === true) {
 		// 		console.log('wow')
 		// 		Object.assign(button, {
 		// 			disabled: false,
@@ -161,9 +161,10 @@ class SignUp extends HTMLElement {
 		// }
 
 		const button = Object.assign(this.createElem(container, 'button'), {
-			// disabled: true,
+			disabled: true,
 			innerText: 'Sign Up',
 			style: buttonSubmitStyle,
+			// style: buttonDisabledStyle,
 			onclick: async function (event) {
 				await createUser (login.value, {
 					name: name.value,

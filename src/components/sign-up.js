@@ -100,25 +100,34 @@ class SignUp extends HTMLElement {
 			return elem
 		}.bind(this))
 
-		login.onchange = (event) => {
-			validateLogin(event.target, event.target.value)
-		}
+		// login.onchange = (event) => {
+		// 	validateLogin(event.target, event.target.value)
+		// }
 
-		name.oninput = (event) => {
-			validateName(event.target, event.target.value)
-		}
+		// name.oninput = (event) => {
+			
 
-		telephone.oninput = (event) => {
-			validatePhone(event.target, event.target.value)
-		}
+		// 	if (validateName(event.target, event.target.value) === true) {
+		// 		console.log('wow')
+		// 		Object.assign(button, {
+		// 			disabled: false,
+		// 			style: buttonSubmitStyle
+		// 		})
+		// 	}
+		// }
 
-		email.oninput = (event) => {
-			validateEmail(event.target, event.target.value)
-		}
+		// telephone.oninput = (event) => {
+		// 	validatePhone(event.target, event.target.value)
+		// }
 
-		password.oninput = (event) => {
-			validatePassword(event.target, event.target.value)
-		}
+		// email.oninput = (event) => {
+		// 	validateEmail(event.target, event.target.value)
+		// }
+
+		// password.oninput = (event) => {
+		// 	validatePassword(event.target, event.target.value)
+		// }
+
 
 		const avatar__container = Object.assign(this.createElem(forms__body, 'div'), {
 			style: avatarContainerStyle
@@ -142,29 +151,48 @@ class SignUp extends HTMLElement {
 			innerText: 'Invalid file type'
 		})
 
-		avatar.onchange = (event) => {
-			readFile(event.target)
+		login.onchange = (event) => {
+			if (validateLogin(event.target, event.target.value) === true) {
+				name.oninput = (event) => {
+					if (validateName(event.target, event.target.value) === true) {
+						telephone.oninput = (event) => {
+							if (validatePhone(event.target, event.target.value) === true) {
+								email.oninput = (event) => {
+									if (validateEmail(event.target, event.target.value) === true) {
+										password.oninput = (event) => {
+											if (validatePassword(event.target, event.target.value) === true) {
+												avatar.onchange = (event) => {
+													if (readFile(event.target) === true) {
+														console.log('wow')
+														Object.assign(button, {
+															disabled: false,
+															style: buttonSubmitStyle
+														})
+													} else {
+														console.log('bad')
+														Object.assign(button, {
+															disabled: true,
+															style: buttonDisabledStyle
+														})
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
 		}
 
 		window[Symbol.for('listInputSignUp')] = [login, name, telephone, email, password]
 
-		// const checkCorrectFillForms = async () => {
-		// 	await console.log(validateName(name.value))
-
-		// 	if (validateName(name.value) === true) {
-		// 		console.log('wow')
-		// 		Object.assign(button, {
-		// 			disabled: false,
-		// 			style: buttonSubmitStyle
-		// 		})
-		// 	}
-		// }
-
 		const button = Object.assign(this.createElem(container, 'button'), {
 			disabled: true,
 			innerText: 'Sign Up',
-			style: buttonSubmitStyle,
-			// style: buttonDisabledStyle,
+			style: buttonDisabledStyle,
 			onclick: async function (event) {
 				await createUser (login.value, {
 					name: name.value,

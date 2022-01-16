@@ -8,6 +8,8 @@ import {
 export const readFile = (value) => {
 	if (value.files[0].type.indexOf('image')) {
 		window[Symbol.for('error__message-avatar')].style = errorMessageActiveStyle
+
+		return false
 	} else {
 		window[Symbol.for('error__message-avatar')].style = errorMessageStyle
 		const reader = new FileReader
@@ -15,5 +17,7 @@ export const readFile = (value) => {
 			window[Symbol.for('photo')].src = ev.target.result
 		}
 		reader.readAsDataURL(value.files[0])
+
+		return true
 	}
 }

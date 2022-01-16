@@ -24,10 +24,15 @@ export const validateEmail = (inputElem, value) => {
 			Object.assign(inputElem.nextElementSibling, {
 				style: errorMessageStyle
 			})
-			return console.log(true)
-		} else Object.assign(inputElem.nextElementSibling, {
-			style: errorMessageActiveStyle
-		})
+
+			return true
+		} else {
+			Object.assign(inputElem.nextElementSibling, {
+				style: errorMessageActiveStyle
+			})
+
+			return false
+		}
 
 	validateEmptyString(inputElem, value)
 }

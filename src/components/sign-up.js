@@ -100,35 +100,6 @@ class SignUp extends HTMLElement {
 			return elem
 		}.bind(this))
 
-		// login.onchange = (event) => {
-		// 	validateLogin(event.target, event.target.value)
-		// }
-
-		// name.oninput = (event) => {
-			
-
-		// 	if (validateName(event.target, event.target.value) === true) {
-		// 		console.log('wow')
-		// 		Object.assign(button, {
-		// 			disabled: false,
-		// 			style: buttonSubmitStyle
-		// 		})
-		// 	}
-		// }
-
-		// telephone.oninput = (event) => {
-		// 	validatePhone(event.target, event.target.value)
-		// }
-
-		// email.oninput = (event) => {
-		// 	validateEmail(event.target, event.target.value)
-		// }
-
-		// password.oninput = (event) => {
-		// 	validatePassword(event.target, event.target.value)
-		// }
-
-
 		const avatar__container = Object.assign(this.createElem(forms__body, 'div'), {
 			style: avatarContainerStyle
 		})
@@ -152,39 +123,29 @@ class SignUp extends HTMLElement {
 		})
 
 		login.onchange = (event) => {
-			if (validateLogin(event.target, event.target.value) === true) {
-				name.oninput = (event) => {
-					if (validateName(event.target, event.target.value) === true) {
-						telephone.oninput = (event) => {
-							if (validatePhone(event.target, event.target.value) === true) {
-								email.oninput = (event) => {
-									if (validateEmail(event.target, event.target.value) === true) {
-										password.oninput = (event) => {
-											if (validatePassword(event.target, event.target.value) === true) {
-												avatar.onchange = (event) => {
-													if (readFile(event.target) === true) {
-														console.log('wow')
-														Object.assign(button, {
-															disabled: false,
-															style: buttonSubmitStyle
-														})
-													} else {
-														console.log('bad')
-														Object.assign(button, {
+			validateLogin(event.target, event.target.value) === true 
+			? name.oninput = (event) => {
+				validateName(event.target, event.target.value) === true
+					? telephone.oninput = (event) => {
+						validatePhone(event.target, event.target.value) === true
+							? email.oninput = (event) => {
+								validateEmail(event.target, event.target.value) === true
+									? password.oninput = (event) => {
+										validatePassword(event.target, event.target.value) === true
+											? avatar.onchange = (event) => {
+												readFile(event.target) === true 
+													? Object.assign(button, {
+														disabled: false,
+														style: buttonSubmitStyle
+													}) : Object.assign(button, {
 															disabled: true,
 															style: buttonDisabledStyle
 														})
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
+											} : null
+									} : null
+							} : null
+					} : null
+			} : null
 		}
 
 		window[Symbol.for('listInputSignUp')] = [login, name, telephone, email, password]

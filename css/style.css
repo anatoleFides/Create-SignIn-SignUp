@@ -246,14 +246,27 @@ input[type="text" i]:focus-visible{
 .avtorisation__container-username{
 	z-index: 2;
 }
-#not_avtirize{
+#not_authorize{
+	display: flex;
+	justify-content: end;
+}
+#authorize{
 	display: flex;
 	justify-content: end;
 }
 @media (max-width: 530px){
-	#not_avtirize {
+	#not_authorize {
 		flex-direction: column;
-		align-items: end;
+		align-items: center;
+	}
+}
+@media (max-width: 530px){
+	#authorize {
+		flex-direction: column;
+		align-items: center;
+	}
+	.user-name:first-child {
+		margin-bottom: 8px;
 	}
 }
 .uzer-not_active {
@@ -271,6 +284,10 @@ input[type="text" i]:focus-visible{
 	color: #9ACD32;
 	font-size: 20px;
 	font-weight: 700;
+}
+.exit{
+	font-size: 14px;
+	color: #8A2BE2;
 }
 @media (max-width: 750px){
 	.user-name {

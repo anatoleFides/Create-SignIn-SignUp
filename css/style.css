@@ -252,21 +252,12 @@ input[type="text" i]:focus-visible{
 }
 #authorize{
 	display: flex;
-	justify-content: end;
+	justify-content:center;
 }
-@media (max-width: 530px){
+@media (max-width: 600px){
 	#not_authorize {
 		flex-direction: column;
 		align-items: center;
-	}
-}
-@media (max-width: 530px){
-	#authorize {
-		flex-direction: column;
-		align-items: center;
-	}
-	.user-name:first-child {
-		margin-bottom: 8px;
 	}
 }
 .uzer-not_active {
@@ -284,14 +275,27 @@ input[type="text" i]:focus-visible{
 	color: #9ACD32;
 	font-size: 20px;
 	font-weight: 700;
+	margin: 0 20px 0 0;
 }
 .exit{
 	font-size: 14px;
-	color: #8A2BE2;
+	color: #fff;
+	padding: 2px 4px;
+	background: #8A2BE2;
+	border-radius: 4px;
 }
 @media (max-width: 750px){
 	.user-name {
 		font-size: 16px;
+	}
+}
+@media (max-width: 600px){
+	#authorize {
+		flex-direction: column;
+		align-items: center;
+	}
+	.user-name {
+		margin: 0 0 8px 0;
 	}
 }
 .avtorisation__link {
@@ -311,15 +315,15 @@ input[type="text" i]:focus-visible{
 @media (max-width: 750px){
 	.avtorisation__link {
 		font-size: 14px;
-		padding: 2px;
+		padding: 2px 1px;
 		min-width: 62px;
 	}
 }
-@media (max-width: 530px){
+@media (max-width: 600px){
 	.avtorisation__link {
 		margin: 0 4px 0 0;
 		font-size: 12px;
-		min-width: 53px;
+		min-width: 52px;
 	}
 	.avtorisation__link:first-child{
 		margin-bottom: 8px;

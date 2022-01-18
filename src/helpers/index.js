@@ -16,6 +16,7 @@ import { testLoginSignIn } from './testLoginSignIn'
 import { testLoginSignUp } from './testLoginSignUp'
 import { testPassordSignIn } from './testPassordSignIn'
 import { authorizeUser } from './authorizeUser'
+import { signOut } from './signOut'
 import { createElem } from './createElem'
 
 export {
@@ -37,5 +38,6 @@ export {
 	testLoginSignUp,
 	testPassordSignIn,
 	authorizeUser,
+	signOut,
 	createElem
 }

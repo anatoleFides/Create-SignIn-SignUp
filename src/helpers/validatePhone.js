@@ -13,6 +13,7 @@ export const validatePhone = (inputElem, value) => {
 
 	let phoneformat = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/
 
+
 	if (value.match(phoneformat)) {
 		Object.assign(inputElem.nextElementSibling, {
 		style: errorMessageStyle

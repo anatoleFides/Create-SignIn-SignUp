@@ -80,7 +80,7 @@ class SignUp extends HTMLElement {
 		const [login, name, telephone, email, password] = [
 			['text', 'Login', 'Invalid login format'],
 			['text', 'User name', 'Invalid name format'],
-			['tel', '(___)___-__-__', 'Invalid telephone format'],
+			['tel', '(0XX)XXX-XX-XX', 'Invalid telephone format'],
 			['email', 'e-mail', 'Invalid e-mail format'],
 			['password', 'Password', 'Invalid password format']
 		].map(function (item) {

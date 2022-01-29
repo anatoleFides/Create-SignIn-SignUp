@@ -81,18 +81,19 @@ class SignUp extends HTMLElement {
 		})
 
 		const [login, name, telephone, email, password] = [
-			['text', 'Login', 'Invalid login format'],
-			['text', 'User name', 'Invalid name format'],
-			['tel', '(0XX)XXX-XX-XX', 'Invalid telephone format'],
-			['email', 'e-mail', 'Invalid e-mail format'],
-			['password', 'Password', 'Invalid password format']
+			['text', 'Login', 'Invalid login format', false],
+			['text', 'User name', 'Invalid name format', true],
+			['tel', '(0XX)XXX-XX-XX', 'Invalid telephone format', true],
+			['email', 'e-mail', 'Invalid e-mail format', true],
+			['password', 'Password', 'Invalid password format', true]
 		].map(function (item) {
 			const elem__container = this.createElem(elems__body, 'div')
 
 			const elem = Object.assign(this.createElem(elem__container, 'input'), {
 				type: item[0],
 				placeholder: item[1],
-				style: inputStyle
+				style: inputStyle,
+				disabled: item[3]
 			})
 
 			const error__message = Object.assign(this.createElem(elem__container, 'p'), {
@@ -155,32 +156,6 @@ class SignUp extends HTMLElement {
 						style: buttonDisabledStyle
 					})
 		}
-
-		// login.onchange = (event) => {
-		// 	validateLogin(event.target, event.target.value) === true 
-		// 	? name.oninput = (event) => {
-		// 		validateName(event.target, event.target.value) === true
-		// 			? telephone.oninput = (event) => {
-		// 				validatePhone(event.target, event.target.value) === true
-		// 					? email.oninput = (event) => {
-		// 						validateEmail(event.target, event.target.value) === true
-		// 							? password.oninput = (event) => {
-		// 								validatePassword(event.target, event.target.value) === true
-		// 									? avatar.onchange = (event) => {
-		// 										readFile(event.target) === true 
-		// 											? Object.assign(button, {
-		// 												disabled: false,
-		// 												style: buttonSubmitStyle
-		// 											}) : Object.assign(button, {
-		// 													disabled: true,
-		// 													style: buttonDisabledStyle
-		// 												})
-		// 									} : null
-		// 							} : null
-		// 					} : null
-		// 			} : null
-		// 	} : null
-		// }
 
 		window[Symbol.for('listInputSignUp')] = [login, name, telephone, email, password]
 

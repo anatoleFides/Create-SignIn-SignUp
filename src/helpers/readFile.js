@@ -6,8 +6,6 @@ import {
 } from '../styles'
 
 export const readFile = (value) => {
-	console.log(value.files[0])
-	// console.log(value.files[0].type.indexOf('image'))
 	if (value.files[0].type.indexOf('image')) {
 		Object.assign(window[Symbol.for('error__message-avatar')], {
 			style: errorMessageActiveStyle,
@@ -18,10 +16,10 @@ export const readFile = (value) => {
 	} else {
 		window[Symbol.for('error__message-avatar')].style = errorMessageStyle
 		
-		if (value.files[0].size > 90000) {
+		if (value.files[0].size > 300000) {
 			Object.assign(window[Symbol.for('error__message-avatar')], {
 				style: errorMessageActiveStyle,
-				textContent: 'Image size exceeds 90 kB'
+				textContent: 'Image size exceeds 300 kB'
 			})
 
 		return false

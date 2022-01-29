@@ -151,7 +151,7 @@ body{
 	transition: all .5s ease;
 }
 .header-menu__lists li:hover .header-menu__link{
-	color: #8A2BE2;
+	color: #708090;
 }
 @media (max-width: 750px) {
 	.header-menu__lists {
@@ -201,8 +201,8 @@ body{
 	border-radius: 4px;
 }
 input[type="text" i]:focus-visible{
-	border: 1px solid #9ACD32;
-	outline: 1px solid #9ACD32;
+	border: 1px solid #708090;
+	outline: 1px solid #708090;
 	border-radius: 3px;
 }
 .search-form__item {
@@ -272,7 +272,7 @@ input[type="text" i]:focus-visible{
 }
 .user-name {
 	text-decoration: none;
-	color: #9ACD32;
+	color: #708090;
 	font-size: 20px;
 	font-weight: 700;
 	margin: 0 20px 0 0;
@@ -281,7 +281,7 @@ input[type="text" i]:focus-visible{
 	font-size: 14px;
 	color: #fff;
 	padding: 2px 4px;
-	background: #8A2BE2;
+	background: #696969;
 	border-radius: 4px;
 }
 @media (max-width: 750px){
@@ -330,7 +330,7 @@ input[type="text" i]:focus-visible{
 	}
 }
 .avtorisation__link:hover{
-	background: #9ACD32;
+	background: #696969;
 	color: #E0FFFF;
 }
 .avtorisation__avatar {
@@ -348,7 +348,7 @@ input[type="text" i]:focus-visible{
 	}
 }
 .avtorisation__avatar:hover{
-	border: 1px solid #9ACD32;
+	border: 1px solid #696969;
 }
 .avtorisation__avatar img{
 	display: block;
@@ -385,7 +385,7 @@ input[type="text" i]:focus-visible{
 /*FOOTER------------------------------------------------------------------------------*/
 .footer{
 	flex: 0 0 60px;
-	background: #6B8E23;
+	background: #696969;
 }
 .footer__text {
 	text-align: center;

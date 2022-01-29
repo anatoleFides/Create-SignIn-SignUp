@@ -2,6 +2,11 @@ import { apiHost } from '../configs'
 
 import { passwordHandler, avatarHandler } from '../data-handlers'
 
+import {
+	errorMessageStyle,
+	errorMessageActiveStyle
+} from '../styles'
+
 export const testLoginSignIn = async (inputElem, login) => {
 	const response = await (await fetch(`${apiHost}/user/${login}`)).json()
 	console.log(response)
@@ -10,5 +15,10 @@ export const testLoginSignIn = async (inputElem, login) => {
 
 	avatarHandler(response.avatar)
 
-	return response.error ? null : response
+	return response.error
+		? Object.assign(inputElem.nextElementSibling, {
+			style: errorMessageActiveStyle
+		}) : Object.assign(inputElem.nextElementSibling, {
+				style: errorMessageStyle
+			})
 }

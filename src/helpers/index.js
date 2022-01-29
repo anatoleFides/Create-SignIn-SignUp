@@ -3,7 +3,6 @@ import { closeSignIn } from './closeSignIn'
 import { closeSignUp } from './closeSignUp'
 import { resetInputSignIn } from './resetInputSignIn'
 import { resetInputSignUp } from './resetInputSignUp'
-import { fillFormStyle } from './fillFormStyle'
 import { validateEmptyString } from './validateEmptyString'
 import { validateLogin } from './validateLogin'
 import { validateName } from './validateName'
@@ -25,7 +24,6 @@ export {
 	closeSignUp,
 	resetInputSignIn,
 	resetInputSignUp,
-	fillFormStyle,
 	validateEmptyString,
 	validateLogin,
 	validateName,

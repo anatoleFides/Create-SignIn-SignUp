@@ -1,15 +1,11 @@
-import {
-	inputValidationStyle,
-	errorMessageStyle
-} from '../styles'
+import {errorMessageStyle } from '../styles' 
 
 import { getDefaultAvatar } from '../assets'
 
 export const resetInputSignUp = () => {
 		window[Symbol.for('listInputSignUp')].forEach(input => {
 		Object.assign(input, {
-			value: '',
-			style: inputValidationStyle
+			value: ''
 		})
 		Object.assign(input.nextElementSibling, {
 			style: errorMessageStyle

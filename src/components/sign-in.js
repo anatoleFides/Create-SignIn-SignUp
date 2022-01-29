@@ -8,6 +8,7 @@ import {
 	titleStyle,
 	formsBodyStyle,
 	inputStyle,
+	outlineStyle,
 	errorMessageStyle,
 	errorMessageActiveStyle,
 	forgotPasswordStyle,
@@ -36,6 +37,8 @@ class SignIn extends HTMLElement {
 		
 		const shadow = this.attachShadow({ mode: 'closed' })
 		
+		shadow.innerHTML = outlineStyle
+
 		const wrapper = Object.assign(this.createElem(shadow, 'div'), {
 		style: wrapperStyle
 		})
@@ -91,7 +94,7 @@ class SignIn extends HTMLElement {
 
 		login.onchange = function (event) {
 			loginHandler(event.target.value)
-			testLoginSignIn(password, loginHandler())
+			testLoginSignIn(event.target, loginHandler())
 		}
 
 		password.oninput = function (event) {

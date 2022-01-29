@@ -7,7 +7,7 @@ import { imageStyle } from './image.js'
 import { titleStyle } from './title.js'
 import { formsBodyStyle } from './forms-body'
 import { inputStyle } from './input'
-import { inputValidationStyle } from './input-validation'
+import { outlineStyle } from './input-outline'
 import { errorMessageStyle } from './error-message'
 import { errorMessageActiveStyle } from './error-message-active'
 import { avatarContainerStyle } from './avatar-container'
@@ -27,7 +27,7 @@ export {
 	titleStyle,
 	formsBodyStyle,
 	inputStyle,
-	inputValidationStyle,
+	outlineStyle,
 	errorMessageStyle,
 	errorMessageActiveStyle,
 	avatarContainerStyle,

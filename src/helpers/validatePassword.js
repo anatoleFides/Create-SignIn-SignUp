@@ -1,7 +1,4 @@
-import {
-	fillFormStyle,
-	validateEmptyString
-} from './'
+import { validateEmptyString } from './'
 
 import {
 	errorMessageStyle,
@@ -9,8 +6,7 @@ import {
 } from '../styles'
 
 export const validatePassword = (inputElem, value) => {
-	fillFormStyle(inputElem, value)
-
+	
 	if (value.length < 8) {
 		inputElem.style.color = '#f00'
 		inputElem.nextElementSibling.style = errorMessageActiveStyle

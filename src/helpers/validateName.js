@@ -1,7 +1,4 @@
-import {
-	fillFormStyle,
-	validateEmptyString,
-} from './'
+import { validateEmptyString } from './'
 
 import {
 	errorMessageStyle,
@@ -9,7 +6,6 @@ import {
 } from '../styles'
 
 export const validateName = (inputElem, value) => {
-	fillFormStyle(inputElem, value)
 
 	let letters = /^[A-Za-z]{2,10}$/
 

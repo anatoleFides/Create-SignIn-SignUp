@@ -1,5 +1,4 @@
 import {
-	fillFormStyle,
 	validateEmptyString,
 	testLoginSignUp
 } from './'
@@ -10,7 +9,6 @@ import {
 } from '../styles'
 
 export const validateLogin = (inputElem, value) => {
-	fillFormStyle(inputElem, value)
 
 	let letters = /^[a-zA-z]{1}[a-zA-Z1-9]{3,12}$/
 

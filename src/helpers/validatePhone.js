@@ -1,7 +1,4 @@
-import {
-	fillFormStyle,
-	validateEmptyString
-} from './'
+import {validateEmptyString } from './' 
 
 import {
 	errorMessageStyle,
@@ -9,7 +6,6 @@ import {
 } from '../styles'
 
 export const validatePhone = (inputElem, value) => {
-	fillFormStyle(inputElem, value)
 
 	let phoneformat = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/
 

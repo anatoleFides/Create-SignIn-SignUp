@@ -1,7 +1,4 @@
-import {
-	fillFormStyle,
-	validateEmptyString
-} from './'
+import { validateEmptyString } from './'
 
 import {
 	errorMessageStyle,
@@ -9,7 +6,6 @@ import {
 } from '../styles'
 
 export const validateEmail = (inputElem, value) => {
-	fillFormStyle(inputElem, value)
 
 	let emailformat = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu
 

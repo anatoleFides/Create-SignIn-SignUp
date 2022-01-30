@@ -192,6 +192,7 @@ class SignUp extends HTMLElement {
 							style: buttonDisabledStyle
 						})
 		}
+async () => await console.log(login.value)
 
 		window[Symbol.for('listInputSignUp')] = [login, name, telephone, email, password]
 

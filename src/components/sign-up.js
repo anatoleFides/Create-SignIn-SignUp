@@ -109,7 +109,8 @@ class SignUp extends HTMLElement {
 		})
 		const avatar = Object.assign(this.createElem(avatar__container, 'input'), {
 			type: 'file',
-			style: avatarStyle
+			style: avatarStyle,
+			disabled: true
 		})
 			
 		const avatar__body = Object.assign(this.createElem(avatar__container, 'div'), {
@@ -127,34 +128,69 @@ class SignUp extends HTMLElement {
 		})
 
 		login.onchange = (event) => {
-			validateLogin(event.target, event.target.value)
+			// console.log(validateLogin(event.target, event.target.value))
+
+			validateLogin(event.target, event.target.value) === true
+				? Object.assign(name, { disabled: false }) 
+					: Object.assign(button, {
+							disabled: true,
+							style: buttonDisabledStyle
+						})
 		}
 
 		name.oninput = (event) => {
-			validateName(event.target, event.target.value)
-		}
+			// console.log(validateName(event.target, event.target.value))
+
+			validateName(event.target, event.target.value) === true
+				? Object.assign(telephone, { disabled: false }) 
+					: Object.assign(button, {
+							disabled: true,
+							style: buttonDisabledStyle
+						})
+			}
 
 		telephone.oninput = (event) => {
-			validatePhone(event.target, event.target.value)
+			// console.log(validatePhone(event.target, event.target.value))
+
+			validatePhone(event.target, event.target.value) === true
+				? Object.assign(email, { disabled: false }) 
+					: Object.assign(button, {
+							disabled: true,
+							style: buttonDisabledStyle
+						})
 		}
 
 		email.oninput = (event) => {
-			validateEmail(event.target, event.target.value)
+// console.log(validateEmail(event.target, event.target.value))
+
+			validateEmail(event.target, event.target.value) === true
+				? Object.assign(password, { disabled: false }) 
+					: Object.assign(button, {
+							disabled: true,
+							style: buttonDisabledStyle
+						}) 
 		}
 
 		password.oninput = (event) => {
-			validatePassword(event.target, event.target.value)
+// console.log(validatePassword(event.target, event.target.value))
+
+			validatePassword(event.target, event.target.value) === true
+				? Object.assign(avatar, { disabled: false }) 
+					: Object.assign(button, {
+							disabled: true,
+							style: buttonDisabledStyle
+						})
 		}
 
 		avatar.onchange = (event) => {
 			readFile(event.target) === true 
 				? Object.assign(button, {
-					disabled: false,
-					style: buttonSubmitStyle
-				}) : Object.assign(button, {
-						disabled: true,
-						style: buttonDisabledStyle
-					})
+						disabled: false,
+						style: buttonSubmitStyle
+					}) : Object.assign(button, {
+							disabled: true,
+							style: buttonDisabledStyle
+						})
 		}
 
 		window[Symbol.for('listInputSignUp')] = [login, name, telephone, email, password]

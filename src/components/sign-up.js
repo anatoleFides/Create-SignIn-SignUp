@@ -128,58 +128,33 @@ class SignUp extends HTMLElement {
 		})
 
 		login.onchange = (event) => {
-			// console.log(validateLogin(event.target, event.target.value))
-
 			validateLogin(event.target, event.target.value) === true
 				? Object.assign(name, { disabled: false }) 
-					: Object.assign(button, {
-							disabled: true,
-							style: buttonDisabledStyle
-						})
+					: null
 		}
 
 		name.oninput = (event) => {
-			// console.log(validateName(event.target, event.target.value))
-
 			validateName(event.target, event.target.value) === true
 				? Object.assign(telephone, { disabled: false }) 
-					: Object.assign(button, {
-							disabled: true,
-							style: buttonDisabledStyle
-						})
+					: null
 			}
 
 		telephone.oninput = (event) => {
-			// console.log(validatePhone(event.target, event.target.value))
-
 			validatePhone(event.target, event.target.value) === true
 				? Object.assign(email, { disabled: false }) 
-					: Object.assign(button, {
-							disabled: true,
-							style: buttonDisabledStyle
-						})
+					: null
 		}
 
 		email.oninput = (event) => {
-// console.log(validateEmail(event.target, event.target.value))
-
 			validateEmail(event.target, event.target.value) === true
 				? Object.assign(password, { disabled: false }) 
-					: Object.assign(button, {
-							disabled: true,
-							style: buttonDisabledStyle
-						}) 
+					: null
 		}
 
 		password.oninput = (event) => {
-// console.log(validatePassword(event.target, event.target.value))
-
 			validatePassword(event.target, event.target.value) === true
 				? Object.assign(avatar, { disabled: false }) 
-					: Object.assign(button, {
-							disabled: true,
-							style: buttonDisabledStyle
-						})
+					: null
 		}
 
 		avatar.onchange = (event) => {
@@ -192,7 +167,6 @@ class SignUp extends HTMLElement {
 							style: buttonDisabledStyle
 						})
 		}
-async () => await console.log(login.value)
 
 		window[Symbol.for('listInputSignUp')] = [login, name, telephone, email, password]
 

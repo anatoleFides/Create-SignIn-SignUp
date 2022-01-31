@@ -24,6 +24,8 @@ export const validateLogin = (inputElem, value) => {
 		Object.assign(inputElem.nextElementSibling, {
 			style: errorMessageActiveStyle
 		})
+
+		return false
 	}
 
 	validateEmptyString(inputElem, value)

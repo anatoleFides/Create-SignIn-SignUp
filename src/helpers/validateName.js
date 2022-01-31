@@ -6,7 +6,6 @@ import {
 } from '../styles'
 
 export const validateName = (inputElem, value) => {
-
 	let letters = /^[A-Za-z]{2,10}$/
 
 	if (value.match(letters)) {
@@ -20,8 +19,8 @@ export const validateName = (inputElem, value) => {
 			style: errorMessageActiveStyle
 		})
 
+		validateEmptyString(inputElem, value)
+		
 		return false
 	}
-
-	validateEmptyString(inputElem, value)
 }

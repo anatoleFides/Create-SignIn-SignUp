@@ -25,9 +25,11 @@ export const validateLogin = (inputElem, value) => {
 			style: errorMessageActiveStyle
 		})
 
+		validateEmptyString(inputElem, value)
+
 		return false
 	}
 
-	validateEmptyString(inputElem, value)
+
 }
 

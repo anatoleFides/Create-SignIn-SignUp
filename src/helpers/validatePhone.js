@@ -14,14 +14,15 @@ export const validatePhone = (inputElem, value) => {
 		style: errorMessageStyle
 	})
 
+
 	return true
 	} else {
 		Object.assign(inputElem.nextElementSibling, {
 			style: errorMessageActiveStyle
 		})
+	
+		validateEmptyString(inputElem, value)
 
 		return false
 	}
-
-	validateEmptyString(inputElem, value)
 }

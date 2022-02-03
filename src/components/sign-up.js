@@ -168,6 +168,11 @@ class SignUp extends HTMLElement {
 						})
 		}
 
+// const testValidateInputs = async () => {
+// 	await console.log(validateLogin(login, login.value))
+// 	console.log(validateName(name, name.value))
+// }
+
 		window[Symbol.for('listInputSignUp')] = [login, name, telephone, email, password]
 
 		const button = Object.assign(this.createElem(container, 'button'), {

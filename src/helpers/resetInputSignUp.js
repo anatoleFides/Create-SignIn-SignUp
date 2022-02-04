@@ -2,8 +2,17 @@ import {errorMessageStyle } from '../styles'
 
 import { getDefaultAvatar } from '../assets'
 
+import {
+	login,
+	name,
+	telephone,
+	email,
+	password
+} from '../helpers'
+
 export const resetInputSignUp = () => {
-		window[Symbol.for('listInputSignUp')].forEach(input => {
+		const inputs = [login, name, telephone, email, password]
+		inputs.forEach(input => {
 		Object.assign(input, {
 			value: ''
 		})

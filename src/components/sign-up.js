@@ -34,7 +34,13 @@ import {
 	validatePassword,
 	readFile,
 	createElem,
-	createUser
+	createUser,
+	getInputs,
+	login,
+	name,
+	telephone,
+	email,
+	password
 } from '../helpers'
 
 class SignUp extends HTMLElement {
@@ -80,29 +86,7 @@ class SignUp extends HTMLElement {
 		const elems__body = Object.assign(this.createElem(forms__body, 'div'), {
 		})
 
-		const [login, name, telephone, email, password] = [
-			['text', 'Login', 'Invalid login format', false],
-			['text', 'User name', 'Invalid name format', true],
-			['tel', '(0XX)XXX-XX-XX', 'Invalid telephone format', true],
-			['email', 'e-mail', 'Invalid e-mail format', true],
-			['password', 'Password', 'Invalid password format', true]
-		].map(function (item) {
-			const elem__container = this.createElem(elems__body, 'div')
-
-			const elem = Object.assign(this.createElem(elem__container, 'input'), {
-				type: item[0],
-				placeholder: item[1],
-				style: inputStyle,
-				disabled: item[3]
-			})
-
-			const error__message = Object.assign(this.createElem(elem__container, 'p'), {
-				textContent: item[2],
-				style: errorMessageStyle
-			})
-
-			return elem
-		}.bind(this))
+		getInputs(this, elems__body)
 
 		const avatar__container = Object.assign(this.createElem(forms__body, 'div'), {
 			style: avatarContainerStyle
@@ -167,13 +151,6 @@ class SignUp extends HTMLElement {
 							style: buttonDisabledStyle
 						})
 		}
-
-// const testValidateInputs = async () => {
-// 	await console.log(validateLogin(login, login.value))
-// 	console.log(validateName(name, name.value))
-// }
-
-		window[Symbol.for('listInputSignUp')] = [login, name, telephone, email, password]
 
 		const button = Object.assign(this.createElem(container, 'button'), {
 			disabled: true,

@@ -17,6 +17,12 @@ import { testPassordSignIn } from './testPassordSignIn'
 import { authorizeUser } from './authorizeUser'
 import { signOut } from './signOut'
 import { createElem } from './createElem'
+import { getInputs } from './getInputs'
+import { login } from './getInputs'
+import { name } from './getInputs'
+import { telephone } from './getInputs'
+import { email } from './getInputs'
+import { password } from './getInputs'
 
 export {
 	openCloseBurgerMenu,
@@ -37,5 +43,11 @@ export {
 	testPassordSignIn,
 	authorizeUser,
 	signOut,
-	createElem
+	createElem,
+	getInputs,
+	login,
+	name,
+	telephone,
+	email,
+	password
 }

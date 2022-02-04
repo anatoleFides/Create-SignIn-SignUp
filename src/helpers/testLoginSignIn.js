@@ -9,8 +9,10 @@ import {
 
 export const testLoginSignIn = async (inputElem, login) => {
 	const response = await (await fetch(`${apiHost}/user/${login}`)).json()
+
 	console.log(response)
 	console.log(response.password)
+
 	passwordHandler(response.password)
 
 	avatarHandler(response.avatar)

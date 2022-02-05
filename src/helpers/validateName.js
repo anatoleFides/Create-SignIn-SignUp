@@ -1,26 +1,23 @@
-import { validateEmptyString } from './'
+import {
+	validateEmptyString,
+	name,
+	telephone
+} from './'
 
 import {
 	errorMessageStyle,
 	errorMessageActiveStyle
-} from '../styles' 
+} from '../styles'
 
 import { nameRule } from '../configs'
 
-export const validateName = (inputElem, value) => {
-	if (value.match(nameRule)) {
-		Object.assign(inputElem.nextElementSibling, {
-			style: errorMessageStyle
-		})
+export const validateName = (value) => {
+	const result = Boolean(value.match(nameRule))
 
-		return true
-	} else {
-		Object.assign(inputElem.nextElementSibling, {
-			style: errorMessageActiveStyle
-		})
+	name.nextElementSibling.style = result 
+		? errorMessageStyle : errorMessageActiveStyle
 
-		validateEmptyString(inputElem, value)
-		
-		return false
-	}
+	validateEmptyString(name, value)
+
+	telephone.disabled = !result
 }

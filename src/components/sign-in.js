@@ -31,9 +31,9 @@ import {
 class SignIn extends HTMLElement {
 	constructor () {
 		super()
-		
+
 		const shadow = this.attachShadow({ mode: 'closed' })
-		
+
 		shadow.innerHTML = outlineStyle
 
 		const wrapper = Object.assign(this.createElem(shadow, 'div'), {

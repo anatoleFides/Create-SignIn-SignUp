@@ -1,4 +1,8 @@
-import {validateEmptyString } from './' 
+import {
+	validateEmptyString,
+	telephone,
+	email
+} from './'
 
 import {
 	errorMessageStyle,
@@ -7,24 +11,13 @@ import {
 
 import { telephoneRule } from '../configs'
 
-export const validatePhone = (inputElem, value) => {
+export const validatePhone = (value) => {
+	const result = Boolean(value.match(telephoneRule))
 
-	// let phoneformat = /^\(?([0]{1}[3-9]{2})\)?[- ]?([0-9]{3})[- ]?([0-9]{2})[- ]?([0-9]{2})$/
+	telephone.nextElementSibling.style = result 
+		? errorMessageStyle : errorMessageActiveStyle
 
-	if (value.match(telephoneRule)) {
-		Object.assign(inputElem.nextElementSibling, {
-		style: errorMessageStyle
-	})
+	validateEmptyString(telephone, value)
 
-
-	return true
-	} else {
-		Object.assign(inputElem.nextElementSibling, {
-			style: errorMessageActiveStyle
-		})
-	
-		validateEmptyString(inputElem, value)
-
-		return false
-	}
+	email.disabled = !result
 }

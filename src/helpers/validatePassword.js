@@ -1,4 +1,7 @@
-import { validateEmptyString } from './'
+import {
+	validateEmptyString,
+	password
+} from './'
 
 import {
 	errorMessageStyle,
@@ -7,21 +10,17 @@ import {
 
 import { passwordRule } from '../configs'
 
-export const validatePassword = (inputElem, value) => {
+import { avatar } from '../elements'
 
-	if (value.length < 8) {
-		inputElem.style.color = '#f00'
-		inputElem.nextElementSibling.style = errorMessageActiveStyle
+export const validatePassword = (value) => {
+	const result = Boolean(value.match(passwordRule))
 
-		validateEmptyString(inputElem, value)
-		
-		return false
-	} else { 
-		inputElem.style.color = '#090'
-		inputElem.nextElementSibling.style = errorMessageStyle
+	password.style.color = result ? '#090' : '#f00'
 
-		return true
-	}
+	password.nextElementSibling.style = result 
+		? errorMessageStyle : errorMessageActiveStyle
 
+	validateEmptyString(password, value)
 
+	avatar.disabled = !result
 }

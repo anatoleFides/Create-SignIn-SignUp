@@ -5,8 +5,6 @@ import {
 	titleStyle,
 	formsBodyStyle,
 	outlineStyle,
-	errorMessageStyle,
-	errorMessageActiveStyle,
 	buttonSubmitStyle,
 	buttonDisabledStyle
 } from '../styles'
@@ -15,12 +13,12 @@ import {
 	btnClose,
 	logoElem,
 	avatarElem,
-	avatar
+	avatar,
+	avatarMessageErrorElem
 } from '../elements'
 
 import {
 	closeSignUp,
-	valueValidation,
 	validateLogin,
 	validateName,
 	validatePhone,
@@ -71,43 +69,20 @@ class SignUp extends HTMLElement {
 
 		avatarElem(this, forms__body)
 
-		window[Symbol.for('error__message-avatar')] = Object.assign(this.createElem(forms__body, 'p'), {
-			style: errorMessageStyle,
-			innerText: 'Invalid file type'
-		})
+		avatarMessageErrorElem(this, forms__body)
 
-		login.onchange = (event) => {
-			validateLogin(event.target, event.target.value) === true
-				? Object.assign(name, { disabled: false }) 
-					: null
-		}
+		login.onchange = (event) => validateLogin(event.target.value)
 
-		name.oninput = (event) => {
-			validateName(event.target, event.target.value) === true
-				? Object.assign(telephone, { disabled: false }) 
-					: null
-			}
+		name.oninput = (event) => validateName(event.target.value)
 
-		telephone.oninput = (event) => {
-			validatePhone(event.target, event.target.value) === true
-				? Object.assign(email, { disabled: false }) 
-					: null
-		}
+		telephone.oninput = (event) => validatePhone(event.target.value)
 
-		email.oninput = (event) => {
-			validateEmail(event.target, event.target.value) === true
-				? Object.assign(password, { disabled: false }) 
-					: null
-		}
+		email.oninput = (event) => validateEmail(event.target.value)
 
-		password.oninput = (event) => {
-			validatePassword(event.target, event.target.value) === true
-				? Object.assign(avatar, { disabled: false }) 
-					: null
-		}
+		password.oninput = (event) => validatePassword(event.target.value)
 
 		avatar.onchange = (event) => {
-			readFile(event.target) === true 
+			readFile(event.target)
 				? Object.assign(button, {
 						disabled: false,
 						style: buttonSubmitStyle
@@ -142,4 +117,3 @@ const elemSignUp = document.createElement('sign-up')
 elemSignUp.id = 'sign-up'
 
 export default elemSignUp
-

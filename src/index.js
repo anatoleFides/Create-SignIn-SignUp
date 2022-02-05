@@ -21,3 +21,4 @@ const [sinInButton, sinUpButton] = ["sing-in__btn", "sing-up__btn"]
 document.getElementById("exit").onclick = (event) => {
 	signOut(event.target)
 }
+

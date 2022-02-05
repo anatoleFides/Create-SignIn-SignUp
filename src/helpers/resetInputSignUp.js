@@ -8,7 +8,9 @@ import {
 	telephone,
 	email,
 	password
-} from '../helpers'
+} from './'
+
+import { avatarMessageErrorElem } from '../elements'
 
 export const resetInputSignUp = () => {
 		const inputs = [login, name, telephone, email, password]
@@ -22,5 +24,5 @@ export const resetInputSignUp = () => {
 	})
 
 	window[Symbol.for('photo')].src = getDefaultAvatar()
-	window[Symbol.for('error__message-avatar')].style = errorMessageStyle
+	avatarMessageErrorElem.style = errorMessageStyle
 }

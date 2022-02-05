@@ -1,4 +1,8 @@
-import { validateEmptyString } from './'
+import {
+	validateEmptyString,
+	email,
+	password
+} from './'
 
 import {
 	errorMessageStyle,
@@ -7,22 +11,13 @@ import {
 
 import { emailRule } from '../configs'
 
-export const validateEmail = (inputElem, value) => {
-		if (value.match(emailRule)) {
-			Object.assign(inputElem.nextElementSibling, {
-				style: errorMessageStyle
-			})
+export const validateEmail = (value) => {
+	const result = Boolean(value.match(emailRule))
 
-			return true
-		} else {
-			Object.assign(inputElem.nextElementSibling, {
-				style: errorMessageActiveStyle
-			})
+	email.nextElementSibling.style = result 
+		? errorMessageStyle : errorMessageActiveStyle
 
-			validateEmptyString(inputElem, value)
+	validateEmptyString(email, value)
 
-			return false
-		}
-
-
+	password.disabled = !result
 }

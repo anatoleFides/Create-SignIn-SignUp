@@ -1,6 +1,8 @@
 import {
 	validateEmptyString,
-	testLoginSignUp
+	testLoginSignUp,
+	login,
+	name
 } from './'
 
 import {
@@ -10,25 +12,15 @@ import {
 
 import { loginRule } from '../configs'
 
-export const validateLogin = (inputElem, value) => {
-	if (value.match(loginRule)) {
-		Object.assign(inputElem.nextElementSibling, {
-			style: errorMessageStyle
-		})
+export const validateLogin = (value) => {
+	const result = Boolean(value.match(loginRule))
 
-		testLoginSignUp(inputElem, value)
-		
-		return true
-	} else {
-		Object.assign(inputElem.nextElementSibling, {
-			style: errorMessageActiveStyle
-		})
+	login.nextElementSibling.style = result 
+		? errorMessageStyle : errorMessageActiveStyle
 
-		validateEmptyString(inputElem, value)
+	testLoginSignUp(login, value)
 
-		return false
-	}
+	validateEmptyString(login, value)
 
-
+	name.disabled = !result
 }
-

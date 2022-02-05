@@ -8,10 +8,6 @@ import {
 let login, name, telephone, email, password
 
 export function getInputs (webElem, container) {
-
-		// const elems__body = Object.assign(webElem.createElem(container, 'div'), {
-		// })
-
 	[login, name, telephone, email, password] = [
 		['text', 'Login', 'Invalid login format', false],
 		['text', 'User name', 'Invalid name format', true],

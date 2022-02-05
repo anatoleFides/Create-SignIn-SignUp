@@ -15,13 +15,13 @@ export const avatarElem = (webElem, container) => {
 	const avatar__container = Object.assign(webElem.createElem(container, 'div'), {
 		style: avatarContainerStyle
 	})
-	
+
 	avatar = Object.assign(webElem.createElem(avatar__container, 'input'), {
 		type: 'file',
 		style: avatarStyle,
 		disabled: true
 	})
-		
+
 	const avatar__body = Object.assign(webElem.createElem(avatar__container, 'div'), {
 		style: avatarBodyStyle
 	})

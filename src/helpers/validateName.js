@@ -3,12 +3,12 @@ import { validateEmptyString } from './'
 import {
 	errorMessageStyle,
 	errorMessageActiveStyle
-} from '../styles'
+} from '../styles' 
+
+import { nameRule } from '../configs'
 
 export const validateName = (inputElem, value) => {
-	let letters = /^[A-Za-z]{2,10}$/
-
-	if (value.match(letters)) {
+	if (value.match(nameRule)) {
 		Object.assign(inputElem.nextElementSibling, {
 			style: errorMessageStyle
 		})

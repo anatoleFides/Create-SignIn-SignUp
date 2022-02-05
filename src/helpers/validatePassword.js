@@ -5,6 +5,8 @@ import {
 	errorMessageActiveStyle
 } from '../styles'
 
+import { passwordRule } from '../configs'
+
 export const validatePassword = (inputElem, value) => {
 
 	if (value.length < 8) {

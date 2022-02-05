@@ -8,11 +8,10 @@ import {
 	errorMessageActiveStyle
 } from '../styles'
 
+import { loginRule } from '../configs'
+
 export const validateLogin = (inputElem, value) => {
-
-	let letters = /^[a-zA-z]{1}[a-zA-Z1-9]{3,12}$/
-
-	if (value.match(letters)) {
+	if (value.match(loginRule)) {
 		Object.assign(inputElem.nextElementSibling, {
 			style: errorMessageStyle
 		})

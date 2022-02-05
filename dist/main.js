@@ -70,13 +70,63 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./src/configs/emailRule.js":
+/*!**********************************!*\
+  !*** ./src/configs/emailRule.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"emailRule\": () => (/* binding */ emailRule)\n/* harmony export */ });\nconst emailRule = /^(([^<>()[\\].,;:\\s@\"]+(\\.[^<>()[\\].,;:\\s@\"]+)*)|(\".+\"))@(([^<>()[\\].,;:\\s@\"]+\\.)+[^<>()[\\].,;:\\s@\"]{2,})$/iu\n\n//# sourceURL=webpack://create-signin-signup/./src/configs/emailRule.js?");
+
+/***/ }),
+
 /***/ "./src/configs/index.js":
 /*!******************************!*\
   !*** ./src/configs/index.js ***!
   \******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"apiHost\": () => (/* reexport safe */ _api_host__WEBPACK_IMPORTED_MODULE_0__.apiHost)\n/* harmony export */ });\n/* harmony import */ var _api_host__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./api-host */ \"./src/configs/api-host.js\");\n\r\n\r\n\n\n//# sourceURL=webpack://create-signin-signup/./src/configs/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"apiHost\": () => (/* reexport safe */ _api_host__WEBPACK_IMPORTED_MODULE_0__.apiHost),\n/* harmony export */   \"loginRule\": () => (/* reexport safe */ _loginRule__WEBPACK_IMPORTED_MODULE_1__.loginRule),\n/* harmony export */   \"nameRule\": () => (/* reexport safe */ _nameRule__WEBPACK_IMPORTED_MODULE_2__.nameRule),\n/* harmony export */   \"telephoneRule\": () => (/* reexport safe */ _telephoneRule__WEBPACK_IMPORTED_MODULE_3__.telephoneRule),\n/* harmony export */   \"emailRule\": () => (/* reexport safe */ _emailRule__WEBPACK_IMPORTED_MODULE_4__.emailRule),\n/* harmony export */   \"passwordRule\": () => (/* reexport safe */ _passwordRule__WEBPACK_IMPORTED_MODULE_5__.passwordRule)\n/* harmony export */ });\n/* harmony import */ var _api_host__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./api-host */ \"./src/configs/api-host.js\");\n/* harmony import */ var _loginRule__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./loginRule */ \"./src/configs/loginRule.js\");\n/* harmony import */ var _nameRule__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./nameRule */ \"./src/configs/nameRule.js\");\n/* harmony import */ var _telephoneRule__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./telephoneRule */ \"./src/configs/telephoneRule.js\");\n/* harmony import */ var _emailRule__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./emailRule */ \"./src/configs/emailRule.js\");\n/* harmony import */ var _passwordRule__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./passwordRule */ \"./src/configs/passwordRule.js\");\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\n\n//# sourceURL=webpack://create-signin-signup/./src/configs/index.js?");
+
+/***/ }),
+
+/***/ "./src/configs/loginRule.js":
+/*!**********************************!*\
+  !*** ./src/configs/loginRule.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"loginRule\": () => (/* binding */ loginRule)\n/* harmony export */ });\nconst loginRule = /^[a-zA-z]{1}[a-zA-Z1-9]{3,12}$/\n\n//# sourceURL=webpack://create-signin-signup/./src/configs/loginRule.js?");
+
+/***/ }),
+
+/***/ "./src/configs/nameRule.js":
+/*!*********************************!*\
+  !*** ./src/configs/nameRule.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"nameRule\": () => (/* binding */ nameRule)\n/* harmony export */ });\nconst nameRule = /^[A-Za-z]{2,10}$/\n\n//# sourceURL=webpack://create-signin-signup/./src/configs/nameRule.js?");
+
+/***/ }),
+
+/***/ "./src/configs/passwordRule.js":
+/*!*************************************!*\
+  !*** ./src/configs/passwordRule.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"passwordRule\": () => (/* binding */ passwordRule)\n/* harmony export */ });\nconst passwordRule = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/\n\n//# sourceURL=webpack://create-signin-signup/./src/configs/passwordRule.js?");
+
+/***/ }),
+
+/***/ "./src/configs/telephoneRule.js":
+/*!**************************************!*\
+  !*** ./src/configs/telephoneRule.js ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"telephoneRule\": () => (/* binding */ telephoneRule)\n/* harmony export */ });\nconst telephoneRule = /^\\(?([0]{1}[3-9]{2})\\)?[- ]?([0-9]{3})[- ]?([0-9]{2})[- ]?([0-9]{2})$/\n\n//# sourceURL=webpack://create-signin-signup/./src/configs/telephoneRule.js?");
 
 /***/ }),
 
@@ -316,7 +366,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"validateEmail\": () => (/* binding */ validateEmail)\n/* harmony export */ });\n/* harmony import */ var ___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ */ \"./src/helpers/index.js\");\n/* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styles */ \"./src/styles/index.js\");\n\r\n\r\n\r\n\r\nconst validateEmail = (inputElem, value) => {\r\n\r\n\tlet emailformat = /^(([^<>()[\\].,;:\\s@\"]+(\\.[^<>()[\\].,;:\\s@\"]+)*)|(\".+\"))@(([^<>()[\\].,;:\\s@\"]+\\.)+[^<>()[\\].,;:\\s@\"]{2,})$/iu\r\n\r\n\t\tif (value.match(emailformat)) {\r\n\t\t\tObject.assign(inputElem.nextElementSibling, {\r\n\t\t\t\tstyle: _styles__WEBPACK_IMPORTED_MODULE_1__.errorMessageStyle\r\n\t\t\t})\r\n\r\n\t\t\treturn true\r\n\t\t} else {\r\n\t\t\tObject.assign(inputElem.nextElementSibling, {\r\n\t\t\t\tstyle: _styles__WEBPACK_IMPORTED_MODULE_1__.errorMessageActiveStyle\r\n\t\t\t})\r\n\r\n\t\t\t;(0,___WEBPACK_IMPORTED_MODULE_0__.validateEmptyString)(inputElem, value)\r\n\r\n\t\t\treturn false\r\n\t\t}\r\n\r\n\r\n}\r\n\n\n//# sourceURL=webpack://create-signin-signup/./src/helpers/validateEmail.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"validateEmail\": () => (/* binding */ validateEmail)\n/* harmony export */ });\n/* harmony import */ var ___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ */ \"./src/helpers/index.js\");\n/* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styles */ \"./src/styles/index.js\");\n/* harmony import */ var _configs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../configs */ \"./src/configs/index.js\");\n\r\n\r\n\r\n\r\n\r\n\r\nconst validateEmail = (inputElem, value) => {\r\n\t\tif (value.match(_configs__WEBPACK_IMPORTED_MODULE_2__.emailRule)) {\r\n\t\t\tObject.assign(inputElem.nextElementSibling, {\r\n\t\t\t\tstyle: _styles__WEBPACK_IMPORTED_MODULE_1__.errorMessageStyle\r\n\t\t\t})\r\n\r\n\t\t\treturn true\r\n\t\t} else {\r\n\t\t\tObject.assign(inputElem.nextElementSibling, {\r\n\t\t\t\tstyle: _styles__WEBPACK_IMPORTED_MODULE_1__.errorMessageActiveStyle\r\n\t\t\t})\r\n\r\n\t\t\t;(0,___WEBPACK_IMPORTED_MODULE_0__.validateEmptyString)(inputElem, value)\r\n\r\n\t\t\treturn false\r\n\t\t}\r\n\r\n\r\n}\r\n\n\n//# sourceURL=webpack://create-signin-signup/./src/helpers/validateEmail.js?");
 
 /***/ }),
 
@@ -336,7 +386,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"validateLogin\": () => (/* binding */ validateLogin)\n/* harmony export */ });\n/* harmony import */ var ___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ */ \"./src/helpers/index.js\");\n/* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styles */ \"./src/styles/index.js\");\n\r\n\r\n\r\n\r\nconst validateLogin = (inputElem, value) => {\r\n\r\n\tlet letters = /^[a-zA-z]{1}[a-zA-Z1-9]{3,12}$/\r\n\r\n\tif (value.match(letters)) {\r\n\t\tObject.assign(inputElem.nextElementSibling, {\r\n\t\t\tstyle: _styles__WEBPACK_IMPORTED_MODULE_1__.errorMessageStyle\r\n\t\t})\r\n\r\n\t\t;(0,___WEBPACK_IMPORTED_MODULE_0__.testLoginSignUp)(inputElem, value)\r\n\t\t\r\n\t\treturn true\r\n\t} else {\r\n\t\tObject.assign(inputElem.nextElementSibling, {\r\n\t\t\tstyle: _styles__WEBPACK_IMPORTED_MODULE_1__.errorMessageActiveStyle\r\n\t\t})\r\n\r\n\t\t;(0,___WEBPACK_IMPORTED_MODULE_0__.validateEmptyString)(inputElem, value)\r\n\r\n\t\treturn false\r\n\t}\r\n\r\n\r\n}\r\n\r\n\n\n//# sourceURL=webpack://create-signin-signup/./src/helpers/validateLogin.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"validateLogin\": () => (/* binding */ validateLogin)\n/* harmony export */ });\n/* harmony import */ var ___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ */ \"./src/helpers/index.js\");\n/* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styles */ \"./src/styles/index.js\");\n/* harmony import */ var _configs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../configs */ \"./src/configs/index.js\");\n\r\n\r\n\r\n\r\n\r\n\r\nconst validateLogin = (inputElem, value) => {\r\n\tif (value.match(_configs__WEBPACK_IMPORTED_MODULE_2__.loginRule)) {\r\n\t\tObject.assign(inputElem.nextElementSibling, {\r\n\t\t\tstyle: _styles__WEBPACK_IMPORTED_MODULE_1__.errorMessageStyle\r\n\t\t})\r\n\r\n\t\t;(0,___WEBPACK_IMPORTED_MODULE_0__.testLoginSignUp)(inputElem, value)\r\n\t\t\r\n\t\treturn true\r\n\t} else {\r\n\t\tObject.assign(inputElem.nextElementSibling, {\r\n\t\t\tstyle: _styles__WEBPACK_IMPORTED_MODULE_1__.errorMessageActiveStyle\r\n\t\t})\r\n\r\n\t\t;(0,___WEBPACK_IMPORTED_MODULE_0__.validateEmptyString)(inputElem, value)\r\n\r\n\t\treturn false\r\n\t}\r\n\r\n\r\n}\r\n\r\n\n\n//# sourceURL=webpack://create-signin-signup/./src/helpers/validateLogin.js?");
 
 /***/ }),
 
@@ -346,7 +396,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"validateName\": () => (/* binding */ validateName)\n/* harmony export */ });\n/* harmony import */ var ___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ */ \"./src/helpers/index.js\");\n/* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styles */ \"./src/styles/index.js\");\n\r\n\r\n\r\n\r\nconst validateName = (inputElem, value) => {\r\n\tlet letters = /^[A-Za-z]{2,10}$/\r\n\r\n\tif (value.match(letters)) {\r\n\t\tObject.assign(inputElem.nextElementSibling, {\r\n\t\t\tstyle: _styles__WEBPACK_IMPORTED_MODULE_1__.errorMessageStyle\r\n\t\t})\r\n\r\n\t\treturn true\r\n\t} else {\r\n\t\tObject.assign(inputElem.nextElementSibling, {\r\n\t\t\tstyle: _styles__WEBPACK_IMPORTED_MODULE_1__.errorMessageActiveStyle\r\n\t\t})\r\n\r\n\t\t;(0,___WEBPACK_IMPORTED_MODULE_0__.validateEmptyString)(inputElem, value)\r\n\t\t\r\n\t\treturn false\r\n\t}\r\n}\n\n//# sourceURL=webpack://create-signin-signup/./src/helpers/validateName.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"validateName\": () => (/* binding */ validateName)\n/* harmony export */ });\n/* harmony import */ var ___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ */ \"./src/helpers/index.js\");\n/* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styles */ \"./src/styles/index.js\");\n/* harmony import */ var _configs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../configs */ \"./src/configs/index.js\");\n\r\n\r\n \r\n\r\n\r\n\r\nconst validateName = (inputElem, value) => {\r\n\tif (value.match(_configs__WEBPACK_IMPORTED_MODULE_2__.nameRule)) {\r\n\t\tObject.assign(inputElem.nextElementSibling, {\r\n\t\t\tstyle: _styles__WEBPACK_IMPORTED_MODULE_1__.errorMessageStyle\r\n\t\t})\r\n\r\n\t\treturn true\r\n\t} else {\r\n\t\tObject.assign(inputElem.nextElementSibling, {\r\n\t\t\tstyle: _styles__WEBPACK_IMPORTED_MODULE_1__.errorMessageActiveStyle\r\n\t\t})\r\n\r\n\t\t;(0,___WEBPACK_IMPORTED_MODULE_0__.validateEmptyString)(inputElem, value)\r\n\t\t\r\n\t\treturn false\r\n\t}\r\n}\n\n//# sourceURL=webpack://create-signin-signup/./src/helpers/validateName.js?");
 
 /***/ }),
 
@@ -356,7 +406,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"validatePassword\": () => (/* binding */ validatePassword)\n/* harmony export */ });\n/* harmony import */ var ___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ */ \"./src/helpers/index.js\");\n/* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styles */ \"./src/styles/index.js\");\n\r\n\r\n\r\n\r\nconst validatePassword = (inputElem, value) => {\r\n\r\n\tif (value.length < 8) {\r\n\t\tinputElem.style.color = '#f00'\r\n\t\tinputElem.nextElementSibling.style = _styles__WEBPACK_IMPORTED_MODULE_1__.errorMessageActiveStyle\r\n\r\n\t\t;(0,___WEBPACK_IMPORTED_MODULE_0__.validateEmptyString)(inputElem, value)\r\n\t\t\r\n\t\treturn false\r\n\t} else { \r\n\t\tinputElem.style.color = '#090'\r\n\t\tinputElem.nextElementSibling.style = _styles__WEBPACK_IMPORTED_MODULE_1__.errorMessageStyle\r\n\r\n\t\treturn true\r\n\t}\r\n\r\n\r\n}\n\n//# sourceURL=webpack://create-signin-signup/./src/helpers/validatePassword.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"validatePassword\": () => (/* binding */ validatePassword)\n/* harmony export */ });\n/* harmony import */ var ___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ */ \"./src/helpers/index.js\");\n/* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styles */ \"./src/styles/index.js\");\n/* harmony import */ var _configs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../configs */ \"./src/configs/index.js\");\n\r\n\r\n\r\n\r\n\r\n\r\nconst validatePassword = (inputElem, value) => {\r\n\r\n\tif (value.length < 8) {\r\n\t\tinputElem.style.color = '#f00'\r\n\t\tinputElem.nextElementSibling.style = _styles__WEBPACK_IMPORTED_MODULE_1__.errorMessageActiveStyle\r\n\r\n\t\t;(0,___WEBPACK_IMPORTED_MODULE_0__.validateEmptyString)(inputElem, value)\r\n\t\t\r\n\t\treturn false\r\n\t} else { \r\n\t\tinputElem.style.color = '#090'\r\n\t\tinputElem.nextElementSibling.style = _styles__WEBPACK_IMPORTED_MODULE_1__.errorMessageStyle\r\n\r\n\t\treturn true\r\n\t}\r\n\r\n\r\n}\n\n//# sourceURL=webpack://create-signin-signup/./src/helpers/validatePassword.js?");
 
 /***/ }),
 
@@ -366,7 +416,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"validatePhone\": () => (/* binding */ validatePhone)\n/* harmony export */ });\n/* harmony import */ var ___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ */ \"./src/helpers/index.js\");\n/* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styles */ \"./src/styles/index.js\");\n \r\n\r\n\r\n\r\nconst validatePhone = (inputElem, value) => {\r\n\r\n\tlet phoneformat = /^\\(?([0]{1}[3-9]{2})\\)?[- ]?([0-9]{3})[- ]?([0-9]{2})[- ]?([0-9]{2})$/\r\n\r\n\tif (value.match(phoneformat)) {\r\n\t\tObject.assign(inputElem.nextElementSibling, {\r\n\t\tstyle: _styles__WEBPACK_IMPORTED_MODULE_1__.errorMessageStyle\r\n\t})\r\n\r\n\r\n\treturn true\r\n\t} else {\r\n\t\tObject.assign(inputElem.nextElementSibling, {\r\n\t\t\tstyle: _styles__WEBPACK_IMPORTED_MODULE_1__.errorMessageActiveStyle\r\n\t\t})\r\n\t\r\n\t\t;(0,___WEBPACK_IMPORTED_MODULE_0__.validateEmptyString)(inputElem, value)\r\n\r\n\t\treturn false\r\n\t}\r\n}\n\n//# sourceURL=webpack://create-signin-signup/./src/helpers/validatePhone.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"validatePhone\": () => (/* binding */ validatePhone)\n/* harmony export */ });\n/* harmony import */ var ___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ */ \"./src/helpers/index.js\");\n/* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styles */ \"./src/styles/index.js\");\n/* harmony import */ var _configs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../configs */ \"./src/configs/index.js\");\n \r\n\r\n\r\n\r\n\r\n\r\nconst validatePhone = (inputElem, value) => {\r\n\r\n\t// let phoneformat = /^\\(?([0]{1}[3-9]{2})\\)?[- ]?([0-9]{3})[- ]?([0-9]{2})[- ]?([0-9]{2})$/\r\n\r\n\tif (value.match(_configs__WEBPACK_IMPORTED_MODULE_2__.telephoneRule)) {\r\n\t\tObject.assign(inputElem.nextElementSibling, {\r\n\t\tstyle: _styles__WEBPACK_IMPORTED_MODULE_1__.errorMessageStyle\r\n\t})\r\n\r\n\r\n\treturn true\r\n\t} else {\r\n\t\tObject.assign(inputElem.nextElementSibling, {\r\n\t\t\tstyle: _styles__WEBPACK_IMPORTED_MODULE_1__.errorMessageActiveStyle\r\n\t\t})\r\n\t\r\n\t\t;(0,___WEBPACK_IMPORTED_MODULE_0__.validateEmptyString)(inputElem, value)\r\n\r\n\t\treturn false\r\n\t}\r\n}\n\n//# sourceURL=webpack://create-signin-signup/./src/helpers/validatePhone.js?");
 
 /***/ }),
 

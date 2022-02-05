@@ -5,11 +5,13 @@ import {
 	errorMessageActiveStyle
 } from '../styles'
 
+import { telephoneRule } from '../configs'
+
 export const validatePhone = (inputElem, value) => {
 
-	let phoneformat = /^\(?([0]{1}[3-9]{2})\)?[- ]?([0-9]{3})[- ]?([0-9]{2})[- ]?([0-9]{2})$/
+	// let phoneformat = /^\(?([0]{1}[3-9]{2})\)?[- ]?([0-9]{3})[- ]?([0-9]{2})[- ]?([0-9]{2})$/
 
-	if (value.match(phoneformat)) {
+	if (value.match(telephoneRule)) {
 		Object.assign(inputElem.nextElementSibling, {
 		style: errorMessageStyle
 	})

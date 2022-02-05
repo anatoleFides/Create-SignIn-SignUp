@@ -5,11 +5,10 @@ import {
 	errorMessageActiveStyle
 } from '../styles'
 
+import { emailRule } from '../configs'
+
 export const validateEmail = (inputElem, value) => {
-
-	let emailformat = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu
-
-		if (value.match(emailformat)) {
+		if (value.match(emailRule)) {
 			Object.assign(inputElem.nextElementSibling, {
 				style: errorMessageStyle
 			})

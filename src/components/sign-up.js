@@ -2,17 +2,9 @@
 import {
 	wrapperStyle,
 	containerStyle,
-	buttonCloseStyle,
-	logoStyle,
-	logoLinkStyle,
-	imageStyle,
 	titleStyle,
 	formsBodyStyle,
-	inputStyle,
 	outlineStyle,
-	avatarContainerStyle,
-	avatarStyle,
-	avatarBodyStyle,
 	errorMessageStyle,
 	errorMessageActiveStyle,
 	buttonSubmitStyle,
@@ -20,9 +12,11 @@ import {
 } from '../styles'
 
 import {
-	logoImg,
-	getDefaultAvatar
-} from '../assets'
+	btnClose,
+	logoElem,
+	avatarElem,
+	avatar
+} from '../elements'
 
 import {
 	closeSignUp,
@@ -58,22 +52,9 @@ class SignUp extends HTMLElement {
 			style: containerStyle
 		})
 
-		const close = Object.assign(this.createElem(container, 'div'), {
-			innerText: 'x',
-			style: buttonCloseStyle,
-			onclick: closeSignUp
-		})
+		btnClose(this, container, closeSignUp)
 
-		const logo = Object.assign(this.createElem(container, 'div'), {
-			style: logoStyle
-		})
-		const logo__link = Object.assign(this.createElem(logo, 'a'), {
-			style: logoLinkStyle
-		})
-		const logo__img = Object.assign(this.createElem(logo__link, 'img'), {
-			src: logoImg,
-			style: imageStyle
-		})
+		logoElem(this, container)
 
 		const title = Object.assign(this.createElem(container, 'h2'), {
 			innerText: 'Sign up to Fantasy World',
@@ -88,23 +69,7 @@ class SignUp extends HTMLElement {
 
 		getInputs(this, elems__body)
 
-		const avatar__container = Object.assign(this.createElem(forms__body, 'div'), {
-			style: avatarContainerStyle
-		})
-		const avatar = Object.assign(this.createElem(avatar__container, 'input'), {
-			type: 'file',
-			style: avatarStyle,
-			disabled: true
-		})
-			
-		const avatar__body = Object.assign(this.createElem(avatar__container, 'div'), {
-			style: avatarBodyStyle
-		})
-
-		window[Symbol.for('photo')] = Object.assign(this.createElem(avatar__body, 'img'), {
-			src: getDefaultAvatar(),
-			style: imageStyle
-		})
+		avatarElem(this, forms__body)
 
 		window[Symbol.for('error__message-avatar')] = Object.assign(this.createElem(forms__body, 'p'), {
 			style: errorMessageStyle,

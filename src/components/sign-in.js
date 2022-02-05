@@ -1,10 +1,6 @@
 import {
 	wrapperStyle,
 	containerStyle,
-	buttonCloseStyle,
-	logoStyle,
-	logoLinkStyle,
-	imageStyle,
 	titleStyle,
 	formsBodyStyle,
 	inputStyle,
@@ -16,12 +12,13 @@ import {
 } from '../styles'
 
 import {
-	logoImg
-} from '../assets'
-
-import {
 	loginHandler,
 } from '../data-handlers'
+
+import {
+	btnClose,
+	logoElem
+} from '../elements'
 
 import {
 	closeSignIn,
@@ -47,22 +44,9 @@ class SignIn extends HTMLElement {
 			style: containerStyle
 		})
 
-		const close = Object.assign(this.createElem(container, 'div'), {
-			innerText: 'x',
-			style: buttonCloseStyle,
-			onclick: closeSignIn
-		})
+		btnClose(this, container, closeSignIn)
 
-		const logo = Object.assign(this.createElem(container, 'div'), {
-			style: logoStyle
-		})
-		const logo__link = Object.assign(this.createElem(logo, 'a'), {
-			style: logoLinkStyle
-		})
-		const logo__img = Object.assign(this.createElem(logo__link, 'img'), {
-			src: logoImg,
-			style: imageStyle
-		})
+		logoElem(this, container)
 
 		const title = Object.assign(this.createElem(container, 'h2'), {
 			innerText: 'Sign in to Fantasy World',

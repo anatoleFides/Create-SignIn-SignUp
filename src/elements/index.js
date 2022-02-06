@@ -4,6 +4,8 @@ import { avatarElem } from './avatarElem'
 import { avatar } from './avatarElem'
 import { avatarMessageErrorElem } from './avatarMessageErrorElem'
 import { avatarMessageError } from './avatarMessageErrorElem'
+import { buttonElem } from './buttonElem'
+import { button } from './buttonElem'
 
 export {
 	btnClose,
@@ -11,5 +13,7 @@ export {
 	avatarElem,
 	avatar,
 	avatarMessageErrorElem,
-	avatarMessageError
+	avatarMessageError,
+	buttonElem,
+	button
 }

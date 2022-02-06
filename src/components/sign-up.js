@@ -14,7 +14,9 @@ import {
 	logoElem,
 	avatarElem,
 	avatar,
-	avatarMessageErrorElem
+	avatarMessageErrorElem,
+	buttonElem,
+	button
 } from '../elements'
 
 import {
@@ -71,6 +73,8 @@ class SignUp extends HTMLElement {
 
 		avatarMessageErrorElem(this, forms__body)
 
+		buttonElem(this, container)
+
 		login.onchange = (event) => validateLogin(event.target.value)
 
 		name.oninput = (event) => validateName(event.target.value)
@@ -92,20 +96,21 @@ class SignUp extends HTMLElement {
 						})
 		}
 
-		const button = Object.assign(this.createElem(container, 'button'), {
-			disabled: true,
-			innerText: 'Sign Up',
-			style: buttonDisabledStyle,
-			onclick: async function (event) {
-				await createUser (login.value, {
-					name: name.value,
-					telephone: telephone.value,
-					email: email.value,
-					password: password.value,
-					avatar: window[Symbol.for('photo')].src
-				})
-			}
-		})
+
+		// const button = Object.assign(this.createElem(container, 'button'), {
+		// 	disabled: true,
+		// 	innerText: 'Sign Up',
+		// 	style: buttonDisabledStyle,
+		// 	onclick: async function (event) {
+		// 		await createUser (login.value, {
+		// 			name: name.value,
+		// 			telephone: telephone.value,
+		// 			email: email.value,
+		// 			password: password.value,
+		// 			avatar: window[Symbol.for('photo')].src
+		// 		})
+		// 	}
+		// })
 	}
 }
 

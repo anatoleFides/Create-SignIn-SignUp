@@ -1,5 +1,6 @@
 import {
 	createElem,
+	createUser,
 	login,
 	name,
 	telephone,
@@ -14,7 +15,7 @@ import { buttonDisabledStyle } from '../styles'
 let button
 
 export const buttonElem = (webElem, container) => {
-	const button = Object.assign(webElem.createElem(container, 'button'), {
+	button = Object.assign(webElem.createElem(container, 'button'), {
 		disabled: true,
 		innerText: 'Sign Up',
 		style: buttonDisabledStyle,

@@ -1,5 +1,6 @@
 import { btnClose } from './btnClose'
 import { logoElem } from './logotipElem'
+import { titleElem } from './titleElem'
 import { avatarElem } from './avatarElem'
 import { avatar } from './avatarElem'
 import { avatarMessageErrorElem } from './avatarMessageErrorElem'
@@ -10,6 +11,7 @@ import { button } from './buttonElem'
 export {
 	btnClose,
 	logoElem,
+	titleElem,
 	avatarElem,
 	avatar,
 	avatarMessageErrorElem,

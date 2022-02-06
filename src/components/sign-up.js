@@ -2,7 +2,6 @@
 import {
 	wrapperStyle,
 	containerStyle,
-	titleStyle,
 	formsBodyStyle,
 	outlineStyle,
 	buttonSubmitStyle,
@@ -12,6 +11,7 @@ import {
 import {
 	btnClose,
 	logoElem,
+	titleElem,
 	avatarElem,
 	avatar,
 	avatarMessageErrorElem,
@@ -28,7 +28,6 @@ import {
 	validatePassword,
 	readFile,
 	createElem,
-	createUser,
 	getInputs,
 	login,
 	name,
@@ -56,24 +55,19 @@ class SignUp extends HTMLElement {
 
 		logoElem(this, container)
 
-		const title = Object.assign(this.createElem(container, 'h2'), {
-			innerText: 'Sign up to Fantasy World',
-			style: titleStyle
-		})
+		titleElem(this, container)
 
 		const forms__body = Object.assign(this.createElem(container, 'div'), {
 			style: formsBodyStyle
 		})
-		const elems__body = Object.assign(this.createElem(forms__body, 'div'), {
-		})
+
+		const elems__body = this.createElem(forms__body, 'div')
 
 		getInputs(this, elems__body)
 
 		avatarElem(this, forms__body)
 
 		avatarMessageErrorElem(this, forms__body)
-
-		buttonElem(this, container)
 
 		login.onchange = (event) => validateLogin(event.target.value)
 
@@ -96,21 +90,7 @@ class SignUp extends HTMLElement {
 						})
 		}
 
-
-		// const button = Object.assign(this.createElem(container, 'button'), {
-		// 	disabled: true,
-		// 	innerText: 'Sign Up',
-		// 	style: buttonDisabledStyle,
-		// 	onclick: async function (event) {
-		// 		await createUser (login.value, {
-		// 			name: name.value,
-		// 			telephone: telephone.value,
-		// 			email: email.value,
-		// 			password: password.value,
-		// 			avatar: window[Symbol.for('photo')].src
-		// 		})
-		// 	}
-		// })
+		buttonElem(this, container)
 	}
 }
 

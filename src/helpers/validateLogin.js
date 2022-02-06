@@ -1,22 +1,17 @@
 import {
+	setErrorMessage,
 	validateEmptyString,
 	testLoginSignUp,
 	login,
 	name
 } from './'
 
-import {
-	errorMessageStyle,
-	errorMessageActiveStyle
-} from '../styles'
-
 import { loginRule } from '../configs'
 
 export const validateLogin = (value) => {
 	const result = Boolean(value.match(loginRule))
 
-	login.nextElementSibling.style = result 
-		? errorMessageStyle : errorMessageActiveStyle
+	setErrorMessage(login, result)
 
 	testLoginSignUp(login, value)
 

@@ -10,6 +10,7 @@ import { validatePhone } from './validatePhone'
 import { validateEmail } from './validateEmail'
 import { validatePassword } from './validatePassword'
 import { readFile } from './readFile'
+import { setErrorMessage } from './setErrorMessage'
 import { createUser } from './createUser'
 import { testLoginSignIn } from './testLoginSignIn'
 import { testLoginSignUp } from './testLoginSignUp'
@@ -37,6 +38,7 @@ export {
 	validateEmail,
 	validatePassword,
 	readFile,
+	setErrorMessage,
 	createUser,
 	testLoginSignIn,
 	testLoginSignUp,

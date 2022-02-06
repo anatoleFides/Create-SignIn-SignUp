@@ -5,7 +5,7 @@ import {
 	errorMessageActiveStyle
 } from '../styles'
 
-import { avatarMessageError }from '../elements'
+import { avatarMessageError, button }from '../elements'
 
 export const readFile = (value) => {
 	if (value.files[0].type.indexOf('image')) {

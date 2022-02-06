@@ -1,21 +1,16 @@
 import {
+	setErrorMessage,
 	validateEmptyString,
 	name,
 	telephone
 } from './'
-
-import {
-	errorMessageStyle,
-	errorMessageActiveStyle
-} from '../styles'
 
 import { nameRule } from '../configs'
 
 export const validateName = (value) => {
 	const result = Boolean(value.match(nameRule))
 
-	name.nextElementSibling.style = result 
-		? errorMessageStyle : errorMessageActiveStyle
+	setErrorMessage(name, result)
 
 	validateEmptyString(name, value)
 

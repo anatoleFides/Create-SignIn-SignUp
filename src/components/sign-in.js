@@ -17,7 +17,8 @@ import {
 
 import {
 	btnClose,
-	logoElem
+	logoElem,
+	titleElem
 } from '../elements'
 
 import {
@@ -48,14 +49,12 @@ class SignIn extends HTMLElement {
 
 		logoElem(this, container)
 
-		const title = Object.assign(this.createElem(container, 'h2'), {
-			innerText: 'Sign in to Fantasy World',
-			style: titleStyle
-		})
+		titleElem(this, container)
 
 		const forms__body = Object.assign(this.createElem(container, 'div'), {
 			style: formsBodyStyle
 		})
+		
 		const [login, password] = [
 			['text', 'Login', 'Login not found'],
 			['password', 'Password', 'Invalid passvord']

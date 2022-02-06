@@ -1,12 +1,8 @@
 import {
+	setErrorMessage,
 	validateEmptyString,
 	password
 } from './'
-
-import {
-	errorMessageStyle,
-	errorMessageActiveStyle
-} from '../styles'
 
 import { passwordRule } from '../configs'
 
@@ -17,8 +13,7 @@ export const validatePassword = (value) => {
 
 	password.style.color = result ? '#090' : '#f00'
 
-	password.nextElementSibling.style = result 
-		? errorMessageStyle : errorMessageActiveStyle
+	setErrorMessage(password, result)
 
 	validateEmptyString(password, value)
 

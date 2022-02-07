@@ -24,6 +24,7 @@ import { name } from './getInputs'
 import { telephone } from './getInputs'
 import { email } from './getInputs'
 import { password } from './getInputs'
+import { showError } from './showError'
 
 export {
 	openCloseBurgerMenu,
@@ -51,5 +52,6 @@ export {
 	name,
 	telephone,
 	email,
-	password
+	password,
+	showError
 }

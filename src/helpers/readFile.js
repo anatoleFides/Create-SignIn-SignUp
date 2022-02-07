@@ -2,86 +2,45 @@ import { getDefaultAvatar } from '../assets'
 
 import {
 	errorMessageStyle,
-	errorMessageActiveStyle,
+	// errorMessageActiveStyle,
 	// buttonSubmitStyle,
 	// buttonDisabledStyle
 } from '../styles'
 
 import { avatarMessageError, button }from '../elements'
 
-export const readFile = (value) => {
-	if (value.files[0].type.indexOf('image')) {
-		Object.assign(avatarMessageError, {
-			style: errorMessageActiveStyle,
-			textContent: 'Invalid file type'
-		})
+import { showError } from './'
+
+export const readFile = (file, elem) => {
+	const errorMessages = [
+		'Invalid file',
+		'Invalid elemHTML',
+		'Invalid file type',
+		'Image size exceeds 300 kB'
+	]
+
+	// if (!(file instanceof File)) return showError(errorMessages[0])
+
+	// if (elem?.nodeType !== 1) return showError(errorMessages[1])
+
+	if (file.files[0].type.indexOf('image')) {
+		showError(errorMessages[2])
 
 		return false
 	} else {
 		avatarMessageError.style = errorMessageStyle
 		
-		if (value.files[0].size > 300000) {
-			Object.assign(avatarMessageError, {
-				style: errorMessageActiveStyle,
-				textContent: 'Image size exceeds 300 kB'
-			})
+		if (file.files[0].size > 300000) {
+			showError(errorMessages[3])
 
 		return false
 		}
 		const reader = new FileReader
 		reader.onload = function (event) {
-			window[Symbol.for('photo')].src = event.target.result
+			elem.src = event.target.result
 		}
-		reader.readAsDataURL(value.files[0])
+		reader.readAsDataURL(file.files[0])
 
 		return true
 	}
-
-	// if (value.files[0].type.indexOf('image')) {
-	// 	Object.assign(avatarMessageError, {
-	// 		style: errorMessageActiveStyle,
-	// 		textContent: 'Invalid file type'
-	// 	})
-
-	// 	Object.assign(button, {
-	// 		disabled: true,
-	// 		style: buttonDisabledStyle
-	// 	})
-	// } else {
-	// 	avatarMessageError.style = errorMessageStyle
-	// 			Object.assign(button, {
-	// 		disabled: false,
-	// 		style: buttonSubmitStyle
-	// 	})
-	// }
-
-	// if (value.files[0].size > 300000) {
-	// 	Object.assign(avatarMessageError, {
-	// 		style: errorMessageActiveStyle,
-	// 		textContent: 'Image size exceeds 300 kB'
-	// 	})
-
-	// 	Object.assign(button, {
-	// 		disabled: true,
-	// 		style: buttonDisabledStyle
-	// 	})
-	// } else {
-	// 	avatarMessageError.style = errorMessageStyle
-	// 			Object.assign(button, {
-	// 		disabled: false,
-	// 		style: buttonSubmitStyle
-	// 	})
-	// }
-
-	// const reader = new FileReader
-	// 	reader.onload = function (event) {
-	// 		window[Symbol.for('photo')].src = event.target.result
-	// 	}
-	// 	reader.readAsDataURL(value.files[0])
-
-	// 	Object.assign(button, {
-	// 		disabled: false,
-	// 		style: buttonSubmitStyle
-	// 	})
-
 }

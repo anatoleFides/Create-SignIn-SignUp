@@ -80,9 +80,9 @@ class SignUp extends HTMLElement {
 		password.oninput = (event) => validatePassword(event.target.value)
 
 		avatar.onchange = (event) => {
-			readFile(event.target, window[Symbol.for('photo')])
+			readFile(event.target.files[0], window[Symbol.for('photo')])
 
-			console.log(event.target)
+			console.log(event.target.files[0])
 			console.log(window[Symbol.for('photo')])
 				// ? Object.assign(button, {
 				// 		disabled: false,

@@ -17,28 +17,28 @@ export const readFile = (file, elem) => {
 		'Invalid file type',
 		'Image size exceeds 300 kB'
 	]
-// console.log(!file instanceof File)
-// 	if (!file instanceof File) {
-// 		// showError(errorMessages[0])
+console.log(!file instanceof File)
+	if (!file instanceof File) {
+		// showError(errorMessages[0])
 
-// 		// return Object.assign(button, {
-// 		// 					disabled: true,
-// 		// 					style: buttonDisabledStyle
-// 		// 				})
-// 		return console.log('Invalid file')
-// 	}
-// console.log(elem?.nodeType !== 1)
-// 	if (elem?.nodeType !== 1) {
-// 		// showError(errorMessages[1])
+		// return Object.assign(button, {
+		// 					disabled: true,
+		// 					style: buttonDisabledStyle
+		// 				})
+		return console.log('Invalid file')
+	}
+console.log(elem?.nodeType !== 1)
+	if (elem?.nodeType !== 1) {
+		// showError(errorMessages[1])
 
-// 		// return Object.assign(button, {
-// 		// 					disabled: true,
-// 		// 					style: buttonDisabledStyle
-// 		// 				})
-// 		return console.log('Invalid elemHTML')
-// 	}
-console.log(file.files[0].type.indexOf('image'))
-	if (file.files[0].type.indexOf('image')) {
+		// return Object.assign(button, {
+		// 					disabled: true,
+		// 					style: buttonDisabledStyle
+		// 				})
+		return console.log('Invalid elemHTML')
+	}
+console.log(file.type.indexOf('image'))
+	if (file.type.indexOf('image')) {
 		showError(errorMessages[2])
 
 		return Object.assign(button, {
@@ -48,7 +48,7 @@ console.log(file.files[0].type.indexOf('image'))
 	} else {
 		avatarMessageError.style = errorMessageStyle
 		
-		if (file.files[0].size > 300000) {
+		if (file.size > 300000) {
 			showError(errorMessages[3])
 
 		return Object.assign(button, {
@@ -60,7 +60,7 @@ console.log(file.files[0].type.indexOf('image'))
 		reader.onload = function (event) {
 			elem.src = event.target.result
 		}
-		reader.readAsDataURL(file.files[0])
+		reader.readAsDataURL(file)
 
 		return Object.assign(button, {
 						disabled: false,

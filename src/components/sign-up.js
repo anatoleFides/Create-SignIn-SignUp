@@ -81,13 +81,16 @@ class SignUp extends HTMLElement {
 
 		avatar.onchange = (event) => {
 			readFile(event.target, window[Symbol.for('photo')])
-				? Object.assign(button, {
-						disabled: false,
-						style: buttonSubmitStyle
-					}) : Object.assign(button, {
-							disabled: true,
-							style: buttonDisabledStyle
-						})
+
+			console.log(event.target)
+			console.log(window[Symbol.for('photo')])
+				// ? Object.assign(button, {
+				// 		disabled: false,
+				// 		style: buttonSubmitStyle
+				// 	}) : Object.assign(button, {
+				// 			disabled: true,
+				// 			style: buttonDisabledStyle
+				// 		})
 		}
 
 		buttonElem(this, container)

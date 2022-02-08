@@ -1,14 +1,15 @@
-import { getDefaultAvatar } from '../assets'
-
 import {
 	errorMessageStyle,
 	buttonSubmitStyle,
 	buttonDisabledStyle
 } from '../styles'
 
-import { avatarMessageError, button }from '../elements'
+import { avatarMessageError }from '../elements'
 
-import { showError } from './'
+import {
+	showError,
+	showDisabledButton
+} from './'
 
 export const readFile = (file, elem) => {
 	const errorMessages = [
@@ -17,44 +18,22 @@ export const readFile = (file, elem) => {
 		'Invalid file type',
 		'Image size exceeds 300 kB'
 	]
-console.log(!file instanceof File)
-	if (!file instanceof File) {
-		// showError(errorMessages[0])
 
-		// return Object.assign(button, {
-		// 					disabled: true,
-		// 					style: buttonDisabledStyle
-		// 				})
-		return console.log('Invalid file')
-	}
-console.log(elem?.nodeType !== 1)
-	if (elem?.nodeType !== 1) {
-		// showError(errorMessages[1])
+	if (!(file instanceof File)) return showError(errorMessages[0])
 
-		// return Object.assign(button, {
-		// 					disabled: true,
-		// 					style: buttonDisabledStyle
-		// 				})
-		return console.log('Invalid elemHTML')
-	}
-console.log(file.type.indexOf('image'))
+	if (elem?.nodeType !== 1) return showError(errorMessages[1])
+
 	if (file.type.indexOf('image')) {
 		showError(errorMessages[2])
 
-		return Object.assign(button, {
-							disabled: true,
-							style: buttonDisabledStyle
-						})
+		return showDisabledButton(true, buttonDisabledStyle)
 	} else {
 		avatarMessageError.style = errorMessageStyle
-		
+
 		if (file.size > 300000) {
 			showError(errorMessages[3])
 
-		return Object.assign(button, {
-							disabled: true,
-							style: buttonDisabledStyle
-						})
+		return showDisabledButton(true, buttonDisabledStyle)
 		}
 		const reader = new FileReader
 		reader.onload = function (event) {
@@ -62,9 +41,6 @@ console.log(file.type.indexOf('image'))
 		}
 		reader.readAsDataURL(file)
 
-		return Object.assign(button, {
-						disabled: false,
-						style: buttonSubmitStyle
-					})
+		return showDisabledButton(false, buttonSubmitStyle)
 	}
 }

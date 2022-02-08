@@ -7,6 +7,7 @@ import { avatarMessageErrorElem } from './avatarMessageErrorElem'
 import { avatarMessageError } from './avatarMessageErrorElem'
 import { buttonElem } from './buttonElem'
 import { button } from './buttonElem'
+import { forgotPasElem } from './forgotPasElem'
 
 export {
 	btnClose,
@@ -17,5 +18,6 @@ export {
 	avatarMessageErrorElem,
 	avatarMessageError,
 	buttonElem,
-	button
+	button,
+	forgotPasElem
 }

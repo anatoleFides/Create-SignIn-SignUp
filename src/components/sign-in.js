@@ -18,7 +18,8 @@ import {
 import {
 	btnClose,
 	logoElem,
-	titleElem
+	titleElem,
+	forgotPasElem
 } from '../elements'
 
 import {
@@ -84,10 +85,7 @@ class SignIn extends HTMLElement {
 			testPassordSignIn(event.target, event.target.value)
 		}
 
-		const forgot__password = Object.assign(this.createElem(container, 'a'), {
-			style: forgotPasswordStyle,
-			innerText: 'Forgot password?',
-		})
+		forgotPasElem(this, container) 
 
 		window[Symbol.for('listInputSignIn')] = [login, password]
 

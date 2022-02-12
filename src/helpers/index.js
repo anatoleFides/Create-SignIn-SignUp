@@ -19,11 +19,13 @@ import { authorizeUser } from './authorizeUser'
 import { signOut } from './signOut'
 import { createElem } from './createElem'
 import { getInputs } from './getInputs'
-import { login } from './getInputs'
-import { name } from './getInputs'
-import { telephone } from './getInputs'
-import { email } from './getInputs'
-import { password } from './getInputs'
+import {
+	login,
+	name,
+	telephone,
+	email,
+	password
+} from './getInputs'
 import { showError } from './showError'
 import { showDisabledButton } from './showDisabledButton'
 

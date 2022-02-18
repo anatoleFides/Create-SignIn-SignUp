@@ -1,106 +1,106 @@
 import {
-	wrapperStyle,
-	containerStyle,
-	titleStyle,
-	formsBodyStyle,
-	inputStyle,
-	outlineStyle,
-	errorMessageStyle,
-	errorMessageActiveStyle,
-	forgotPasswordStyle,
-	buttonDisabledStyle
+  wrapperStyle,
+  containerStyle,
+  titleStyle,
+  formsBodyStyle,
+  inputStyle,
+  outlineStyle,
+  errorMessageStyle,
+  errorMessageActiveStyle,
+  forgotPasswordStyle,
+  buttonDisabledStyle
 } from '../styles'
 
 import {
-	loginHandler,
+  loginHandler,
 } from '../data-handlers'
 
 import {
-	btnClose,
-	logoElem,
-	titleElem,
-	forgotPasElem
+  btnClose,
+  logoElem,
+  titleElem,
+  forgotPasElem
 } from '../elements'
 
 import {
-	closeSignIn,
-	testLoginSignIn,
-	testPassordSignIn,
-	authorizeUser,
-	createElem
+  closeSignIn,
+  testLoginSignIn,
+  testPassordSignIn,
+  authorizeUser,
+  createElem
 } from '../helpers'
 
 class SignIn extends HTMLElement {
-	constructor () {
-		super()
+  constructor () {
+    super()
 
-		const shadow = this.attachShadow({ mode: 'closed' })
+    const shadow = this.attachShadow({ mode: 'closed' })
 
-		shadow.innerHTML = outlineStyle
+    shadow.innerHTML = outlineStyle
 
-		const wrapper = Object.assign(this.createElem(shadow, 'div'), {
-		style: wrapperStyle
-		})
+    const wrapper = Object.assign(this.createElem(shadow, 'div'), {
+      style: wrapperStyle
+    })
 
-		const container = Object.assign(this.createElem(wrapper, 'div'), {
-			style: containerStyle
-		})
+    const container = Object.assign(this.createElem(wrapper, 'div'), {
+      style: containerStyle
+    })
 
-		btnClose(this, container, closeSignIn)
+    btnClose(this, container, closeSignIn)
 
-		logoElem(this, container)
+    logoElem(this, container)
 
-		titleElem(this, container)
+    titleElem(this, container)
 
-		const forms__body = Object.assign(this.createElem(container, 'div'), {
-			style: formsBodyStyle
-		})
-		
-		const [login, password] = [
-			['text', 'Login', 'Login not found'],
-			['password', 'Password', 'Invalid passvord']
-		].map(function (item) {
-			const elem__container = this.createElem(forms__body, 'div')
+    const forms__body = Object.assign(this.createElem(container, 'div'), {
+      style: formsBodyStyle
+    })
 
-			const elem = Object.assign(this.createElem(elem__container, 'input'), {
-				type: item[0],
-				placeholder: item[1],
-				style: inputStyle
-			})
+    const [login, password] = [
+      ['text', 'Login', 'Login not found'],
+      ['password', 'Password', 'Invalid passvord']
+    ].map(function (item) {
+      const elem__container = this.createElem(forms__body, 'div')
 
-			const error__message = Object.assign(this.createElem(elem__container, 'p'), {
-				textContent: item[2],
-				style: errorMessageStyle
-			})
+      const elem = Object.assign(this.createElem(elem__container, 'input'), {
+        type: item[0],
+        placeholder: item[1],
+        style: inputStyle
+      })
 
-			return elem
-		}.bind(this))
+      const error__message = Object.assign(this.createElem(elem__container, 'p'), {
+        textContent: item[2],
+        style: errorMessageStyle
+      })
 
-		login.onchange = function (event) {
-			loginHandler(event.target.value)
-			testLoginSignIn(event.target, loginHandler())
-		}
+      return elem
+    }.bind(this))
 
-		password.oninput = function (event) {
-			testPassordSignIn(event.target, event.target.value)
-		}
+    login.onchange = function (event) {
+      loginHandler(event.target.value)
+      testLoginSignIn(event.target, loginHandler())
+    }
 
-		forgotPasElem(this, container) 
+    password.oninput = function (event) {
+      testPassordSignIn(event.target, event.target.value)
+    }
 
-		window[Symbol.for('listInputSignIn')] = [login, password]
+    forgotPasElem(this, container) 
 
-		window[Symbol.for('buttonSignIn')] = Object.assign(this.createElem(container, 'button'), {
-			innerText: 'Sign In',
-			style: buttonDisabledStyle,
-			disabled: true,
-			onclick: async function (event) {
-				await authorizeUser({
-					login: login.value,
-					password: password.value
-				})
-			}
-		})
-	}
+    window[Symbol.for('listInputSignIn')] = [login, password]
+
+    window[Symbol.for('buttonSignIn')] = Object.assign(this.createElem(container, 'button'), {
+      innerText: 'Sign In',
+      style: buttonDisabledStyle,
+      disabled: true,
+      onclick: async function (event) {
+        await authorizeUser({
+          login: login.value,
+          password: password.value
+        })
+      }
+    })
+  }
 }
 
 SignIn.prototype.createElem = createElem

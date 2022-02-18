@@ -3,7 +3,7 @@ import { passwordHandler } from './password-handler'
 import { avatarHandler } from './avatar-handler'
 
 export {
-	loginHandler,
-	passwordHandler,
-	avatarHandler
+  loginHandler,
+  passwordHandler,
+  avatarHandler
 }

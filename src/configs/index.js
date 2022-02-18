@@ -6,10 +6,10 @@ import { emailRule } from './emailRule'
 import { passwordRule } from './passwordRule'
 
 export {
-	apiHost,
-	loginRule,
-	nameRule,
-	telephoneRule,
-	emailRule,
-	passwordRule
+  apiHost,
+  loginRule,
+  nameRule,
+  telephoneRule,
+  emailRule,
+  passwordRule
 }

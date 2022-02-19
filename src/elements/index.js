@@ -10,14 +10,14 @@ import { button } from './buttonElem'
 import { forgotPasElem } from './forgotPasElem'
 
 export {
-	btnClose,
-	logoElem,
-	titleElem,
-	avatarElem,
-	avatar,
-	avatarMessageErrorElem,
-	avatarMessageError,
-	buttonElem,
-	button,
-	forgotPasElem
+  btnClose,
+  logoElem,
+  titleElem,
+  avatarElem,
+  avatar,
+  avatarMessageErrorElem,
+  avatarMessageError,
+  buttonElem,
+  button,
+  forgotPasElem
 }

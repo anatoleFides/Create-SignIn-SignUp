@@ -1,18 +1,18 @@
 import {
-	setErrorMessage,
-	validateEmptyString,
-	telephone,
-	email
+  setErrorMessage,
+  validateEmptyString,
+  telephone,
+  email
 } from './'
 
 import { telephoneRule } from '../configs'
 
 export const validatePhone = (value) => {
-	const result = Boolean(value.match(telephoneRule))
+  const result = Boolean(value.match(telephoneRule))
 
-	setErrorMessage(telephone, result)
+  setErrorMessage(telephone, result)
 
-	validateEmptyString(telephone, value)
+  validateEmptyString(telephone, value)
 
-	email.disabled = !result
+  email.disabled = !result
 }

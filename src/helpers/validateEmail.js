@@ -1,18 +1,18 @@
 import {
-	setErrorMessage,
-	validateEmptyString,
-	email,
-	password
+  setErrorMessage,
+  validateEmptyString,
+  email,
+  password
 } from './'
 
 import { emailRule } from '../configs'
 
 export const validateEmail = (value) => {
-	const result = Boolean(value.match(emailRule))
+  const result = Boolean(value.match(emailRule))
 
-	setErrorMessage(email, result)
+  setErrorMessage(email, result)
 
-	validateEmptyString(email, value)
+  validateEmptyString(email, value)
 
-	password.disabled = !result
+  password.disabled = !result
 }

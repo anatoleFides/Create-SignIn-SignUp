@@ -1,8 +1,4 @@
-import {
-  errorMessageStyle,
-  buttonSubmitStyle,
-  buttonDisabledStyle
-} from '../styles'
+import { errorMessageStyle } from '../styles'
 
 import {
   avatarMessageError,
@@ -29,14 +25,14 @@ export const readFile = (file, elem) => {
   if (file.type.indexOf('image')) {
     showError(errorMessages[2])
 
-    return showDisabledButton(button, true, buttonDisabledStyle)
+    return showDisabledButton(button, false)
   } else {
     avatarMessageError.style = errorMessageStyle
 
     if (file.size > 300000) {
       showError(errorMessages[3])
 
-    return showDisabledButton(button, true, buttonDisabledStyle)
+    return showDisabledButton(button, false)
     }
     const reader = new FileReader
     reader.onload = function (event) {
@@ -44,6 +40,6 @@ export const readFile = (file, elem) => {
     }
     reader.readAsDataURL(file)
 
-    return showDisabledButton(button, false, buttonSubmitStyle)
+    return showDisabledButton(button, true)
   }
 }

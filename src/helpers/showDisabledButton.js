@@ -1,7 +1,5 @@
-import { button }from '../elements'
-
-export const showDisabledButton = (paramDisabled, paramStyle) => {
-	Object.assign(button, {
+export const showDisabledButton = (object, paramDisabled, paramStyle) => {
+	Object.assign(object, {
 		disabled: paramDisabled,
 		style: paramStyle
 	})

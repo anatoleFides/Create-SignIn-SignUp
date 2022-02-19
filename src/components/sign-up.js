@@ -71,6 +71,14 @@ class SignUp extends HTMLElement {
 
     login.onchange = (event) => validateLogin(event.target.value)
 
+
+    // const [name, telephone, email, password] = [
+    //   validateName(event.target.value),
+    //   validateEmail(event.target.value),
+    //   validateEmail(event.target.value),
+    //   validatePassword(event.target.value)
+    // ].forEach(item => { oninput: (event) => item })
+
     name.oninput = (event) => validateName(event.target.value)
 
     telephone.oninput = (event) => validatePhone(event.target.value)

@@ -1,21 +1,26 @@
 import {
-	setErrorMessage,
-	validateEmptyString,
-	password
+  setErrorMessage,
+  validateEmptyString,
+  password
 } from './'
 
 import { passwordRule } from '../configs'
 
 import { avatar } from '../elements'
 
+import { sha256 } from 'js-sha256'
+
 export const validatePassword = (value) => {
-	const result = Boolean(value.match(passwordRule))
+  const digest = sha256(value)
+  console.log(digest)
 
-	password.style.color = result ? '#090' : '#f00'
+  const result = Boolean(value.match(passwordRule))
 
-	setErrorMessage(password, result)
+  password.style.color = result ? '#090' : '#f00'
 
-	validateEmptyString(password, value)
+  setErrorMessage(password, result)
 
-	avatar.disabled = !result
+  validateEmptyString(password, value)
+
+  avatar.disabled = !result
 }

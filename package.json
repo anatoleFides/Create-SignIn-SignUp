@@ -18,6 +18,7 @@
   "homepage": "https://github.com/anatoleFides/Create-SignIn-SignUp#readme",
   "dependencies": {
     "fast-sha256": "^1.3.0",
+    "js-sha256": "^0.9.0",
     "undefined": "^0.1.0"
   }
 }

@@ -19,6 +19,9 @@ import {
   btnClose,
   logoElem,
   titleElem,
+  inputsAuthorize,
+  loginAuthorize,
+  passwordAuthorize,
   forgotPasElem
 } from '../elements'
 
@@ -56,38 +59,40 @@ class SignIn extends HTMLElement {
       style: formsBodyStyle
     })
 
-    const [login, password] = [
-      ['text', 'Login', 'Login not found'],
-      ['password', 'Password', 'Invalid passvord']
-    ].map(function (item) {
-      const elem__container = this.createElem(forms__body, 'div')
+    inputsAuthorize(this, forms__body)
 
-      const elem = Object.assign(this.createElem(elem__container, 'input'), {
-        type: item[0],
-        placeholder: item[1],
-        style: inputStyle
-      })
+    // const [login, password] = [
+    //   ['text', 'Login', 'Login not found'],
+    //   ['password', 'Password', 'Invalid passvord']
+    // ].map(function (item) {
+    //   const elem__container = this.createElem(forms__body, 'div')
 
-      const error__message = Object.assign(this.createElem(elem__container, 'p'), {
-        textContent: item[2],
-        style: errorMessageStyle
-      })
+    //   const elem = Object.assign(this.createElem(elem__container, 'input'), {
+    //     type: item[0],
+    //     placeholder: item[1],
+    //     style: inputStyle
+    //   })
 
-      return elem
-    }.bind(this))
+    //   const error__message = Object.assign(this.createElem(elem__container, 'p'), {
+    //     textContent: item[2],
+    //     style: errorMessageStyle
+    //   })
 
-    login.onchange = function (event) {
+    //   return elem
+    // }.bind(this))
+
+    loginAuthorize.onchange = function (event) {
       loginHandler(event.target.value)
       testLoginSignIn(event.target, loginHandler())
     }
 
-    password.oninput = function (event) {
+    passwordAuthorize.oninput = function (event) {
       testPassordSignIn(event.target, event.target.value)
     }
 
     forgotPasElem(this, container) 
 
-    window[Symbol.for('listInputSignIn')] = [login, password]
+    // window[Symbol.for('listInputSignIn')] = [loginAuthorize, passwordAuthorize]
 
     window[Symbol.for('buttonSignIn')] = Object.assign(this.createElem(container, 'button'), {
       innerText: 'Sign In',
@@ -95,8 +100,8 @@ class SignIn extends HTMLElement {
       disabled: true,
       onclick: async function (event) {
         await authorizeUser({
-          login: login.value,
-          password: password.value
+          loginAuthorize: loginAuthorize.value,
+          passwordAuthorize: passwordAuthorize.value
         })
       }
     })

@@ -71,21 +71,17 @@ class SignUp extends HTMLElement {
 
     login.onchange = (event) => validateLogin(event.target.value)
 
+    const funcsValidete = [
+      validateName,
+      validatePhone,
+      validateEmail,
+      validatePassword
+    ]
 
-    // const [name, telephone, email, password] = [
-    //   validateName(event.target.value),
-    //   validateEmail(event.target.value),
-    //   validateEmail(event.target.value),
-    //   validatePassword(event.target.value)
-    // ].forEach(item => { oninput: (event) => item })
-
-    name.oninput = (event) => validateName(event.target.value)
-
-    telephone.oninput = (event) => validatePhone(event.target.value)
-
-    email.oninput = (event) => validateEmail(event.target.value)
-
-    password.oninput = (event) => validatePassword(event.target.value)
+    ; [name, telephone, email, password]
+      .map((item, index) => Object.assign(item, {
+        oninput: (event) => funcsValidete[index](event.target.value)
+      }))
 
     avatar.onchange = (event) => readFile(event.target.files[0], window[Symbol.for('photo')])
 

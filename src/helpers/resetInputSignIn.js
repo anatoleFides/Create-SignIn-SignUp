@@ -1,7 +1,12 @@
 import { errorMessageStyle } from '../styles'
 
+import {
+  loginAuthorize,
+  passwordAuthorize,
+} from '../elements'
+
 export const resetInputSignIn = () => {
-  window[Symbol.for('listInputSignIn')].forEach(input => {
+  [loginAuthorize, passwordAuthorize].forEach(input => {
     Object.assign(input, {
       value: ''
     })

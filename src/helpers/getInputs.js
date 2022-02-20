@@ -14,7 +14,7 @@ export function getInputs (webElem, container) {
     ['tel', '(0XX)XXX-XX-XX', 'Invalid telephone format', true],
     ['email', 'e-mail', 'Invalid e-mail format', true],
     ['password', 'Password', 'Invalid password format', true]
-	].map(function (item) {
+  ].map(function (item) {
     const elem__container = webElem.createElem(container, 'div')
 
     const elem = Object.assign(webElem.createElem(elem__container, 'input'), {
@@ -30,7 +30,7 @@ export function getInputs (webElem, container) {
     })
 
     return elem
-	})
+  })
 }
 
 export {

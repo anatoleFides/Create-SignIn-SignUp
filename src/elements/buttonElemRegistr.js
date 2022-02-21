@@ -13,10 +13,10 @@ import { buttonDisabledStyle } from '../styles'
 
 import { sha256 } from 'js-sha256'
 
-let button
+let buttonRegistr
 
-export const buttonElem = (webElem, container) => {
-  button = Object.assign(webElem.createElem(container, 'button'), {
+export const buttonElemRegistr = (webElem, container) => {
+  buttonRegistr = Object.assign(webElem.createElem(container, 'button'), {
     disabled: true,
     innerText: 'Sign Up',
     style: buttonDisabledStyle,
@@ -33,5 +33,5 @@ export const buttonElem = (webElem, container) => {
 }
 
 export {
-  button
+  buttonRegistr
 }

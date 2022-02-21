@@ -2,7 +2,7 @@ import { errorMessageStyle } from '../styles'
 
 import {
   avatarMessageError,
-  button
+  buttonRegistr
 }from '../elements'
 
 import {
@@ -25,14 +25,14 @@ export const readFile = (file, elem) => {
   if (file.type.indexOf('image')) {
     showError(errorMessages[2])
 
-    return showDisabledButton(button, false)
+    return showDisabledButton(buttonRegistr, false)
   } else {
     avatarMessageError.style = errorMessageStyle
 
     if (file.size > 300000) {
       showError(errorMessages[3])
 
-    return showDisabledButton(button, false)
+    return showDisabledButton(buttonRegistr, false)
     }
     const reader = new FileReader
     reader.onload = function (event) {
@@ -40,6 +40,6 @@ export const readFile = (file, elem) => {
     }
     reader.readAsDataURL(file)
 
-    return showDisabledButton(button, true)
+    return showDisabledButton(buttonRegistr, true)
   }
 }

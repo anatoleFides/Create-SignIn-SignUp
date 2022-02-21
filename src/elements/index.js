@@ -5,11 +5,13 @@ import { avatarElem } from './avatarElem'
 import { avatar } from './avatarElem'
 import { avatarMessageErrorElem } from './avatarMessageErrorElem'
 import { avatarMessageError } from './avatarMessageErrorElem'
-import { buttonElem } from './buttonElem'
-import { button } from './buttonElem'
+import { buttonElemRegistr } from './buttonElemRegistr'
+import { buttonRegistr } from './buttonElemRegistr'
 import { inputsAuthorize } from './inputsAuthorize'
 import { loginAuthorize, passwordAuthorize } from './inputsAuthorize'
 import { forgotPasElem } from './forgotPasElem'
+import { buttonElemAuthorize } from './buttonElemAuthorize'
+import { buttonAuthorize } from './buttonElemAuthorize'
 
 export {
   btnClose,
@@ -19,10 +21,12 @@ export {
   avatar,
   avatarMessageErrorElem,
   avatarMessageError,
-  buttonElem,
-  button,
+  buttonElemRegistr,
+  buttonRegistr,
   inputsAuthorize,
   loginAuthorize,
   passwordAuthorize,
-  forgotPasElem
+  forgotPasElem,
+  buttonElemAuthorize,
+  buttonAuthorize
 }

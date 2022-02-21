@@ -5,6 +5,8 @@ import {
   setErrorMessage
 } from './'
 
+import { buttonAuthorize } from '../elements'
+
 import { sha256 } from 'js-sha256'
 
 export const testPassordSignIn = async (inputElem, property) => {
@@ -12,5 +14,5 @@ export const testPassordSignIn = async (inputElem, property) => {
 
   setErrorMessage(inputElem, result)
 
-  showDisabledButton(window[Symbol.for('buttonSignIn')], result)
+  showDisabledButton(buttonAuthorize, result)
 }

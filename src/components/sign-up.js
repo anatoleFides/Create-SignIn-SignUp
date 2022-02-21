@@ -15,8 +15,7 @@ import {
   avatarElem,
   avatar,
   avatarMessageErrorElem,
-  buttonElem,
-  button
+  buttonElemRegistr
 } from '../elements'
 
 import {
@@ -85,7 +84,7 @@ class SignUp extends HTMLElement {
 
     avatar.onchange = (event) => readFile(event.target.files[0], window[Symbol.for('photo')])
 
-    buttonElem(this, container)
+    buttonElemRegistr(this, container)
   }
 }
 
